@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao {{appName}}</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background-color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 26px;
+            margin: 10px 0 0;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #111827;
+            font-size: 22px;
+            margin-top: 0;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-box {
+            background-color: #eff6ff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            border: 1px solid #dbeafe;
+        }
+        
+        .steps-container {
+            margin: 30px 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: #3b82f6;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(229,231,235,0) 0%, rgba(209,213,219,1) 50%, rgba(229,231,235,0) 100%);
+            margin: 35px 0;
+        }
+        
+        .footer {
+            padding: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            margin: 0 8px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            line-height: 36px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #d1d5db;
+            transform: translateY(-2px);
+        }
+        
+        .footer-links {
+            margin: 15px 0;
+        }
+        
+        .footer-link {
+            color: #6b7280;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .content {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .button {
+                padding: 14px 28px;
+            }
+            
+            .welcome-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 16V12M12 8H12.01" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="brand-name">{{appName}}</span>
+            </div>
+            <h1>Bem-vindo à nossa comunidade!</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Olá {{username}},</h2>
+            
+            <p>É com grande alegria que damos as boas-vindas ao <strong>{{appName}}</strong>! Sua jornada de aprendizado está prestes a começar.</p>
+            
+            <div class="welcome-box">
+                <p>Sua conta foi criada com sucesso e agora você tem acesso completo a todos os recursos da nossa plataforma de ensino.</p>
+                
+                <div class="button-container">
+                    <a href="{{loginUrl}}" class="button">Acessar Minha Conta</a>
+                </div>
+                
+                <p><small>Se o botão não funcionar, copie e cole este link: <span style="word-break: break-all; font-family: monospace;">{{loginUrl}}</span></small></p>
+            </div>
+            
+            <h3>Comece sua jornada:</h3>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Complete seu perfil</strong>
+                        <p>Adicione suas informações para personalizar sua experiência de aprendizado.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Explore os cursos</strong>
+                        <p>Descubra conteúdos cuidadosamente preparados para seu desenvolvimento.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Conecte-se com outros</strong>
+                        <p>Interaja com colegas e instrutores para enriquecer sua experiência.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p><strong>Precisa de ajuda?</strong><br>
+            Nossa equipe está sempre disponível para te ajudar. Entre em contato através do e-mail <a href="mailto:{{supportEmail}}" style="color: #3b82f6;">{{supportEmail}}</a> ou visite nossa <a href="{{helpUrl}}" style="color: #3b82f6;">Central de Ajuda</a>.</p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://facebook.com/profile.php?id=61565792531619" class="social-icon">f</a>
+                <a href="https://www.instagram.com/nordinomaviedev/" class="social-icon">ig</a>
+                <a href="https://github.com/Mavton23" class="social-icon">git</a>
+                <a href="https://www.linkedin.com/in/nordino-mavie-developer-ab6824357/" class="social-icon">lk</a>
+            </div>
+            <div class="footer-links">
+                <a href="{{helpUrl}}" class="footer-link">Ajuda</a>
+                <a href="{{terms}}" class="footer-link">Termos</a>
+                <a href="{{privacy}}" class="footer-link">Privacidade</a>
+            </div>
+            <p>Atenciosamente,<br><strong>Equipe {{appName}}</strong></p>
+            <p>© {{currentYear}} {{appName}}. Todos os direitos reservados.</p>
+            <p><a href="mailto:{{supportEmail}}" style="color: #3b82f6; text-decoration: none;">{{supportEmail}}</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,727 @@
+2025-03-30 20:22:43 [ERROR]: Erro ao conectar ao banco de dados:
+2025-03-30 20:23:48 [ERROR]: Erro ao conectar ao banco de dados: password authentication failed for user "postgres"
+2025-03-30 21:02:55 [ERROR]: ❌ Falha ao sincronizar User: type "geometry" does not exist
+2025-03-30 21:02:58 [ERROR]: ❌ Falha ao sincronizar User: type "geometry" does not exist
+2025-04-01 11:28:28 [ERROR]: ❌ Falha ao sincronizar Token: relation "Users" does not exist
+2025-04-01 14:43:29 [ERROR]: ❌ Falha ao sincronizar UserLesson: relation "Lessons" does not exist
+2025-04-01 14:43:57 [ERROR]: ❌ Falha ao sincronizar UserLesson: relation "Lesson" does not exist
+2025-04-02 09:27:35 [ERROR]: ❌ Falha ao sincronizar Message: column "conversationId" does not exist
+2025-04-02 09:28:52 [ERROR]: ❌ Falha ao sincronizar Message: column "conversationId" does not exist
+2025-04-02 09:29:07 [ERROR]: ❌ Falha ao sincronizar Message: column "conversationId" does not exist
+2025-04-02 09:29:26 [ERROR]: ❌ Falha ao sincronizar Message: column "conversationId" does not exist
+2025-04-02 09:30:20 [ERROR]: ❌ Falha ao sincronizar Message: column "conversationId" does not exist
+2025-04-02 10:34:40 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:35:32 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:35:53 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:37:18 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:37:27 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:37:40 [ERROR]: ❌ Falha ao sincronizar CommunityPost: relation "communities" does not exist
+2025-04-02 10:37:59 [ERROR]: ❌ Falha ao sincronizar CommunityPost: column "communityId" does not exist
+2025-04-08 17:06:07 [ERROR]: Falha na autenticação:
+2025-04-08 22:04:21 [ERROR]: Falha na autenticação:
+2025-04-09 15:58:27 [ERROR]: Falha na autenticação:
+2025-04-09 15:58:27 [ERROR]: Falha na autenticação:
+2025-04-09 22:08:20 [ERROR]: Falha na autenticação:
+2025-04-09 22:08:20 [ERROR]: Falha na autenticação:
+2025-04-10 14:23:34 [ERROR]: Falha na autenticação:
+2025-04-10 14:23:34 [ERROR]: Falha na autenticação:
+2025-04-10 15:25:01 [ERROR]: Falha na autenticação:
+2025-04-10 15:25:01 [ERROR]: Falha na autenticação:
+2025-04-10 19:06:10 [ERROR]: Falha na autenticação:
+2025-04-10 19:06:12 [ERROR]: Falha na autenticação:
+2025-04-11 09:50:57 [ERROR]: Falha na autenticação:
+2025-04-11 09:50:59 [ERROR]: Falha na autenticação:
+2025-04-11 12:32:08 [ERROR]: Falha na autenticação:
+2025-04-11 12:32:08 [ERROR]: Falha na autenticação:
+2025-04-11 13:46:45 [ERROR]: Falha na autenticação:
+2025-04-11 13:46:45 [ERROR]: Falha na autenticação:
+2025-04-11 14:55:22 [ERROR]: Falha na autenticação:
+2025-04-11 14:55:22 [ERROR]: Falha na autenticação:
+2025-04-11 21:22:14 [ERROR]: Falha na autenticação:
+2025-04-11 21:22:16 [ERROR]: Falha na autenticação:
+2025-04-12 08:00:47 [ERROR]: Falha na autenticação:
+2025-04-12 08:00:49 [ERROR]: Falha na autenticação:
+2025-04-12 11:02:41 [ERROR]: Falha na autenticação:
+2025-04-12 11:02:41 [ERROR]: Falha na autenticação:
+2025-04-12 13:21:28 [ERROR]: Falha na autenticação:
+2025-04-12 13:21:28 [ERROR]: Falha na autenticação:
+2025-04-12 16:37:41 [ERROR]: Falha na autenticação:
+2025-04-12 16:37:41 [ERROR]: Falha na autenticação:
+2025-04-12 19:54:02 [ERROR]: Falha na autenticação:
+2025-04-12 19:54:04 [ERROR]: Falha na autenticação:
+2025-04-12 20:55:09 [ERROR]: Falha na autenticação:
+2025-04-12 20:55:09 [ERROR]: Falha na autenticação:
+2025-04-13 10:03:04 [ERROR]: Falha na autenticação:
+2025-04-13 10:03:06 [ERROR]: Falha na autenticação:
+2025-04-13 20:18:29 [ERROR]: Falha na autenticação:
+2025-04-13 20:18:31 [ERROR]: Falha na autenticação:
+2025-04-13 22:59:08 [ERROR]: Falha na autenticação:
+2025-04-13 22:59:08 [ERROR]: Falha na autenticação:
+2025-04-14 14:08:04 [ERROR]: Falha na autenticação:
+2025-04-14 14:08:04 [ERROR]: Falha na autenticação:
+2025-04-14 22:09:41 [ERROR]: Falha na autenticação:
+2025-04-14 22:09:41 [ERROR]: Falha na autenticação:
+2025-04-15 17:52:21 [ERROR]: Falha na autenticação:
+2025-04-15 17:52:21 [ERROR]: Falha na autenticação:
+2025-04-15 23:20:25 [ERROR]: Falha na autenticação:
+2025-04-15 23:20:25 [ERROR]: Falha na autenticação:
+2025-04-16 09:07:22 [ERROR]: Falha na autenticação:
+2025-04-16 09:07:24 [ERROR]: Falha na autenticação:
+2025-04-16 14:26:05 [ERROR]: Falha na autenticação:
+2025-04-16 14:26:05 [ERROR]: Falha na autenticação:
+2025-04-16 15:28:49 [ERROR]: Falha na autenticação:
+2025-04-16 15:28:50 [ERROR]: Falha na autenticação:
+2025-04-16 17:09:42 [ERROR]: Falha na autenticação:
+2025-04-16 17:09:42 [ERROR]: Falha na autenticação:
+2025-04-16 21:18:15 [ERROR]: Falha na autenticação:
+2025-04-16 21:18:20 [ERROR]: Falha na autenticação:
+2025-04-16 23:13:20 [ERROR]: Falha na autenticação:
+2025-04-16 23:13:20 [ERROR]: Falha na autenticação:
+2025-04-17 09:41:44 [ERROR]: Falha na autenticação:
+2025-04-17 09:41:44 [ERROR]: Falha na autenticação:
+2025-04-17 11:42:30 [ERROR]: Falha na autenticação:
+2025-04-17 12:23:07 [ERROR]: Falha na autenticação:
+2025-04-17 13:25:09 [ERROR]: Falha na autenticação:
+2025-04-17 13:29:49 [ERROR]: Falha na autenticação:
+2025-04-17 13:29:49 [ERROR]: Falha na autenticação:
+2025-04-17 14:54:17 [ERROR]: Falha na autenticação:
+2025-04-17 14:54:17 [ERROR]: Falha na autenticação:
+2025-04-17 14:54:34 [ERROR]: Falha na autenticação:
+2025-04-17 14:54:34 [ERROR]: Falha na autenticação:
+2025-04-17 22:52:36 [ERROR]: Falha na autenticação:
+2025-04-17 22:52:36 [ERROR]: Falha na autenticação:
+2025-04-18 00:07:16 [ERROR]: Falha na autenticação:
+2025-04-18 00:07:16 [ERROR]: Falha na autenticação:
+2025-04-18 01:21:26 [ERROR]: Falha na autenticação:
+2025-04-18 01:21:26 [ERROR]: Falha na autenticação:
+2025-04-18 01:21:26 [ERROR]: Falha na autenticação:
+2025-04-18 01:21:26 [ERROR]: Falha na autenticação:
+2025-04-18 11:39:05 [ERROR]: Falha na autenticação:
+2025-04-18 11:39:05 [ERROR]: Falha na autenticação:
+2025-04-18 13:58:35 [ERROR]: Falha na autenticação:
+2025-04-18 13:58:35 [ERROR]: Falha na autenticação:
+2025-04-18 13:58:56 [ERROR]: Falha na autenticação:
+2025-04-18 13:58:56 [ERROR]: Falha na autenticação:
+2025-04-18 16:28:02 [ERROR]: Falha na autenticação:
+2025-04-18 16:30:26 [ERROR]: Falha na autenticação:
+2025-04-18 16:30:26 [ERROR]: Falha na autenticação:
+2025-04-19 00:19:11 [ERROR]: Falha na autenticação:
+2025-04-19 00:19:11 [ERROR]: Falha na autenticação:
+2025-04-19 00:57:01 [ERROR]: Falha na autenticação:
+2025-04-19 00:57:01 [ERROR]: Falha na autenticação:
+2025-04-19 09:58:17 [ERROR]: Falha na autenticação:
+2025-04-19 09:58:18 [ERROR]: Falha na autenticação:
+2025-04-19 13:19:38 [ERROR]: Falha na autenticação:
+2025-04-19 13:19:38 [ERROR]: Falha na autenticação:
+2025-04-19 19:28:17 [ERROR]: Falha na autenticação:
+2025-04-19 19:28:17 [ERROR]: Falha na autenticação:
+2025-04-19 20:30:52 [ERROR]: Falha na autenticação:
+2025-04-19 22:54:20 [ERROR]: Falha na autenticação:
+2025-04-19 23:59:39 [ERROR]: Falha na autenticação:
+2025-04-19 23:59:40 [ERROR]: Falha na autenticação:
+2025-04-20 00:01:34 [ERROR]: Falha na autenticação:
+2025-04-20 00:01:34 [ERROR]: Falha na autenticação:
+2025-04-20 15:49:00 [ERROR]: Falha na autenticação:
+2025-04-20 15:49:00 [ERROR]: Falha na autenticação:
+2025-04-20 17:52:57 [ERROR]: Falha na autenticação:
+2025-04-20 17:52:57 [ERROR]: Falha na autenticação:
+2025-04-20 22:48:23 [ERROR]: Falha na autenticação:
+2025-04-20 22:48:23 [ERROR]: Falha na autenticação:
+2025-04-20 23:59:22 [ERROR]: Falha na autenticação:
+2025-04-20 23:59:22 [ERROR]: Falha na autenticação:
+2025-04-21 11:34:46 [ERROR]: Falha na autenticação:
+2025-04-21 11:34:46 [ERROR]: Falha na autenticação:
+2025-04-21 13:29:34 [ERROR]: Falha na autenticação:
+2025-04-21 13:30:00 [ERROR]: Falha na autenticação:
+2025-04-21 13:30:00 [ERROR]: Falha na autenticação:
+2025-04-21 14:30:55 [ERROR]: Falha na autenticação:
+2025-04-21 15:42:54 [ERROR]: Falha na autenticação:
+2025-04-21 21:51:25 [ERROR]: Falha na autenticação:
+2025-04-21 22:55:40 [ERROR]: Falha na autenticação:
+2025-04-21 23:02:40 [ERROR]: Falha na autenticação:
+2025-04-21 23:59:08 [ERROR]: Falha na autenticação:
+2025-04-22 00:05:11 [ERROR]: Falha na autenticação:
+2025-04-22 22:04:20 [ERROR]: Falha na autenticação:
+2025-04-22 23:05:55 [ERROR]: Falha na autenticação:
+2025-04-22 23:46:51 [ERROR]: Falha na autenticação:
+2025-04-22 23:46:51 [ERROR]: Falha na autenticação:
+2025-04-23 00:08:47 [ERROR]: Falha na autenticação:
+2025-04-23 12:43:26 [ERROR]: Falha na autenticação:
+2025-04-23 14:42:29 [ERROR]: Falha na autenticação:
+2025-04-23 14:44:09 [ERROR]: Falha na autenticação:
+2025-04-23 23:07:57 [ERROR]: Falha na autenticação:
+2025-04-23 23:07:57 [ERROR]: Falha na autenticação:
+2025-04-24 08:24:46 [ERROR]: Falha na autenticação:
+2025-04-24 08:56:14 [ERROR]: Falha na autenticação:
+2025-04-24 09:48:54 [ERROR]: Falha na autenticação:
+2025-04-24 10:55:17 [ERROR]: Falha na autenticação:
+2025-04-24 11:56:42 [ERROR]: Falha na autenticação:
+2025-04-24 13:43:54 [ERROR]: Falha na autenticação:
+2025-04-24 14:16:40 [ERROR]: Falha na autenticação:
+2025-04-24 15:28:32 [ERROR]: Falha na autenticação:
+2025-04-24 15:28:32 [ERROR]: Falha na autenticação:
+2025-04-24 15:45:50 [ERROR]: Falha na autenticação:
+2025-04-24 15:45:50 [ERROR]: Falha na autenticação:
+2025-04-24 23:09:55 [ERROR]: Falha na autenticação:
+2025-04-24 23:09:55 [ERROR]: Falha na autenticação:
+2025-04-25 00:15:21 [ERROR]: Falha na autenticação:
+2025-04-25 00:15:21 [ERROR]: Falha na autenticação:
+2025-04-25 11:28:50 [ERROR]: Falha na autenticação:
+2025-04-25 11:52:49 [ERROR]: Falha na autenticação:
+2025-04-25 11:52:49 [ERROR]: Falha na autenticação:
+2025-04-25 13:17:33 [ERROR]: Falha na autenticação:
+2025-04-25 13:17:34 [ERROR]: Falha na autenticação:
+2025-04-25 13:17:39 [ERROR]: Falha na autenticação:
+2025-04-25 13:17:39 [ERROR]: Falha na autenticação:
+2025-04-25 14:17:59 [ERROR]: Falha na autenticação:
+2025-04-25 14:17:59 [ERROR]: Falha na autenticação:
+2025-04-25 14:17:59 [ERROR]: Falha na autenticação:
+2025-04-25 14:17:59 [ERROR]: Falha na autenticação:
+2025-04-26 09:21:10 [ERROR]: Falha na autenticação:
+2025-04-26 11:05:31 [ERROR]: Falha na autenticação:
+2025-04-26 12:09:20 [ERROR]: Falha na autenticação:
+2025-04-26 16:34:17 [ERROR]: Falha na autenticação:
+2025-04-26 17:35:34 [ERROR]: Falha na autenticação:
+2025-04-26 19:35:03 [ERROR]: Falha na autenticação:
+2025-04-26 20:37:31 [ERROR]: Falha na autenticação:
+2025-04-26 20:37:31 [ERROR]: Falha na autenticação:
+2025-04-26 21:56:49 [ERROR]: Falha na autenticação:
+2025-04-26 22:40:49 [ERROR]: Falha na autenticação:
+2025-04-27 13:48:13 [ERROR]: Falha na autenticação:
+2025-04-27 13:48:14 [ERROR]: Falha na autenticação:
+2025-04-27 14:52:32 [ERROR]: Falha na autenticação:
+2025-04-27 14:52:32 [ERROR]: Falha na autenticação:
+2025-04-27 16:02:46 [ERROR]: Falha na autenticação:
+2025-04-27 16:02:46 [ERROR]: Falha na autenticação:
+2025-04-27 17:38:48 [ERROR]: Falha na autenticação:
+2025-04-27 17:38:48 [ERROR]: Falha na autenticação:
+2025-04-27 18:55:42 [ERROR]: Falha na autenticação:
+2025-04-28 11:14:28 [ERROR]: Falha na autenticação:
+2025-04-28 13:05:28 [ERROR]: Falha na autenticação:
+2025-04-28 13:56:13 [ERROR]: Falha na autenticação:
+2025-04-28 14:21:47 [ERROR]: Falha na autenticação:
+2025-04-28 14:21:47 [ERROR]: Falha na autenticação:
+2025-04-28 15:00:53 [ERROR]: Falha na autenticação:
+2025-04-28 15:00:53 [ERROR]: Falha na autenticação:
+2025-04-28 15:54:38 [ERROR]: Falha na autenticação:
+2025-04-28 15:54:38 [ERROR]: Falha na autenticação:
+2025-04-28 16:43:22 [ERROR]: ❌ Falha ao sincronizar CommunityMemberRole: relation "community_roles" does not exist
+2025-04-28 16:46:52 [ERROR]: ❌ Falha ao sincronizar CommunityMemberRole: relation "community_roles" does not exist
+2025-04-28 16:47:14 [ERROR]: ❌ Falha ao sincronizar CommunityMemberRole: relation "community_roles" does not exist
+2025-04-28 23:37:27 [ERROR]: Falha na autenticação:
+2025-04-29 11:14:10 [ERROR]: Falha na autenticação:
+2025-04-29 12:21:43 [ERROR]: Falha na autenticação:
+2025-04-29 14:23:53 [ERROR]: Falha na autenticação:
+2025-04-29 15:25:06 [ERROR]: Falha na autenticação:
+2025-04-29 16:29:43 [ERROR]: Falha na autenticação:
+2025-04-29 17:33:00 [ERROR]: Falha na autenticação:
+2025-04-29 18:42:35 [ERROR]: Falha na autenticação:
+2025-04-29 19:43:27 [ERROR]: Falha na autenticação:
+2025-04-29 20:43:47 [ERROR]: Falha na autenticação:
+2025-04-29 20:43:47 [ERROR]: Falha na autenticação:
+2025-04-30 09:49:26 [ERROR]: Falha na autenticação:
+2025-04-30 09:49:26 [ERROR]: Falha na autenticação:
+2025-04-30 12:05:16 [ERROR]: Falha na autenticação:
+2025-04-30 12:05:16 [ERROR]: Falha na autenticação:
+2025-04-30 13:46:33 [ERROR]: Falha na autenticação:
+2025-04-30 15:30:43 [ERROR]: Falha na autenticação:
+2025-04-30 16:38:23 [ERROR]: Falha na autenticação:
+2025-04-30 21:21:42 [ERROR]: Falha na autenticação:
+2025-04-30 22:30:55 [ERROR]: Falha na autenticação:
+2025-05-01 12:48:39 [ERROR]: Falha na autenticação:
+2025-05-01 12:48:39 [ERROR]: Falha na autenticação:
+2025-05-01 13:27:47 [ERROR]: Falha na autenticação:
+2025-05-01 13:49:22 [ERROR]: Falha na autenticação:
+2025-05-01 14:36:26 [ERROR]: Falha na autenticação:
+2025-05-01 14:36:26 [ERROR]: Falha na autenticação:
+2025-05-01 15:32:37 [ERROR]: Falha na autenticação:
+2025-05-01 15:32:37 [ERROR]: Falha na autenticação:
+2025-05-01 15:45:58 [ERROR]: Falha na autenticação:
+2025-05-01 15:45:58 [ERROR]: Falha na autenticação:
+2025-05-01 16:44:10 [ERROR]: Falha na autenticação:
+2025-05-01 16:44:11 [ERROR]: Falha na autenticação:
+2025-05-01 18:06:35 [ERROR]: ❌ Falha ao sincronizar DiscussionReply: column "topicId" does not exist
+2025-05-01 18:07:25 [ERROR]: ❌ Falha ao sincronizar ReplyVote: column "replyId" does not exist
+2025-05-01 18:07:46 [ERROR]: ❌ Falha ao sincronizar ChatMessage: column "chatId" does not exist
+2025-05-01 21:35:50 [ERROR]: Falha na autenticação:
+2025-05-02 09:00:12 [ERROR]: Falha na autenticação:
+2025-05-04 08:18:40 [ERROR]: Falha na autenticação:
+2025-05-04 09:19:02 [ERROR]: Falha na autenticação:
+2025-05-04 09:19:02 [ERROR]: Falha na autenticação:
+2025-05-04 10:46:50 [ERROR]: Falha na autenticação:
+2025-05-04 10:46:50 [ERROR]: Falha na autenticação:
+2025-05-04 11:57:11 [ERROR]: Falha na autenticação:
+2025-05-04 11:57:11 [ERROR]: Falha na autenticação:
+2025-05-04 14:25:15 [ERROR]: Falha na autenticação:
+2025-05-04 15:35:39 [ERROR]: Falha na autenticação:
+2025-05-05 09:50:33 [ERROR]: Falha na autenticação:
+2025-05-05 13:09:04 [ERROR]: Falha na autenticação:
+2025-05-05 14:09:57 [ERROR]: Falha na autenticação:
+2025-05-05 14:09:57 [ERROR]: Falha na autenticação:
+2025-05-06 14:33:51 [ERROR]: Falha na autenticação:
+2025-05-06 16:02:45 [ERROR]: Falha na autenticação:
+2025-05-06 16:02:45 [ERROR]: Falha na autenticação:
+2025-05-20 12:19:22 [ERROR]: Falha na autenticação:
+2025-05-20 12:19:22 [ERROR]: Falha na autenticação:
+2025-05-20 13:46:31 [ERROR]: Falha na autenticação:
+2025-05-20 15:57:07 [ERROR]: Falha na autenticação:
+2025-05-20 17:07:12 [ERROR]: Falha na autenticação:
+2025-05-20 18:17:23 [ERROR]: Falha na autenticação:
+2025-05-21 06:22:32 [ERROR]: Falha na autenticação:
+2025-05-21 18:04:58 [ERROR]: Falha na autenticação:
+2025-05-21 18:04:58 [ERROR]: Falha na autenticação:
+2025-05-21 19:17:40 [ERROR]: Falha na autenticação:
+2025-05-21 19:17:40 [ERROR]: Falha na autenticação:
+2025-05-21 20:19:25 [ERROR]: Falha na autenticação:
+2025-05-21 20:19:25 [ERROR]: Falha na autenticação:
+2025-05-21 21:24:28 [ERROR]: Falha na autenticação:
+2025-05-21 21:24:28 [ERROR]: Falha na autenticação:
+2025-05-22 14:02:27 [ERROR]: Falha na autenticação:
+2025-05-22 14:02:27 [ERROR]: Falha na autenticação:
+2025-05-22 15:04:19 [ERROR]: Falha na autenticação:
+2025-05-22 15:48:53 [ERROR]: Falha na autenticação:
+2025-05-22 15:48:53 [ERROR]: Falha na autenticação:
+2025-05-22 16:50:32 [ERROR]: Falha na autenticação:
+2025-05-22 17:08:11 [ERROR]: Falha na autenticação:
+2025-05-22 17:08:11 [ERROR]: Falha na autenticação:
+2025-05-22 17:54:56 [ERROR]: Falha na autenticação:
+2025-05-22 18:09:48 [ERROR]: Falha na autenticação:
+2025-05-24 15:58:10 [ERROR]: Falha na autenticação:
+2025-05-24 15:58:13 [ERROR]: Falha na autenticação:
+2025-05-24 16:59:31 [ERROR]: Falha na autenticação:
+2025-05-24 18:06:38 [ERROR]: Falha na autenticação:
+2025-05-24 19:22:49 [ERROR]: Falha na autenticação:
+2025-05-24 19:22:49 [ERROR]: Falha na autenticação:
+2025-05-25 13:05:47 [ERROR]: Falha na autenticação:
+2025-05-25 13:05:47 [ERROR]: Falha na autenticação:
+2025-05-26 09:21:11 [ERROR]: Falha na autenticação:
+2025-05-26 10:27:08 [ERROR]: Falha na autenticação:
+2025-05-26 10:27:08 [ERROR]: Falha na autenticação:
+2025-05-26 10:27:08 [ERROR]: Falha na autenticação:
+2025-05-26 11:32:09 [ERROR]: Falha na autenticação:
+2025-05-26 11:32:09 [ERROR]: Falha na autenticação:
+2025-05-26 13:14:11 [ERROR]: Falha na autenticação:
+2025-05-26 13:14:11 [ERROR]: Falha na autenticação:
+2025-05-26 13:14:11 [ERROR]: Falha na autenticação:
+2025-05-26 13:37:46 [ERROR]: Falha na autenticação:
+2025-05-26 13:37:46 [ERROR]: Falha na autenticação:
+2025-05-27 11:44:11 [ERROR]: Falha na autenticação:
+2025-05-27 11:44:12 [ERROR]: Falha na autenticação:
+2025-05-27 12:48:23 [ERROR]: Falha na autenticação:
+2025-05-27 12:48:23 [ERROR]: Falha na autenticação:
+2025-05-27 12:48:24 [ERROR]: Falha na autenticação:
+2025-05-27 12:48:24 [ERROR]: Falha na autenticação:
+2025-05-27 13:56:18 [ERROR]: Falha na autenticação:
+2025-05-27 15:06:46 [ERROR]: Falha na autenticação:
+2025-05-27 15:06:46 [ERROR]: Falha na autenticação:
+2025-05-27 15:06:46 [ERROR]: Falha na autenticação:
+2025-05-27 20:50:11 [ERROR]: Falha na autenticação:
+2025-05-28 12:19:13 [ERROR]: Falha na autenticação:
+2025-05-28 12:19:13 [ERROR]: Falha na autenticação:
+2025-05-28 13:28:11 [ERROR]: Falha na autenticação:
+2025-05-28 14:46:56 [ERROR]: Falha na autenticação:
+2025-05-28 14:46:56 [ERROR]: Falha na autenticação:
+2025-05-28 14:46:56 [ERROR]: Falha na autenticação:
+2025-05-28 15:36:20 [ERROR]: Falha na autenticação:
+2025-05-28 15:36:20 [ERROR]: Falha na autenticação:
+2025-05-28 15:36:20 [ERROR]: Falha na autenticação:
+2025-05-29 08:36:25 [ERROR]: Falha na autenticação:
+2025-05-29 08:36:25 [ERROR]: Falha na autenticação:
+2025-05-29 09:41:26 [ERROR]: Falha na autenticação:
+2025-05-29 09:41:26 [ERROR]: Falha na autenticação:
+2025-05-29 09:41:26 [ERROR]: Falha na autenticação:
+2025-05-29 09:41:26 [ERROR]: Falha na autenticação:
+2025-05-29 10:48:18 [ERROR]: Falha na autenticação:
+2025-05-29 10:48:18 [ERROR]: Falha na autenticação:
+2025-05-29 10:48:18 [ERROR]: Falha na autenticação:
+2025-05-29 10:48:18 [ERROR]: Falha na autenticação:
+2025-05-29 11:54:38 [ERROR]: Falha na autenticação:
+2025-05-29 11:54:38 [ERROR]: Falha na autenticação:
+2025-05-29 11:54:38 [ERROR]: Falha na autenticação:
+2025-05-29 17:44:22 [ERROR]: Falha na autenticação:
+2025-05-29 17:44:22 [ERROR]: Falha na autenticação:
+2025-05-29 17:44:22 [ERROR]: Falha na autenticação:
+2025-05-29 17:44:22 [ERROR]: Falha na autenticação:
+2025-05-29 17:44:22 [ERROR]: Falha na autenticação:
+2025-05-29 19:37:24 [ERROR]: Falha na autenticação:
+2025-05-29 22:18:58 [ERROR]: Falha na autenticação:
+2025-05-29 22:18:58 [ERROR]: Falha na autenticação:
+2025-06-01 10:20:07 [ERROR]: Falha na autenticação:
+2025-06-01 11:35:49 [ERROR]: Falha na autenticação:
+2025-06-01 11:35:49 [ERROR]: Falha na autenticação:
+2025-06-01 15:52:31 [ERROR]: Falha na autenticação:
+2025-06-01 15:52:31 [ERROR]: Falha na autenticação:
+2025-06-01 18:09:31 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:11:05 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:11:21 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:11:31 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:12:02 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:12:24 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:12:37 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:12:49 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:14:51 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:18:30 [ERROR]: ❌ Falha ao sincronizar HelpFeedback:
+2025-06-01 18:18:45 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:19:53 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:21:06 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:21:11 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:22:17 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:23:33 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:28:02 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:28:11 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:28:26 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:28:38 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:02 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:10 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:20 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:25 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:29 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:29:43 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:30:04 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:30:10 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:30:25 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:30:31 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:30:49 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:18 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:31 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:36 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:42 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:45 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:53 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:31:58 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:32:06 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:32:13 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:32:56 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:33:58 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:34:52 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:34:59 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:37:38 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 18:47:33 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-01 19:04:41 [ERROR]: ❌ Falha ao sincronizar HelpArticle:
+2025-06-02 06:20:10 [ERROR]: Falha na autenticação:
+2025-06-02 14:05:35 [ERROR]: Falha na autenticação:
+2025-06-02 14:05:35 [ERROR]: Falha na autenticação:
+2025-06-03 01:05:19 [ERROR]: Falha na autenticação:
+2025-06-03 01:05:20 [ERROR]: Falha na autenticação:
+2025-06-03 13:42:34 [ERROR]: Falha na autenticação:
+2025-06-03 13:42:34 [ERROR]: Falha na autenticação:
+2025-06-03 15:49:17 [ERROR]: Falha na autenticação:
+2025-06-04 09:01:16 [ERROR]: Falha na autenticação:
+2025-06-04 09:01:16 [ERROR]: Falha na autenticação:
+2025-06-04 09:09:42 [ERROR]: Falha na autenticação:
+2025-06-04 10:49:51 [ERROR]: Falha na autenticação:
+2025-06-04 20:25:28 [ERROR]: Falha na autenticação:
+2025-06-04 20:25:28 [ERROR]: Falha na autenticação:
+2025-06-04 21:00:44 [ERROR]: Failed to log activity
+2025-06-04 21:01:00 [ERROR]: Failed to log activity
+2025-06-04 21:10:49 [ERROR]: Failed to log activity
+2025-06-04 21:58:35 [ERROR]: Failed to log activity
+2025-06-05 11:27:31 [ERROR]: Falha na autenticação:
+2025-06-05 11:27:31 [ERROR]: Falha na autenticação:
+2025-06-05 11:27:58 [ERROR]: Failed to log activity
+2025-06-05 11:34:30 [ERROR]: Failed to log activity
+2025-06-05 11:34:43 [ERROR]: Failed to log activity
+2025-06-05 11:51:20 [ERROR]: Failed to log activity
+2025-06-05 12:33:25 [ERROR]: Falha na autenticação:
+2025-06-05 12:33:25 [ERROR]: Falha na autenticação:
+2025-06-05 12:33:26 [ERROR]: Falha na autenticação:
+2025-06-05 12:33:53 [ERROR]: Failed to log activity
+2025-06-05 18:04:39 [ERROR]: Falha na autenticação:
+2025-06-05 18:04:40 [ERROR]: Falha na autenticação:
+2025-06-05 18:04:40 [ERROR]: Falha na autenticação:
+2025-06-05 18:05:11 [ERROR]: Failed to log activity
+2025-06-05 18:36:17 [ERROR]: Failed to log activity
+2025-06-05 18:37:27 [ERROR]: Failed to log activity
+2025-06-05 19:08:48 [ERROR]: Falha na autenticação:
+2025-06-05 19:08:48 [ERROR]: Falha na autenticação:
+2025-06-05 19:08:48 [ERROR]: Falha na autenticação:
+2025-06-05 19:09:18 [ERROR]: Failed to log activity
+2025-06-06 10:54:32 [ERROR]: Falha na autenticação:
+2025-06-06 10:54:32 [ERROR]: Falha na autenticação:
+2025-06-06 13:34:05 [ERROR]: Failed to log activity
+2025-06-06 13:42:59 [ERROR]: Failed to log activity
+2025-06-06 13:43:08 [ERROR]: Failed to log activity
+2025-06-06 13:43:25 [ERROR]: Failed to log activity
+2025-06-06 13:48:59 [ERROR]: Failed to log activity
+2025-06-06 13:51:10 [ERROR]: Failed to log activity
+2025-06-06 13:51:24 [ERROR]: Failed to log activity
+2025-06-06 13:51:26 [ERROR]: Failed to log activity
+2025-06-06 13:51:33 [ERROR]: Failed to log activity
+2025-06-06 13:51:41 [ERROR]: Failed to log activity
+2025-06-06 13:55:32 [ERROR]: Failed to log activity
+2025-06-06 14:35:01 [ERROR]: Falha na autenticação:
+2025-06-06 14:35:20 [ERROR]: Failed to log activity
+2025-06-06 14:52:52 [ERROR]: Failed to log activity
+2025-06-06 14:54:14 [ERROR]: Failed to log activity
+2025-06-06 14:58:12 [ERROR]: Failed to log activity
+2025-06-06 15:29:23 [ERROR]: Failed to log activity
+2025-06-06 15:36:01 [ERROR]: Falha na autenticação:
+2025-06-06 15:36:01 [ERROR]: Falha na autenticação:
+2025-06-06 15:36:01 [ERROR]: Falha na autenticação:
+2025-06-06 15:36:22 [ERROR]: Failed to log activity
+2025-06-06 15:39:05 [ERROR]: Failed to log activity
+2025-06-06 15:39:17 [ERROR]: Failed to log activity
+2025-06-06 15:39:45 [ERROR]: Failed to log activity
+2025-06-06 15:40:14 [ERROR]: Failed to log activity
+2025-06-06 15:40:23 [ERROR]: Failed to log activity
+2025-06-06 15:40:34 [ERROR]: Failed to log activity
+2025-06-06 20:16:10 [ERROR]: Falha na autenticação:
+2025-06-06 20:27:53 [ERROR]: Failed to log activity
+2025-06-06 20:34:13 [ERROR]: Failed to log activity
+2025-06-06 21:57:28 [ERROR]: Falha ao criar notificação:
+2025-06-06 21:57:28 [ERROR]: Erro ao enviar notificações de novo seguidor: invalid input value for enum enum_notifications_type: "NEW_FOLLOWER"
+2025-06-06 22:04:20 [ERROR]: Falha na autenticação:
+2025-06-06 22:05:07 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-06 22:05:07 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-06 22:16:18 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-06 22:16:18 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-07 08:15:22 [ERROR]: Falha na autenticação:
+2025-06-07 10:14:28 [ERROR]: Falha na autenticação:
+2025-06-07 10:14:29 [ERROR]: Falha na autenticação:
+2025-06-07 16:10:01 [ERROR]: Falha na autenticação:
+2025-06-10 13:00:01 [ERROR]: Erro no processo de envio de lembretes column "startTime" does not exist
+2025-06-10 15:00:00 [ERROR]: Erro no processo de envio de lembretes column "startTime" does not exist
+2025-06-10 15:55:12 [ERROR]: Falha na autenticação:
+2025-06-10 18:01:25 [ERROR]: Failed to log activity
+2025-06-10 18:02:04 [ERROR]: Failed to log activity
+2025-06-11 18:00:55 [ERROR]: Falha na autenticação:
+2025-06-11 19:19:30 [ERROR]: Falha na autenticação:
+2025-06-11 20:41:45 [ERROR]: Falha na autenticação:
+2025-06-11 20:47:19 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-11 20:47:19 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-11 21:42:20 [ERROR]: Falha na autenticação:
+2025-06-12 06:02:40 [ERROR]: Falha na autenticação:
+2025-06-12 06:04:24 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 06:04:24 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 18:58:42 [ERROR]: Falha na autenticação:
+2025-06-12 19:36:08 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 19:36:08 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 19:53:48 [ERROR]: Falha na autenticação:
+2025-06-12 20:00:26 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 20:00:26 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 20:04:22 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 20:04:22 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 20:11:47 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 20:11:47 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 20:12:50 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 20:12:50 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 20:21:07 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 20:21:07 [ERROR]: Falha no envio assíncrono de e-mail: logger is not defined
+2025-06-12 21:09:16 [ERROR]: Falha na autenticação:
+2025-06-12 21:51:56 [ERROR]: Falha ao criar notificação:
+2025-06-12 21:54:48 [ERROR]: Falha ao criar notificação:
+2025-06-12 22:01:14 [ERROR]: Falha ao criar notificação:
+2025-06-12 22:01:46 [ERROR]: Falha ao criar notificação:
+2025-06-12 22:05:46 [ERROR]: Falha na autenticação:
+2025-06-12 22:05:46 [ERROR]: Falha na autenticação:
+2025-06-12 22:08:59 [ERROR]: Falha ao enviar notificação
+2025-06-12 22:08:59 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-12 22:08:59 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-12 22:09:53 [ERROR]: Falha na autenticação:
+2025-06-12 22:09:53 [ERROR]: Falha na autenticação:
+2025-06-13 12:03:21 [ERROR]: Falha na autenticação:
+2025-06-13 12:25:52 [ERROR]: Falha na autenticação:
+2025-06-13 12:25:52 [ERROR]: Falha na autenticação:
+2025-06-13 12:50:25 [ERROR]: Falha ao criar notificação:
+2025-06-13 13:05:42 [ERROR]: Falha na autenticação:
+2025-06-13 13:08:00 [ERROR]: Falha ao enviar notificação
+2025-06-13 13:08:00 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-13 13:08:00 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-13 13:52:21 [ERROR]: Falha na autenticação:
+2025-06-13 13:52:21 [ERROR]: Falha na autenticação:
+2025-06-13 13:53:50 [ERROR]: Falha ao criar notificação:
+2025-06-13 18:06:15 [ERROR]: Falha na autenticação:
+2025-06-13 19:30:04 [ERROR]: Falha na autenticação:
+2025-06-13 20:24:21 [ERROR]: Falha na autenticação:
+2025-06-13 20:24:21 [ERROR]: Falha na autenticação:
+2025-06-14 19:17:55 [ERROR]: Falha na autenticação:
+2025-06-14 20:20:56 [ERROR]: Falha na autenticação:
+2025-06-14 21:40:01 [ERROR]: Falha na autenticação:
+2025-06-14 21:40:01 [ERROR]: Falha na autenticação:
+2025-06-15 06:59:47 [ERROR]: Falha na autenticação:
+2025-06-15 07:09:44 [ERROR]: Falha ao enviar notificação
+2025-06-15 07:09:44 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 07:09:44 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:12:33 [ERROR]: Falha na autenticação:
+2025-06-15 16:15:12 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:12 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:12 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:12 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:12 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:12 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:17 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:17 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:17 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:17 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:17 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:17 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:51 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:51 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:51 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:51 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:51 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:51 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:57 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:57 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:57 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:15:57 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:15:57 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:15:57 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:16:03 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:16:03 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:16:03 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 16:16:03 [ERROR]: Falha ao enviar notificação
+2025-06-15 16:16:03 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 16:16:03 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 17:43:02 [ERROR]: Falha na autenticação:
+2025-06-15 19:51:21 [ERROR]: Falha na autenticação:
+2025-06-15 19:52:46 [ERROR]: Falha na autenticação:
+2025-06-15 19:55:47 [ERROR]: Falha ao enviar notificação
+2025-06-15 19:55:47 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 19:55:47 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 19:57:52 [ERROR]: Falha ao enviar notificação
+2025-06-15 19:57:52 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 19:57:52 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 20:01:29 [ERROR]: Falha ao enviar notificação
+2025-06-15 20:01:29 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 20:01:29 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 20:03:21 [ERROR]: Falha ao enviar notificação
+2025-06-15 20:03:21 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 20:03:21 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 20:06:02 [ERROR]: Falha ao enviar notificação
+2025-06-15 20:06:02 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 20:06:02 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 20:10:37 [ERROR]: Falha ao enviar notificação
+2025-06-15 20:10:37 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 20:10:37 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-15 20:10:43 [ERROR]: Falha ao enviar notificação
+2025-06-15 20:10:43 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-15 20:10:43 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-16 10:17:35 [ERROR]: Falha na autenticação:
+2025-06-16 13:00:53 [ERROR]: ❌ Falha ao sincronizar Testimonial:
+2025-06-17 10:23:18 [ERROR]: Falha na autenticação:
+2025-06-17 10:51:17 [ERROR]: Failed to log activity
+2025-06-17 10:52:48 [ERROR]: Failed to log activity
+2025-06-17 10:52:54 [ERROR]: Failed to log activity
+2025-06-17 10:52:55 [ERROR]: Failed to log activity
+2025-06-17 10:53:09 [ERROR]: Failed to log activity
+2025-06-17 10:53:14 [ERROR]: Failed to log activity
+2025-06-17 10:53:15 [ERROR]: Failed to log activity
+2025-06-17 10:53:27 [ERROR]: Failed to log activity
+2025-06-17 10:55:55 [ERROR]: Failed to log activity
+2025-06-17 10:56:00 [ERROR]: Failed to log activity
+2025-06-17 10:56:03 [ERROR]: Failed to log activity
+2025-06-17 10:56:06 [ERROR]: Failed to log activity
+2025-06-17 10:56:10 [ERROR]: Failed to log activity
+2025-06-17 10:59:28 [ERROR]: Failed to log activity
+2025-06-17 11:00:05 [ERROR]: Failed to log activity
+2025-06-17 11:00:13 [ERROR]: Failed to log activity
+2025-06-17 11:00:22 [ERROR]: Failed to log activity
+2025-06-17 11:00:26 [ERROR]: Failed to log activity
+2025-06-17 11:00:30 [ERROR]: Failed to log activity
+2025-06-17 11:06:06 [ERROR]: Failed to log activity
+2025-06-17 11:06:17 [ERROR]: Failed to log activity
+2025-06-17 11:06:40 [ERROR]: Failed to log activity
+2025-06-17 11:07:18 [ERROR]: Failed to log activity
+2025-06-17 11:07:34 [ERROR]: Failed to log activity
+2025-06-17 11:07:39 [ERROR]: Failed to log activity
+2025-06-17 11:07:47 [ERROR]: Failed to log activity
+2025-06-17 11:09:09 [ERROR]: Failed to log activity
+2025-06-17 11:09:10 [ERROR]: Failed to log activity
+2025-06-17 11:22:09 [ERROR]: Failed to log activity
+2025-06-17 11:53:15 [ERROR]: Falha na autenticação:
+2025-06-17 11:53:15 [ERROR]: Falha na autenticação:
+2025-06-17 11:53:15 [ERROR]: Falha na autenticação:
+2025-06-17 12:54:18 [ERROR]: Falha na autenticação:
+2025-06-17 14:09:00 [ERROR]: Falha na autenticação:
+2025-06-17 14:09:00 [ERROR]: Falha na autenticação:
+2025-06-17 14:09:00 [ERROR]: Falha na autenticação:
+2025-06-17 14:57:19 [ERROR]: Failed to fetch chart stats column "created_at" does not exist
+2025-06-17 15:05:11 [ERROR]: Failed to fetch chart stats column "created_at" does not exist
+2025-06-17 15:12:15 [ERROR]: Falha na autenticação:
+2025-06-17 15:12:40 [ERROR]: Failed to fetch chart stats column "createdat" does not exist
+2025-06-18 15:08:33 [ERROR]: Falha na autenticação:
+2025-06-18 15:12:21 [ERROR]: Falha ao enviar notificação
+2025-06-18 15:12:21 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-18 15:12:21 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-18 15:12:21 [ERROR]: Falha ao enviar notificação
+2025-06-18 15:12:21 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-18 15:12:21 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-19 14:44:42 [ERROR]: Falha na autenticação:
+2025-06-19 15:46:37 [ERROR]: Falha na autenticação:
+2025-06-19 20:22:49 [ERROR]: Falha na autenticação:
+2025-06-19 20:22:49 [ERROR]: Falha na autenticação:
+2025-06-19 20:40:15 [ERROR]: Falha ao criar notificação:
+2025-06-19 20:40:56 [ERROR]: Falha ao criar notificação:
+2025-06-19 20:44:00 [ERROR]: Falha na autenticação:
+2025-06-20 17:58:36 [ERROR]: Falha na autenticação:
+2025-06-20 18:00:03 [ERROR]: Falha na autenticação:
+2025-06-20 18:00:03 [ERROR]: Falha na autenticação:
+2025-06-20 19:32:46 [ERROR]: Falha na autenticação:
+2025-06-20 19:32:46 [ERROR]: Falha na autenticação:
+2025-06-20 21:43:06 [ERROR]: Falha na autenticação:
+2025-06-21 05:58:53 [ERROR]: Falha na autenticação:
+2025-06-21 05:58:53 [ERROR]: Falha na autenticação:
+2025-06-21 15:30:23 [ERROR]: Falha na autenticação:
+2025-06-21 15:30:23 [ERROR]: Falha na autenticação:
+2025-06-21 16:32:21 [ERROR]: Falha na autenticação:
+2025-06-21 16:32:21 [ERROR]: Falha na autenticação:
+2025-06-21 17:02:42 [ERROR]: Falha na autenticação:
+2025-06-21 17:38:57 [ERROR]: Falha na autenticação:
+2025-06-21 17:38:57 [ERROR]: Falha na autenticação:
+2025-06-22 17:37:31 [ERROR]: Falha na autenticação:
+2025-06-22 18:44:42 [ERROR]: Falha na autenticação:
+2025-06-23 13:17:32 [ERROR]: Falha na autenticação:
+2025-06-23 13:17:32 [ERROR]: Falha na autenticação:
+2025-06-23 14:32:59 [ERROR]: Falha na autenticação:
+2025-06-23 15:58:29 [ERROR]: Falha na autenticação:
+2025-06-23 17:23:12 [ERROR]: Falha na autenticação:
+2025-06-24 06:09:23 [ERROR]: Falha na autenticação:
+2025-06-24 09:36:11 [ERROR]: Falha na autenticação:
+2025-06-24 09:36:11 [ERROR]: Falha na autenticação:
+2025-06-24 09:36:34 [ERROR]: Falha ao enviar notificação
+2025-06-24 09:36:34 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-06-24 09:36:34 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-06-24 14:24:21 [ERROR]: Falha na autenticação:
+2025-06-24 14:24:21 [ERROR]: Falha na autenticação:
+2025-06-24 14:24:21 [ERROR]: Falha na autenticação:
+2025-06-25 15:08:25 [ERROR]: Falha na autenticação:
+2025-07-04 16:14:42 [ERROR]: Falha na autenticação:
+2025-07-17 18:05:57 [ERROR]: Falha na autenticação:
+2025-07-17 20:08:19 [ERROR]: Falha na autenticação:
+2025-07-20 16:56:54 [ERROR]: Falha na autenticação:
+2025-07-28 13:42:27 [ERROR]: Falha ao notificar administradores:
+2025-07-28 13:49:57 [ERROR]: Falha ao notificar administradores:
+2025-07-28 13:51:05 [ERROR]: Falha ao notificar administradores:
+2025-07-28 16:48:11 [ERROR]: Falha na autenticação:
+2025-07-28 17:26:50 [ERROR]: Falha ao notificar administradores:
+2025-07-30 14:30:01 [ERROR]: Falha ao notificar administradores:
+2025-07-31 14:29:15 [ERROR]: Falha ao notificar administradores:
+2025-08-01 19:33:43 [ERROR]: Falha ao notificar administradores:
+2025-08-02 17:42:32 [ERROR]: Falha ao notificar administradores:
+2025-08-02 18:00:39 [ERROR]: Falha ao notificar administradores:
+2025-08-02 19:51:35 [ERROR]: Falha ao notificar administradores:
+2025-08-02 21:04:57 [ERROR]: Falha ao notificar administradores:
+2025-08-03 12:59:23 [ERROR]: Falha ao enviar notificação
+2025-08-03 12:59:23 [ERROR]: Falha ao enviar notificação por e-mail:
+2025-08-03 12:59:23 [ERROR]: Falha no envio assíncrono de e-mail: compiledBaseTemplate is not defined
+2025-08-04 17:19:37 [ERROR]: Failed to list verifications UserDocument is not defined
+2025-08-05 06:08:45 [ERROR]: Falha ao notificar administradores:
+2025-08-05 15:51:29 [ERROR]: Falha na autenticação:
+2025-08-05 21:16:27 [ERROR]: Falha na autenticação:
+2025-08-06 09:02:39 [ERROR]: Falha ao notificar administradores:
+2025-08-06 14:43:16 [ERROR]: ❌ Falha ao sincronizar UserDocument:
+2025-08-06 14:44:02 [ERROR]: ❌ Falha ao sincronizar UserDocument:
+2025-08-06 15:15:48 [ERROR]: ❌ Falha ao sincronizar UserDocument:
+2025-08-06 15:18:45 [ERROR]: Falha na autenticação:
+2025-08-09 16:45:37 [ERROR]: Falha na autenticação:
+2025-08-09 17:50:42 [ERROR]: Falha na autenticação:
+2025-08-09 18:01:43 [ERROR]: Falha ao notificar administradores:
+2025-08-09 18:28:44 [ERROR]: Failed to process verification Todos os documentos necessários devem ser aprovados
+2025-08-09 18:29:15 [ERROR]: Failed to process verification Todos os documentos necessários devem ser aprovados
+2025-08-09 18:29:43 [ERROR]: Failed to process verification Todos os documentos necessários devem ser aprovados
+2025-08-09 18:32:20 [ERROR]: Falha ao criar notificação:
+2025-08-09 18:32:20 [ERROR]: Falha ao notificar usuário sobre aprovação: invalid input value for enum enum_notifications_type: "USER_APPROVED"
+2025-08-09 18:34:42 [ERROR]: ❌ Falha ao sincronizar Notification:
+2025-08-09 18:37:44 [ERROR]: Falha na autenticação:
+2025-08-10 10:49:46 [ERROR]: Falha na autenticação:

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação Não Aprovada - {{appName}}</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            background-color: #585ad4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        
+        .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        .hidden-sm {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .hidden-sm {
+                display: inline;
+            }
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 26px;
+            margin: 10px 0 0;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            color: #111827;
+            font-size: 22px;
+            margin-top: 0;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .reason-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .reason-title {
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 8px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(229,231,235,0) 0%, rgba(209,213,219,1) 50%, rgba(229,231,235,0) 100%);
+            margin: 35px 0;
+        }
+        
+        .footer {
+            padding: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            margin: 0 8px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            line-height: 36px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #d1d5db;
+            transform: translateY(-2px);
+        }
+        
+        .footer-links {
+            margin: 15px 0;
+        }
+        
+        .footer-link {
+            color: #6b7280;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #ef4444;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .content {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .button {
+                padding: 14px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="brand">
+                <div class="brand-logo">
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="20" 
+                        height="20" 
+                        viewBox="0 0 20 20" 
+                        fill="currentColor"
+                        style="color: white;"
+                    >
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                </div>
+                <span class="brand-name hidden-sm">{{appName}}</span>
+            </div>
+            <h1>Solicitação Não Aprovada</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Olá {{username}},</h2>
+            
+            <p>Lamentamos informar que sua solicitação de conta na plataforma <strong>{{appName}}</strong> não foi aprovada neste momento.</p>
+            
+            <div class="highlight-box">
+                <p>Sua conta foi revisada por <strong>{{reviewer}}</strong> e infelizmente não atendeu aos critérios necessários para aprovação.</p>
+            </div>
+            
+            <div class="reason-box">
+                <div class="reason-title">Motivo da rejeição:</div>
+                <p>{{reason}}</p>
+            </div>
+            
+            <p>Caso você acredite que houve um equívoco ou deseje esclarecer algum ponto, entre em contato com nossa equipe de suporte para mais informações.</p>
+            
+            <div class="button-container">
+                <a href="mailto:{{supportEmail}}" class="button">Falar com o Suporte</a>
+            </div>
+            
+            <p>Se necessário, você pode tentar se registrar novamente no futuro, garantindo que todas as informações solicitadas estejam completas e em conformidade com nossos requisitos.</p>
+            
+            <div class="divider"></div>
+            
+            <p><strong>Precisa de ajuda?</strong><br>
+            Estamos à disposição para esclarecer quaisquer dúvidas através do e-mail <a href="mailto:{{supportEmail}}" style="color: #ef4444;">{{supportEmail}}</a> ou em nossa <a href="{{helpUrl}}" style="color: #ef4444;">Central de Ajuda</a>.</p>
+        </div>
+        
+        <div class="footer">
+            <div class="social-links">
+                <a href="https://facebook.com/profile.php?id=61565792531619" class="social-icon">f</a>
+                <a href="https://www.instagram.com/nordinomaviedev/" class="social-icon">ig</a>
+                <a href="https://github.com/Mavton23" class="social-icon">git</a>
+                <a href="https://www.linkedin.com/in/nordino-mavie-developer-ab6824357/" class="social-icon">lk</a>
+            </div>
+            <div class="footer-links">
+                <a href="{{helpUrl}}" class="footer-link">Ajuda</a>
+            </div>
+            <p>Atenciosamente,<br><strong>Equipe {{appName}}</strong></p>
+            <p>© {{currentYear}} {{appName}}. Todos os direitos reservados.</p>
+            <p><a href="mailto:{{supportEmail}}" style="color: #ef4444; text-decoration: none;">{{supportEmail}}</a></p>
+        </div>
+    </div>
+</body>
+</html>
