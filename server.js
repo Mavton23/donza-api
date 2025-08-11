@@ -8,9 +8,7 @@ const { WebSocketServer } = require('ws');
 const jwt = require('jsonwebtoken');
 const logger = require('./src/utils/logger');
 const errorHandler = require('./src/middleware/errorHandler');
-
-// Jobs
-// require('./src/jobs/eventReminder').init();
+const syncDatabase = require('./src/configs/sync');
 
 const app = express();
 const port = process.env.WS_PORT || 5000;
@@ -335,16 +333,26 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Rotas da API
-const apiRouter = require('./src/routes/index');
-app.use('/api', apiRouter);
+try {
+  await syncDatabase({
+    force: process.env.DB_FORCE_SYNC === 'true',
+    alter: process.env.DB_ALTER_SYNC === 'true'
+  })
 
-app.use(errorHandler);
+  // Rotas da API
+  const apiRouter = require('./src/routes/index');
+  app.use('/api', apiRouter);
 
-// Inicia servidor
-server.listen(port, () => {
-  logger.info(`NODE & WEBSOCKET SERVER RUNNIG ON ${port} PORT`);
-});
+  app.use(errorHandler);
+
+  // Inicia servidor
+  server.listen(port, () => {
+    logger.info(`NODE & WEBSOCKET SERVER RUNNIG ON ${port} PORT`);
+  });
+} catch (error) {
+  logger.error('Falha ao iniciar o servidor:', error instanceof Error ? error.message : error);
+  process.exit(1);
+}
 
 process.on('SIGTERM', () => {
   logger.info('Shutting down WebSocket server');
