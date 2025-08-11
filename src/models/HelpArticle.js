@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
     slug: {
       type: DataTypes.STRING(120),
       allowNull: false,
-      unique: true,
+      unique: 'slug_unique',
       comment: 'Slug para URLs amigáveis'
     },
     category: {
@@ -95,7 +95,7 @@ module.exports = (sequelize) => {
     },
     // indexes: [
     //   {
-    //     name: 'help_articles_slug_index',
+    //     name: 'slug_unique',
     //     fields: ['slug'],
     //     unique: true
     //   },
