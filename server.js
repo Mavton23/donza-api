@@ -56,7 +56,7 @@ const startServer = async () => {
     });
   } catch (error) {
     logger.error('Falha ao iniciar o servidor:', error instanceof Error ? error.message : error);
-    process.exit(1);
+    // process.exit(1);
   }
 }
 
