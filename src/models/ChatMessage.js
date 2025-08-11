@@ -44,19 +44,19 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // ChatMessage.associate = (models) => {
-    //   ChatMessage.belongsTo(models.GroupChat, {
-    //     foreignKey: 'chatId'
-    //   });
-    //   ChatMessage.belongsTo(models.User, {
-    //     foreignKey: 'senderId',
-    //     as: 'sender'
-    //   });
-    //   ChatMessage.belongsTo(models.ChatMessage, {
-    //     foreignKey: 'replyToId',
-    //     as: 'replyTo'
-    //   });
-    // };
+    ChatMessage.associate = (models) => {
+      ChatMessage.belongsTo(models.GroupChat, {
+        foreignKey: 'chatId'
+      });
+      ChatMessage.belongsTo(models.User, {
+        foreignKey: 'senderId',
+        as: 'sender'
+      });
+      ChatMessage.belongsTo(models.ChatMessage, {
+        foreignKey: 'replyToId',
+        as: 'replyTo'
+      });
+    };
   
     return ChatMessage;
 };

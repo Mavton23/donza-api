@@ -71,12 +71,12 @@ module.exports = (sequelize) => {
     // ],
   });
 
-  // Testimonial.associate = (models) => {
-  //   Testimonial.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'author',
-  //   });
-  // };
+  Testimonial.associate = (models) => {
+    Testimonial.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'author',
+    });
+  };
 
   return Testimonial;
 };

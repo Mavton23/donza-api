@@ -41,12 +41,12 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // LearningObjective.associate = (models) => {
-    //   LearningObjective.belongsToMany(models.CommunityPost, {
-    //     through: 'PostObjectives',
-    //     as: 'posts'
-    //   });
-    // };
+    LearningObjective.associate = (models) => {
+      LearningObjective.belongsToMany(models.CommunityPost, {
+        through: 'PostObjectives',
+        as: 'posts'
+      });
+    };
   
     return LearningObjective;
   };

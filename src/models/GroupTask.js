@@ -42,37 +42,37 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // GroupTask.associate = (models) => {
-    //   GroupTask.belongsTo(models.StudyGroup, {
-    //     foreignKey: 'groupId',
-    //     as: 'group'
-    //   });
+    GroupTask.associate = (models) => {
+      GroupTask.belongsTo(models.StudyGroup, {
+        foreignKey: 'groupId',
+        as: 'group'
+      });
 
-    //   GroupTask.belongsTo(models.User, {
-    //     foreignKey: 'creatorId',
-    //     as: 'creator'
-    //   });
+      GroupTask.belongsTo(models.User, {
+        foreignKey: 'creatorId',
+        as: 'creator'
+      });
 
-    //   // Associação com o atribuidor (usuário)
-    //   GroupTask.belongsTo(models.User, {
-    //     foreignKey: 'assignerId',
-    //     as: 'assigner'
-    //   });
+      // Associação com o atribuidor (usuário)
+      GroupTask.belongsTo(models.User, {
+        foreignKey: 'assignerId',
+        as: 'assigner'
+      });
 
-    //   // Associação muitos-para-muitos com User através de TaskAssignment
-    //   GroupTask.belongsToMany(models.User, {
-    //     through: models.TaskAssignment,
-    //     foreignKey: 'taskId',
-    //     otherKey: 'userId',
-    //     as: 'assignees'
-    //   });
+      // Associação muitos-para-muitos com User através de TaskAssignment
+      GroupTask.belongsToMany(models.User, {
+        through: models.TaskAssignment,
+        foreignKey: 'taskId',
+        otherKey: 'userId',
+        as: 'assignees'
+      });
 
-    //   // Associação um-para-muitos com TaskAssignment
-    //   GroupTask.hasMany(models.TaskAssignment, {
-    //     foreignKey: 'taskId',
-    //     as: 'assignments'
-    //   });
-    // };
+      // Associação um-para-muitos com TaskAssignment
+      GroupTask.hasMany(models.TaskAssignment, {
+        foreignKey: 'taskId',
+        as: 'assignments'
+      });
+    };
   
     return GroupTask;
   };

@@ -117,12 +117,5 @@ module.exports = (sequelize) => {
     }
   });
 
-  // Certificate.associate = (models) => {
-  //   Certificate.belongsTo(models.Course, {
-  //     foreignKey: 'courseId',
-  //     as: 'course'
-  //   });
-  // };
-
   return Certificate;
 };

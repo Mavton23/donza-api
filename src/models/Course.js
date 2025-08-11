@@ -140,55 +140,54 @@ module.exports = (sequelize) => {
     // ],
   });
 
-  // Course.associate = (models) => {
-  //   Course.belongsTo(models.User, {
-  //       as: 'instructor',
-  //       foreignKey: 'instructorId',
-  //   });
+  Course.associate = (models) => {
+    Course.belongsTo(models.User, {
+        as: 'instructor',
+        foreignKey: 'instructorId',
+    });
 
-  //   Course.belongsTo(models.User, {
-  //     as: 'organizer',
-  //     foreignKey: 'organizerId',
-  //   });
+    Course.belongsTo(models.User, {
+      as: 'organizer',
+      foreignKey: 'organizerId',
+    });
 
-  //   Course.hasMany(models.Module, {
-  //       as: 'modules',
-  //       foreignKey: 'courseId',
-  //       onDelete: 'CASCADE',
-  //   });
+    Course.hasMany(models.Module, {
+        as: 'modules',
+        foreignKey: 'courseId',
+        onDelete: 'CASCADE',
+    });
 
-  //   Course.hasMany(models.Certificate, {
-  //     foreignKey: 'courseId',
-  //     as: 'certificates'
-  //   });
+    Course.hasMany(models.Certificate, {
+      foreignKey: 'courseId',
+      as: 'certificates'
+    });
 
-  //   Course.belongsToMany(models.User, {
-  //       through: models.Enrollment,
-  //       as: 'students',
-  //       foreignKey: 'courseId',
-  //   });
+    Course.belongsToMany(models.User, {
+        through: models.Enrollment,
+        as: 'students',
+        foreignKey: 'courseId',
+    });
 
-  //   Course.hasMany(models.Enrollment, {
-  //     foreignKey: 'courseId',
-  //     as: 'enrollments'
-  //   });
+    Course.hasMany(models.Enrollment, {
+      foreignKey: 'courseId',
+      as: 'enrollments'
+    });
 
-  //   Course.hasMany(models.Review, {
-  //     foreignKey: 'courseId',
-  //     as: 'reviews'
-  //   });
+    Course.hasMany(models.Review, {
+      foreignKey: 'courseId',
+      as: 'reviews'
+    });
 
-  //   Course.hasMany(models.Activity, {
-  //     foreignKey: 'entityId',
-  //     as: 'courseActivities'
-  //   });
+    Course.hasMany(models.Activity, {
+      foreignKey: 'entityId',
+      as: 'courseActivities'
+    });
 
-  //   Course.hasMany(models.Assignment, {
-  //     as: 'assignments',
-  //     foreignKey: 'courseId'
-  //   });
-
-  // }
+    Course.hasMany(models.Assignment, {
+      as: 'assignments',
+      foreignKey: 'courseId'
+    });
+ }
 
   return Course;
 };

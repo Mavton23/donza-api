@@ -60,17 +60,17 @@ module.exports = (sequelize) => {
     tableName: 'enrollments',
   });
 
-  // Enrollment.associate = (models) => {
-  //   Enrollment.belongsTo(models.Course, {
-  //     foreignKey: 'courseId',
-  //     as: 'course'
-  //   });
+  Enrollment.associate = (models) => {
+    Enrollment.belongsTo(models.Course, {
+      foreignKey: 'courseId',
+      as: 'course'
+    });
 
-  //   Enrollment.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'user'
-  //   });
-  // };
+    Enrollment.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
+  };
 
   return Enrollment;
 };

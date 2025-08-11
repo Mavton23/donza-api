@@ -42,16 +42,16 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    // GroupChat.associate = (models) => {
-    //   GroupChat.belongsTo(models.StudyGroup, {
-    //     foreignKey: 'groupId',
-    //     unique: true
-    //   });
-    //   GroupChat.belongsTo(models.User, {
-    //     foreignKey: 'topicSetBy',
-    //     as: 'topicSetter'
-    //   });
-    // };
+    GroupChat.associate = (models) => {
+      GroupChat.belongsTo(models.StudyGroup, {
+        foreignKey: 'groupId',
+        unique: true
+      });
+      GroupChat.belongsTo(models.User, {
+        foreignKey: 'topicSetBy',
+        as: 'topicSetter'
+      });
+    };
   
     return GroupChat;
 };

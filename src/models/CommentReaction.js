@@ -45,16 +45,16 @@ module.exports = (sequelize) => {
     // ],
   });
 
-  // CommentReaction.associate = (models) => {
-  //   CommentReaction.belongsTo(models.PostComment, {
-  //     foreignKey: 'commentId',
-  //     as: 'comment'
-  //   });
-  //   CommentReaction.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'user'
-  //   });
-  // };
+  CommentReaction.associate = (models) => {
+    CommentReaction.belongsTo(models.PostComment, {
+      foreignKey: 'commentId',
+      as: 'comment'
+    });
+    CommentReaction.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
+  };
 
   return CommentReaction;
 };

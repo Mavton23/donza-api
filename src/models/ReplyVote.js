@@ -23,14 +23,14 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // ReplyVote.associate = (models) => {
-    //   ReplyVote.belongsTo(models.DiscussionReply, {
-    //     foreignKey: 'replyId'
-    //   });
-    //   ReplyVote.belongsTo(models.User, {
-    //     foreignKey: 'userId'
-    //   });
-    // };
+    ReplyVote.associate = (models) => {
+      ReplyVote.belongsTo(models.DiscussionReply, {
+        foreignKey: 'replyId'
+      });
+      ReplyVote.belongsTo(models.User, {
+        foreignKey: 'userId'
+      });
+    };
   
     return ReplyVote;
   };

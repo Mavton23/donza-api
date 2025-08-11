@@ -24,16 +24,16 @@ module.exports = (sequelize) => {
         tableName: 'message_requests'
     });
 
-    // MessageRequest.associate = (models) => {
-    //     MessageRequest.belongsTo(models.User, {
-    //         as: 'sender',
-    //         foreignKey: 'senderId'
-    //     });
-    //     MessageRequest.belongsTo(models.User, {
-    //         as: 'receiver',
-    //         foreignKey: 'receiverId'
-    //     });
-    // }
+    MessageRequest.associate = (models) => {
+        MessageRequest.belongsTo(models.User, {
+            as: 'sender',
+            foreignKey: 'senderId'
+        });
+        MessageRequest.belongsTo(models.User, {
+            as: 'receiver',
+            foreignKey: 'receiverId'
+        });
+    }
 
     return MessageRequest;
 }

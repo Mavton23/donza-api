@@ -44,23 +44,23 @@ module.exports = (sequelize) => {
     tableName: 'modules',
   });
 
-  // Module.associate = (models) => {
-  //   Module.belongsTo(models.Course, {
-  //     as: 'course',
-  //     foreignKey: 'courseId',
-  //   });
+  Module.associate = (models) => {
+    Module.belongsTo(models.Course, {
+      as: 'course',
+      foreignKey: 'courseId',
+    });
 
-  //   Module.hasMany(models.Lesson, {
-  //     as: 'lessons',
-  //     foreignKey: 'moduleId',
-  //     onDelete: 'CASCADE',
-  //   });
+    Module.hasMany(models.Lesson, {
+      as: 'lessons',
+      foreignKey: 'moduleId',
+      onDelete: 'CASCADE',
+    });
 
-  //   Module.belongsTo(models.User, {
-  //     as: 'creator',
-  //     foreignKey: 'creatorId',
-  //   });
-  // };
+    Module.belongsTo(models.User, {
+      as: 'creator',
+      foreignKey: 'creatorId',
+    });
+  };
 
   return Module;
 };

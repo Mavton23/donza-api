@@ -88,33 +88,33 @@ module.exports = (sequelize) => {
     // ]
   });
   
-    // Community.associate = (models) => {
-    //     Community.belongsToMany(models.User, {
-    //         through: models.CommunityMember,
-    //         as: 'members'
-    //     });
-    //   Community.belongsTo(models.User, {
-    //     foreignKey: 'creatorId',
-    //     as: 'creator'
-    //   });
-    //   Community.hasMany(models.StudyGroup, {
-    //     foreignKey: 'communityId',
-    //     as: 'studyGroups'
-    //   });
-    //   Community.hasMany(models.CommunityPost, {
-    //     foreignKey: 'communityId',
-    //     as: 'posts'
-    //   });
-    //   Community.hasMany(models.CommunityInvite, {
-    //     foreignKey: 'communityId',
-    //     as: 'invites'
-    //   });
+    Community.associate = (models) => {
+        Community.belongsToMany(models.User, {
+            through: models.CommunityMember,
+            as: 'members'
+        });
+      Community.belongsTo(models.User, {
+        foreignKey: 'creatorId',
+        as: 'creator'
+      });
+      Community.hasMany(models.StudyGroup, {
+        foreignKey: 'communityId',
+        as: 'studyGroups'
+      });
+      Community.hasMany(models.CommunityPost, {
+        foreignKey: 'communityId',
+        as: 'posts'
+      });
+      Community.hasMany(models.CommunityInvite, {
+        foreignKey: 'communityId',
+        as: 'invites'
+      });
       
-    //   Community.hasMany(models.CommunityRole, {
-    //     foreignKey: 'communityId',
-    //     as: 'roles'
-    //   });
-    // };
+      Community.hasMany(models.CommunityRole, {
+        foreignKey: 'communityId',
+        as: 'roles'
+      });
+    };
   
     return Community;
   };

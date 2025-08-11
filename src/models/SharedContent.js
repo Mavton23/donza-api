@@ -42,15 +42,15 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // SharedContent.associate = (models) => {
-    //   SharedContent.belongsTo(models.StudyGroup, {
-    //     foreignKey: 'groupId'
-    //   });
-    //   SharedContent.belongsTo(models.User, {
-    //     foreignKey: 'uploaderId',
-    //     as: 'uploader'
-    //   });
-    // };
+    SharedContent.associate = (models) => {
+      SharedContent.belongsTo(models.StudyGroup, {
+        foreignKey: 'groupId'
+      });
+      SharedContent.belongsTo(models.User, {
+        foreignKey: 'uploaderId',
+        as: 'uploader'
+      });
+    };
   
     return SharedContent;
   };

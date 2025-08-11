@@ -39,17 +39,17 @@ module.exports = (sequelize) => {
         // ]
     });
 
-    // EventParticipant.associate = (models) => {
-    //     EventParticipant.belongsTo(models.User, {
-    //         foreignKey: 'userId',
-    //         as: 'user'
-    //     });
+    EventParticipant.associate = (models) => {
+        EventParticipant.belongsTo(models.User, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
         
-    //     EventParticipant.belongsTo(models.Event, {
-    //         foreignKey: 'eventId',
-    //         as: 'event'
-    //     });
-    // };
+        EventParticipant.belongsTo(models.Event, {
+            foreignKey: 'eventId',
+            as: 'event'
+        });
+    };
 
     return EventParticipant;
 };

@@ -26,11 +26,11 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    // Achievement.associate = (models) => {
-    //   Achievement.belongsTo(models.StudyGroupMember, {
-    //     foreignKey: 'membershipId'
-    //   });
-    // };
+    Achievement.associate = (models) => {
+      Achievement.belongsTo(models.StudyGroupMember, {
+        foreignKey: 'membershipId'
+      });
+    };
   
     return Achievement;
   };

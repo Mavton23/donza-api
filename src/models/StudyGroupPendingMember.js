@@ -50,20 +50,20 @@ module.exports = (sequelize) => {
         // ]
     });
 
-    // StudyGroupPendingMember.associate = (models) => {
-    //     StudyGroupPendingMember.belongsTo(models.StudyGroup, {
-    //         foreignKey: 'groupId',
-    //         as: 'studyGroup'
-    //     });
-    //     StudyGroupPendingMember.belongsTo(models.User, {
-    //         foreignKey: 'userId',
-    //         as: 'user'
-    //     });
-    //     StudyGroupPendingMember.belongsTo(models.User, {
-    //         foreignKey: 'reviewedBy',
-    //         as: 'reviewer'
-    //     });
-    // };
+    StudyGroupPendingMember.associate = (models) => {
+        StudyGroupPendingMember.belongsTo(models.StudyGroup, {
+            foreignKey: 'groupId',
+            as: 'studyGroup'
+        });
+        StudyGroupPendingMember.belongsTo(models.User, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
+        StudyGroupPendingMember.belongsTo(models.User, {
+            foreignKey: 'reviewedBy',
+            as: 'reviewer'
+        });
+    };
 
     return StudyGroupPendingMember;
 };

@@ -15,22 +15,22 @@ module.exports = (sequelize) => {
     }, 
     { timestamps: true });
 
-    // TaskAssignment.associate = (models) => {
-    //     TaskAssignment.belongsTo(models.GroupTask, {
-    //         foreignKey: 'taskId',
-    //         as: 'task'
-    //     });
+    TaskAssignment.associate = (models) => {
+        TaskAssignment.belongsTo(models.GroupTask, {
+            foreignKey: 'taskId',
+            as: 'task'
+        });
   
-    //     TaskAssignment.belongsTo(models.User, {
-    //         foreignKey: 'userId',
-    //         as: 'user'
-    //     });
+        TaskAssignment.belongsTo(models.User, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
         
-    //     TaskAssignment.belongsTo(models.User, {
-    //         foreignKey: 'assignedBy',
-    //         as: 'assigner'
-    //     });
-    // };
+        TaskAssignment.belongsTo(models.User, {
+            foreignKey: 'assignedBy',
+            as: 'assigner'
+        });
+    };
 
     return TaskAssignment;
 }

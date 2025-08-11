@@ -65,24 +65,24 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    // Assignment.associate = (models) => {
-    //   Assignment.belongsTo(models.Course, {
-    //     foreignKey: 'courseId',
-    //     as: 'course'
-    //   });
-    //   Assignment.belongsTo(models.Module, {
-    //     foreignKey: 'moduleId',
-    //     as: 'module'
-    //   });
-    //   Assignment.belongsTo(models.Lesson, {
-    //     foreignKey: 'lessonId',
-    //     as: 'lesson'
-    //   });
-    //   Assignment.hasMany(models.Submission, {
-    //     foreignKey: 'assignmentId',
-    //     as: 'submissions'
-    //   });
-    // };
+    Assignment.associate = (models) => {
+      Assignment.belongsTo(models.Course, {
+        foreignKey: 'courseId',
+        as: 'course'
+      });
+      Assignment.belongsTo(models.Module, {
+        foreignKey: 'moduleId',
+        as: 'module'
+      });
+      Assignment.belongsTo(models.Lesson, {
+        foreignKey: 'lessonId',
+        as: 'lesson'
+      });
+      Assignment.hasMany(models.Submission, {
+        foreignKey: 'assignmentId',
+        as: 'submissions'
+      });
+    };
   
     return Assignment;
   };

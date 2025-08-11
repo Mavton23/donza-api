@@ -68,17 +68,17 @@ module.exports = (sequelize) => {
     tableName: 'lessons',
   });
 
-  // Lesson.associate = (models) => {
-  //   Lesson.belongsTo(models.Module, {
-  //       as: 'module',
-  //       foreignKey: 'moduleId',
-  //   });
+  Lesson.associate = (models) => {
+    Lesson.belongsTo(models.Module, {
+        as: 'module',
+        foreignKey: 'moduleId',
+    });
 
-  //   Lesson.belongsTo(models.User, {
-  //     as: 'creator',
-  //     foreignKey: 'creatorId',
-  //   });
-  // }
+    Lesson.belongsTo(models.User, {
+      as: 'creator',
+      foreignKey: 'creatorId',
+    });
+  }
 
   return Lesson;
 };

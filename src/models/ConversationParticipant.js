@@ -45,17 +45,17 @@ module.exports = (sequelize) => {
     // ]
   });
 
-  // ConversationParticipant.associate = (models) => {
-  //   ConversationParticipant.belongsTo(models.Conversation, {
-  //     foreignKey: 'conversationId',
-  //     as: 'Conversation'
-  //   });
+  ConversationParticipant.associate = (models) => {
+    ConversationParticipant.belongsTo(models.Conversation, {
+      foreignKey: 'conversationId',
+      as: 'Conversation'
+    });
     
-  //   ConversationParticipant.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'User'
-  //   });
-  // };
+    ConversationParticipant.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'User'
+    });
+  };
 
   return ConversationParticipant;
 };

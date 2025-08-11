@@ -98,58 +98,58 @@ module.exports = (sequelize) => {
     // ]
   });
 
-  // Activity.associate = (models) => {
-  //   Activity.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'user'
-  //   });
+  Activity.associate = (models) => {
+    Activity.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
     
-  //   Activity.belongsTo(models.Course, {
-  //     foreignKey: 'courseId',
-  //     as: 'activityCourse'
-  //   });
+    Activity.belongsTo(models.Course, {
+      foreignKey: 'courseId',
+      as: 'activityCourse'
+    });
     
-  //   Activity.belongsTo(models.Lesson, {
-  //     foreignKey: 'entityId',
-  //     as: 'lesson',
-  //     constraints: false
-  //   });
+    Activity.belongsTo(models.Lesson, {
+      foreignKey: 'entityId',
+      as: 'lesson',
+      constraints: false
+    });
     
-  //   Activity.belongsTo(models.Event, {
-  //     foreignKey: 'entityId',
-  //     as: 'event',
-  //     constraints: false
-  //   });
+    Activity.belongsTo(models.Event, {
+      foreignKey: 'entityId',
+      as: 'event',
+      constraints: false
+    });
     
-  //   Activity.belongsTo(models.StudyGroup, {
-  //     foreignKey: 'groupId',
-  //     as: 'group'
-  //   });
+    Activity.belongsTo(models.StudyGroup, {
+      foreignKey: 'groupId',
+      as: 'group'
+    });
     
-  //   Activity.belongsTo(models.SharedContent, {
-  //     foreignKey: 'entityId',
-  //     as: 'content',
-  //     constraints: false
-  //   });
+    Activity.belongsTo(models.SharedContent, {
+      foreignKey: 'entityId',
+      as: 'content',
+      constraints: false
+    });
     
-  //   Activity.belongsTo(models.GroupMeeting, {
-  //     foreignKey: 'entityId',
-  //     as: 'meeting',
-  //     constraints: false
-  //   });
+    Activity.belongsTo(models.GroupMeeting, {
+      foreignKey: 'entityId',
+      as: 'meeting',
+      constraints: false
+    });
     
-  //   Activity.belongsTo(models.DiscussionTopic, {
-  //     foreignKey: 'entityId',
-  //     as: 'discussion',
-  //     constraints: false
-  //   });
+    Activity.belongsTo(models.DiscussionTopic, {
+      foreignKey: 'entityId',
+      as: 'discussion',
+      constraints: false
+    });
     
-  //   Activity.belongsTo(models.GroupTask, {
-  //     foreignKey: 'entityId',
-  //     as: 'task',
-  //     constraints: false
-  //   });
-  // };
+    Activity.belongsTo(models.GroupTask, {
+      foreignKey: 'entityId',
+      as: 'task',
+      constraints: false
+    });
+  };
 
   return Activity;
 };

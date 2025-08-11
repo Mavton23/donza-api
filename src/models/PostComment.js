@@ -48,28 +48,28 @@ module.exports = (sequelize) => {
     // ]
   });
 
-  // PostComment.associate = (models) => {
-  //   PostComment.belongsTo(models.CommunityPost, {
-  //     foreignKey: 'postId',
-  //     as: 'post'
-  //   });
-  //   PostComment.belongsTo(models.User, {
-  //     foreignKey: 'authorId',
-  //     as: 'author'
-  //   });
-  //   PostComment.belongsTo(models.PostComment, {
-  //     foreignKey: 'parentCommentId',
-  //     as: 'parentComment'
-  //   });
-  //   PostComment.hasMany(models.PostComment, {
-  //     foreignKey: 'parentCommentId',
-  //     as: 'replies'
-  //   });
-  //   PostComment.hasMany(models.CommentReaction, {
-  //     foreignKey: 'commentId',
-  //     as: 'reactions'
-  //   });
-  // };
+  PostComment.associate = (models) => {
+    PostComment.belongsTo(models.CommunityPost, {
+      foreignKey: 'postId',
+      as: 'post'
+    });
+    PostComment.belongsTo(models.User, {
+      foreignKey: 'authorId',
+      as: 'author'
+    });
+    PostComment.belongsTo(models.PostComment, {
+      foreignKey: 'parentCommentId',
+      as: 'parentComment'
+    });
+    PostComment.hasMany(models.PostComment, {
+      foreignKey: 'parentCommentId',
+      as: 'replies'
+    });
+    PostComment.hasMany(models.CommentReaction, {
+      foreignKey: 'commentId',
+      as: 'reactions'
+    });
+  };
 
   return PostComment;
 };

@@ -23,14 +23,14 @@ module.exports = (sequelize) => {
       timestamps: false
     });
   
-    // MeetingParticipant.associate = (models) => {
-    //   MeetingParticipant.belongsTo(models.GroupMeeting, {
-    //     foreignKey: 'meetingId'
-    //   });
-    //   MeetingParticipant.belongsTo(models.User, {
-    //     foreignKey: 'userId'
-    //   });
-    // };
+    MeetingParticipant.associate = (models) => {
+      MeetingParticipant.belongsTo(models.GroupMeeting, {
+        foreignKey: 'meetingId'
+      });
+      MeetingParticipant.belongsTo(models.User, {
+        foreignKey: 'userId'
+      });
+    };
   
     return MeetingParticipant;
   };

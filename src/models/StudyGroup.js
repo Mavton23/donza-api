@@ -60,43 +60,43 @@ module.exports = (sequelize) => {
         }
     });
 
-    // StudyGroup.associate = (models) => {
-    //     StudyGroup.belongsTo(models.Community, {
-    //         foreignKey: 'communityId'
-    //     });
-    //     StudyGroup.belongsTo(models.User, {
-    //         foreignKey: 'creatorId',
-    //         as: 'creator'
-    //     });
-    //     StudyGroup.belongsToMany(models.User, {
-    //         through: models.StudyGroupMember,
-    //         as: 'members'
-    //     });
-    //     StudyGroup.hasMany(models.StudyGroupPendingMember, {
-    //         foreignKey: 'groupId',
-    //         as: 'pendingMemberRequests'
-    //     });
-    //     StudyGroup.hasMany(models.GroupMeeting, {
-    //         foreignKey: 'groupId',
-    //         as: 'meetings'
-    //     });
-    //     StudyGroup.hasMany(models.DiscussionTopic, {
-    //         foreignKey: 'groupId',
-    //         as: 'discussionTopics'
-    //     });
-    //     StudyGroup.hasMany(models.SharedContent, {
-    //         foreignKey: 'groupId',
-    //         as: 'sharedContents'
-    //     });
-    //     StudyGroup.hasMany(models.GroupTask, {
-    //         foreignKey: 'groupId',
-    //         as: 'tasks'
-    //     });
-    //     StudyGroup.hasOne(models.GroupChat, {
-    //         foreignKey: 'groupId',
-    //         as: 'chat'
-    //     });
-    // };
+    StudyGroup.associate = (models) => {
+        StudyGroup.belongsTo(models.Community, {
+            foreignKey: 'communityId'
+        });
+        StudyGroup.belongsTo(models.User, {
+            foreignKey: 'creatorId',
+            as: 'creator'
+        });
+        StudyGroup.belongsToMany(models.User, {
+            through: models.StudyGroupMember,
+            as: 'members'
+        });
+        StudyGroup.hasMany(models.StudyGroupPendingMember, {
+            foreignKey: 'groupId',
+            as: 'pendingMemberRequests'
+        });
+        StudyGroup.hasMany(models.GroupMeeting, {
+            foreignKey: 'groupId',
+            as: 'meetings'
+        });
+        StudyGroup.hasMany(models.DiscussionTopic, {
+            foreignKey: 'groupId',
+            as: 'discussionTopics'
+        });
+        StudyGroup.hasMany(models.SharedContent, {
+            foreignKey: 'groupId',
+            as: 'sharedContents'
+        });
+        StudyGroup.hasMany(models.GroupTask, {
+            foreignKey: 'groupId',
+            as: 'tasks'
+        });
+        StudyGroup.hasOne(models.GroupChat, {
+            foreignKey: 'groupId',
+            as: 'chat'
+        });
+    };
 
     return StudyGroup;
 };

@@ -78,16 +78,16 @@ module.exports = (sequelize) => {
     // ]
   });
 
-  // ContactRequest.associate = (models) => {
-  //   ContactRequest.belongsTo(models.User, {
-  //     foreignKey: 'userId',
-  //     as: 'user'
-  //   });
-  //   ContactRequest.belongsTo(models.User, {
-  //     foreignKey: 'updatedBy',
-  //     as: 'updatedByUser'
-  //   });
-  // };
+  ContactRequest.associate = (models) => {
+    ContactRequest.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
+    ContactRequest.belongsTo(models.User, {
+      foreignKey: 'updatedBy',
+      as: 'updatedByUser'
+    });
+  };
 
   return ContactRequest;
 };

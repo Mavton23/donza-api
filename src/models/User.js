@@ -240,116 +240,116 @@ module.exports = (sequelize) => {
     ],
   });
 
-  // User.associate = (models) => {
-  //     User.hasMany(models.Token, {
-  //       foreignKey: 'userId',
-  //       as: 'tokens'
-  //     });
+  User.associate = (models) => {
+      User.hasMany(models.Token, {
+        foreignKey: 'userId',
+        as: 'tokens'
+      });
 
-  //     User.hasMany(models.UserRelationship, {
-  //       foreignKey: 'userId',
-  //       as: 'relationshipsInitiated',
-  //     });
+      User.hasMany(models.UserRelationship, {
+        foreignKey: 'userId',
+        as: 'relationshipsInitiated',
+      });
       
-  //     User.hasMany(models.UserRelationship, {
-  //       foreignKey: 'relatedUserId',
-  //       as: 'relationshipsReceived',
-  //     });
+      User.hasMany(models.UserRelationship, {
+        foreignKey: 'relatedUserId',
+        as: 'relationshipsReceived',
+      });
 
-  //     User.hasMany(models.Activity, {
-  //       foreignKey: 'userId',
-  //       as: 'activities'
-  //     });
+      User.hasMany(models.Activity, {
+        foreignKey: 'userId',
+        as: 'activities'
+      });
 
-  //     User.hasMany(models.Enrollment, {
-  //       foreignKey: 'userId',
-  //       as: 'enrollments'
-  //     });
+      User.hasMany(models.Enrollment, {
+        foreignKey: 'userId',
+        as: 'enrollments'
+      });
 
-  //     User.belongsToMany(models.Course, {
-  //       through: models.Enrollment,
-  //       as: 'enrolledCourses',
-  //       foreignKey: 'userId'
-  //     });
+      User.belongsToMany(models.Course, {
+        through: models.Enrollment,
+        as: 'enrolledCourses',
+        foreignKey: 'userId'
+      });
     
-  //     User.hasMany(models.Course, {
-  //       as: 'taughtCourses',
-  //       foreignKey: 'instructorId'
-  //     });
+      User.hasMany(models.Course, {
+        as: 'taughtCourses',
+        foreignKey: 'instructorId'
+      });
 
-  //     User.hasMany(models.Certificate, {
-  //       foreignKey: 'userId',
-  //       as: 'certificates'
-  //     });
+      User.hasMany(models.Certificate, {
+        foreignKey: 'userId',
+        as: 'certificates'
+      });
 
-  //     User.hasMany(models.Review, {
-  //       foreignKey: 'userId',
-  //       as: 'reviews'
-  //     });
+      User.hasMany(models.Review, {
+        foreignKey: 'userId',
+        as: 'reviews'
+      });
     
-  //     User.belongsToMany(models.Event, {
-  //       through: models.EventParticipant,
-  //       as: 'eventsAttended',
-  //       foreignKey: 'userId',
-  //     });
+      User.belongsToMany(models.Event, {
+        through: models.EventParticipant,
+        as: 'eventsAttended',
+        foreignKey: 'userId',
+      });
     
-  //     User.hasMany(models.Event, {
-  //       foreignKey: 'organizerId',
-  //       as: 'organizedEvents'
-  //     });
+      User.hasMany(models.Event, {
+        foreignKey: 'organizerId',
+        as: 'organizedEvents'
+      });
 
-  //     User.belongsToMany(models.Conversation, {
-  //       through: models.ConversationParticipant,
-  //       as: 'conversations',
-  //       foreignKey: 'userId'
-  //     });
+      User.belongsToMany(models.Conversation, {
+        through: models.ConversationParticipant,
+        as: 'conversations',
+        foreignKey: 'userId'
+      });
 
-  //     User.hasMany(models.ChatMember, {
-  //       foreignKey: 'userId',
-  //       as: 'ChatMembers'
-  //     });
+      User.hasMany(models.ChatMember, {
+        foreignKey: 'userId',
+        as: 'ChatMembers'
+      });
 
-  //     User.hasMany(models.Testimonial, {
-  //       foreignKey: 'userId',
-  //       as: 'testimonials'
-  //     });
+      User.hasMany(models.Testimonial, {
+        foreignKey: 'userId',
+        as: 'testimonials'
+      });
 
-  //   // Relacionamento com instrutores (para instituições)
-  //   User.belongsToMany(models.User, {
-  //     through: models.InstitutionInstructor,
-  //     as: 'instructors',
-  //     foreignKey: 'institutionId',
-  //     otherKey: 'instructorId',
-  //     constraints: false,
-  //     scope: {
-  //       role: 'instructor'
-  //     }
-  //   });
+    // Relacionamento com instrutores (para instituições)
+    User.belongsToMany(models.User, {
+      through: models.InstitutionInstructor,
+      as: 'instructors',
+      foreignKey: 'institutionId',
+      otherKey: 'instructorId',
+      constraints: false,
+      scope: {
+        role: 'instructor'
+      }
+    });
 
-  //   // Relacionamento com instituições (para instrutores)
-  //   User.belongsToMany(models.User, {
-  //     through: models.InstitutionInstructor,
-  //     as: 'institutions',
-  //     foreignKey: 'instructorId',
-  //     otherKey: 'institutionId',
-  //     constraints: false,
-  //     scope: {
-  //       role: 'institution'
-  //     }
-  //   });
+    // Relacionamento com instituições (para instrutores)
+    User.belongsToMany(models.User, {
+      through: models.InstitutionInstructor,
+      as: 'institutions',
+      foreignKey: 'instructorId',
+      otherKey: 'institutionId',
+      constraints: false,
+      scope: {
+        role: 'institution'
+      }
+    });
     
-  //   User.hasMany(models.UserDocument, {
-  //     foreignKey: 'userId',
-  //     as: 'documents'
-  //   })
+    User.hasMany(models.UserDocument, {
+      foreignKey: 'userId',
+      as: 'documents'
+    })
 
-  //   // Relacionamento com o admin que revisou
-  //   User.belongsTo(models.User, {
-  //     foreignKey: 'adminReviewer',
-  //     as: 'reviewedBy',
-  //     constraints: false
-  //   });
-  // };
+    // Relacionamento com o admin que revisou
+    User.belongsTo(models.User, {
+      foreignKey: 'adminReviewer',
+      as: 'reviewedBy',
+      constraints: false
+    });
+  };
 
   return User;
 };

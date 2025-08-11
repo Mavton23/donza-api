@@ -110,26 +110,26 @@ module.exports = (sequelize) => {
     // ]
   });
 
-  // HelpArticle.associate = (models) => {
-  //   HelpArticle.belongsTo(models.HelpCategory, {
-  //       foreignKey: 'category',
-  //       as: 'categoryInfo', 
-  //       targetKey: 'name', 
-  //       onDelete: 'SET NULL',
-  //   });
+  HelpArticle.associate = (models) => {
+    HelpArticle.belongsTo(models.HelpCategory, {
+        foreignKey: 'category',
+        as: 'categoryInfo', 
+        targetKey: 'name', 
+        onDelete: 'SET NULL',
+    });
 
-  //   HelpArticle.belongsTo(models.User, {
-  //     foreignKey: 'reviewerId',
-  //     as: 'reviewer',
-  //     onDelete: 'SET NULL'
-  //   });
+    HelpArticle.belongsTo(models.User, {
+      foreignKey: 'reviewerId',
+      as: 'reviewer',
+      onDelete: 'SET NULL'
+    });
 
-  //   HelpArticle.hasMany(models.HelpFeedback, {
-  //     foreignKey: 'articleId',
-  //     as: 'feedbacks',
-  //     onDelete: 'CASCADE'
-  //   });
-  // };
+    HelpArticle.hasMany(models.HelpFeedback, {
+      foreignKey: 'articleId',
+      as: 'feedbacks',
+      onDelete: 'CASCADE'
+    });
+  };
 
   return HelpArticle;
 };

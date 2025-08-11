@@ -38,21 +38,21 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // CommunityInvite.associate = (models) => {
-    //   CommunityInvite.belongsTo(models.Community, {
-    //     foreignKey: 'communityId',
-    //     as: 'community'
-    //   });
-    //   CommunityInvite.belongsTo(models.User, {
-    //     foreignKey: 'inviterId',
-    //     as: 'inviter'
-    //   });
-    //   CommunityInvite.belongsTo(models.User, {
-    //     foreignKey: 'userId',
-    //     as: 'user',
-    //     allowNull: true
-    //   });
-    // };
+    CommunityInvite.associate = (models) => {
+      CommunityInvite.belongsTo(models.Community, {
+        foreignKey: 'communityId',
+        as: 'community'
+      });
+      CommunityInvite.belongsTo(models.User, {
+        foreignKey: 'inviterId',
+        as: 'inviter'
+      });
+      CommunityInvite.belongsTo(models.User, {
+        foreignKey: 'userId',
+        as: 'user',
+        allowNull: true
+      });
+    };
   
     return CommunityInvite;
   };

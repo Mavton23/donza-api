@@ -34,15 +34,15 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    // GroupReport.associate = (models) => {
-    //   GroupReport.belongsTo(models.StudyGroup, {
-    //     foreignKey: 'groupId'
-    //   });
-    //   GroupReport.belongsTo(models.User, {
-    //     foreignKey: 'generatedBy',
-    //     as: 'generator'
-    //   });
-    // };
+    GroupReport.associate = (models) => {
+      GroupReport.belongsTo(models.StudyGroup, {
+        foreignKey: 'groupId'
+      });
+      GroupReport.belongsTo(models.User, {
+        foreignKey: 'generatedBy',
+        as: 'generator'
+      });
+    };
   
     return GroupReport;
   };

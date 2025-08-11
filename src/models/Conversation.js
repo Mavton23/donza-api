@@ -30,31 +30,31 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    // Conversation.associate = (models) => {
-    //   Conversation.belongsToMany(models.User, {
-    //     through: models.ConversationParticipant,
-    //     as: 'participants',
-    //     foreignKey: 'conversationId'
-    //   });
+    Conversation.associate = (models) => {
+      Conversation.belongsToMany(models.User, {
+        through: models.ConversationParticipant,
+        as: 'participants',
+        foreignKey: 'conversationId'
+      });
     
-    //   // Todas as mensagens da conversa
-    //   Conversation.hasMany(models.Message, {
-    //     foreignKey: 'conversationId',
-    //     as: 'messages'
-    //   });
+      // Todas as mensagens da conversa
+      Conversation.hasMany(models.Message, {
+        foreignKey: 'conversationId',
+        as: 'messages'
+      });
     
-    //   // Última mensagem (alias separado)
-    //   Conversation.hasMany(models.Message, {
-    //     foreignKey: 'conversationId',
-    //     as: 'lastMessage'
-    //   });
+      // Última mensagem (alias separado)
+      Conversation.hasMany(models.Message, {
+        foreignKey: 'conversationId',
+        as: 'lastMessage'
+      });
     
-    //   // Mensagens não lidas (alias separado)
-    //   Conversation.hasMany(models.Message, {
-    //     foreignKey: 'conversationId',
-    //     as: 'unreadCount'
-    //   });
-    // };
+      // Mensagens não lidas (alias separado)
+      Conversation.hasMany(models.Message, {
+        foreignKey: 'conversationId',
+        as: 'unreadCount'
+      });
+    };
   
     return Conversation;
   };

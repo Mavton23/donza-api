@@ -33,19 +33,19 @@ module.exports = (sequelize) => {
       // ]
     });
   
-    // DiscussionReply.associate = (models) => {
-    //   DiscussionReply.belongsTo(models.DiscussionTopic, {
-    //     foreignKey: 'topicId'
-    //   });
-    //   DiscussionReply.belongsTo(models.User, {
-    //     foreignKey: 'authorId',
-    //     as: 'author'
-    //   });
-    //   DiscussionReply.hasMany(models.ReplyVote, {
-    //     foreignKey: 'replyId',
-    //     as: 'votes'
-    //   });
-    // };
+    DiscussionReply.associate = (models) => {
+      DiscussionReply.belongsTo(models.DiscussionTopic, {
+        foreignKey: 'topicId'
+      });
+      DiscussionReply.belongsTo(models.User, {
+        foreignKey: 'authorId',
+        as: 'author'
+      });
+      DiscussionReply.hasMany(models.ReplyVote, {
+        foreignKey: 'replyId',
+        as: 'votes'
+      });
+    };
   
     return DiscussionReply;
   };

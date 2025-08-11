@@ -74,15 +74,15 @@ module.exports = (sequelize) => {
         // ]
     });
 
-    // StudyGroupMember.associate = (models) => {
-    //     StudyGroupMember.belongsTo(models.StudyGroup, {
-    //         foreignKey: 'groupId'
-    //     });
-    //     StudyGroupMember.belongsTo(models.User, {
-    //         foreignKey: 'userId',
-    //         as: 'user'
-    //     });
-    // };
+    StudyGroupMember.associate = (models) => {
+        StudyGroupMember.belongsTo(models.StudyGroup, {
+            foreignKey: 'groupId'
+        });
+        StudyGroupMember.belongsTo(models.User, {
+            foreignKey: 'userId',
+            as: 'user'
+        });
+    };
 
     return StudyGroupMember;
 };
