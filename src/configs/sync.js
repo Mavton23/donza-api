@@ -5,8 +5,8 @@ const logger = require('../utils/logger');
 const syncOrder = [
     'Token',
     'TempUser',
-    'UserDocument',
     'User',
+    'UserDocument',
     'UserRelationship',
     'Activity',
     'Course',
