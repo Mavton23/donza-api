@@ -47,14 +47,14 @@ module.exports = (sequelize) => {
     }
   }, {
     tableName: 'invoices',
-    indexes: [
-      {
-        fields: ['billingId'],
-      },
-      {
-        fields: ['status'],
-      }
-    ]
+    // indexes: [
+    //   {
+    //     fields: ['billingId'],
+    //   },
+    //   {
+    //     fields: ['status'],
+    //   }
+    // ]
   });
 
   // Invoice.associate = (models) => {

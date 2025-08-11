@@ -39,15 +39,15 @@ module.exports = (sequelize) => {
     }, {
         tableName: 'study_group_pending_members',
         timestamps: false,
-        indexes: [
-            {
-                unique: true,
-                fields: ['groupId', 'userId']
-            },
-            {
-                fields: ['status']
-            }
-        ]
+        // indexes: [
+        //     {
+        //         unique: true,
+        //         fields: ['groupId', 'userId']
+        //     },
+        //     {
+        //         fields: ['status']
+        //     }
+        // ]
     });
 
     // StudyGroupPendingMember.associate = (models) => {

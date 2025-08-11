@@ -35,14 +35,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'discussion_topics',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['groupId']
-        },
-        {
-          fields: ['isPinned']
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['groupId']
+      //   },
+      //   {
+      //     fields: ['isPinned']
+      //   }
+      // ]
     });
   
     // DiscussionTopic.associate = (models) => {

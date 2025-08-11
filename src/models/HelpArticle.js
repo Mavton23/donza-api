@@ -93,21 +93,21 @@ module.exports = (sequelize) => {
         }
       }
     },
-    indexes: [
-      {
-        name: 'help_articles_slug_index',
-        fields: ['slug'],
-        unique: true
-      },
-      {
-        name: 'help_articles_category_index',
-        fields: ['category']
-      },
-      {
-        name: 'help_articles_rating_index',
-        fields: ['rating']
-      }
-    ]
+    // indexes: [
+    //   {
+    //     name: 'help_articles_slug_index',
+    //     fields: ['slug'],
+    //     unique: true
+    //   },
+    //   {
+    //     name: 'help_articles_category_index',
+    //     fields: ['category']
+    //   },
+    //   {
+    //     name: 'help_articles_rating_index',
+    //     fields: ['rating']
+    //   }
+    // ]
   });
 
   // HelpArticle.associate = (models) => {

@@ -32,16 +32,16 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'help_categories',
     timestamps: true,
-    indexes: [
-      {
-        name: 'help_categories_name_index',
-        fields: ['name'],
-      },
-      {
-        name: 'help_categories_order_index',
-        fields: ['displayOrder'],
-      },
-    ],
+    // indexes: [
+    //   {
+    //     name: 'help_categories_name_index',
+    //     fields: ['name'],
+    //   },
+    //   {
+    //     name: 'help_categories_order_index',
+    //     fields: ['displayOrder'],
+    //   },
+    // ],
   });
 
   // HelpCategory.associate = (models) => {

@@ -29,17 +29,17 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'group_tasks',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['groupId']
-        },
-        {
-          fields: ['status']
-        },
-        {
-          fields: ['deadline']
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['groupId']
+      //   },
+      //   {
+      //     fields: ['status']
+      //   },
+      //   {
+      //     fields: ['deadline']
+      //   }
+      // ]
     });
   
     // GroupTask.associate = (models) => {

@@ -123,14 +123,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'notifications',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['userId', 'isRead']
-        },
-        {
-          fields: ['scheduledAt']
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['userId', 'isRead']
+      //   },
+      //   {
+      //     fields: ['scheduledAt']
+      //   }
+      // ]
     });
   
     // Notification.associate = (models) => {

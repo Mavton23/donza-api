@@ -21,17 +21,17 @@ module.exports = (sequelize) => {
     timestamps: true,
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    indexes: [
-      {
-        name: 'help_feedbacks_user_article_index',
-        fields: ['userId', 'articleId'],
-        unique: true,
-      },
-      {
-        name: 'help_feedbacks_article_index',
-        fields: ['articleId'],
-      },
-    ],
+    // indexes: [
+    //   {
+    //     name: 'help_feedbacks_user_article_index',
+    //     fields: ['userId', 'articleId'],
+    //     unique: true,
+    //   },
+    //   {
+    //     name: 'help_feedbacks_article_index',
+    //     fields: ['articleId'],
+    //   },
+    // ],
   });
 
   // HelpFeedback.associate = (models) => {

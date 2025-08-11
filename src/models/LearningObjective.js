@@ -27,18 +27,18 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'learning_objectives',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['subjectArea']
-        },
-        {
-          fields: ['level']
-        },
-        {
-          type: 'FULLTEXT',
-          fields: ['name', 'description']
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['subjectArea']
+      //   },
+      //   {
+      //     fields: ['level']
+      //   },
+      //   {
+      //     type: 'FULLTEXT',
+      //     fields: ['name', 'description']
+      //   }
+      // ]
     });
   
     // LearningObjective.associate = (models) => {

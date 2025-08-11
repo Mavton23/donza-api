@@ -69,24 +69,24 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'certificates',
-    indexes: [
-      {
-        unique: true,
-        fields: ['credentialId']
-      },
-      {
-        fields: ['userId']
-      },
-      {
-        fields: ['courseId']
-      },
-      {
-        fields: ['eventId']
-      },
-      {
-        fields: ['status']
-      }
-    ]
+    // indexes: [
+    //   {
+    //     unique: true,
+    //     fields: ['credentialId']
+    //   },
+    //   {
+    //     fields: ['userId']
+    //   },
+    //   {
+    //     fields: ['courseId']
+    //   },
+    //   {
+    //     fields: ['eventId']
+    //   },
+    //   {
+    //     fields: ['status']
+    //   }
+    // ]
   });
 
   Certificate.associate = (models) => {

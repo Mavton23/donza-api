@@ -35,11 +35,11 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'shared_contents',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['groupId', 'fileType']
-        },
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['groupId', 'fileType']
+      //   },
+      // ]
     });
   
     // SharedContent.associate = (models) => {

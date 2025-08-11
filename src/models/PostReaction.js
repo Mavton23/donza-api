@@ -22,21 +22,21 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'post_reactions',
     timestamps: true,
-    indexes: [
-      {
-        fields: ['postId']
-      },
-      {
-        fields: ['userId']
-      },
-      {
-        fields: ['type']
-      },
-      {
-        fields: ['postId', 'userId'],
-        unique: true
-      }
-    ]
+    // indexes: [
+    //   {
+    //     fields: ['postId']
+    //   },
+    //   {
+    //     fields: ['userId']
+    //   },
+    //   {
+    //     fields: ['type']
+    //   },
+    //   {
+    //     fields: ['postId', 'userId'],
+    //     unique: true
+    //   }
+    // ]
   });
 
   // PostReaction.associate = (models) => {

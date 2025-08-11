@@ -19,17 +19,17 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'post_views',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['postId']
-        },
-        {
-          fields: ['userId']
-        },
-        {
-          fields: ['createdAt']
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['postId']
+      //   },
+      //   {
+      //     fields: ['userId']
+      //   },
+      //   {
+      //     fields: ['createdAt']
+      //   }
+      // ]
     });
   
     // PostView.associate = (models) => {

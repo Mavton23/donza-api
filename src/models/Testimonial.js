@@ -58,17 +58,17 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'testimonials',
-    indexes: [
-      {
-        fields: ['status'],
-      },
-      {
-        fields: ['featured'],
-      },
-      {
-        fields: ['userId'],
-      },
-    ],
+    // indexes: [
+    //   {
+    //     fields: ['status'],
+    //   },
+    //   {
+    //     fields: ['featured'],
+    //   },
+    //   {
+    //     fields: ['userId'],
+    //   },
+    // ],
   });
 
   // Testimonial.associate = (models) => {

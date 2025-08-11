@@ -39,21 +39,21 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'messages',
       timestamps: true,
-      indexes: [
-        {
-          fields: ['conversationId']
-        },
-        {
-          fields: ['senderId']
-        },
-        {
-          fields: ['isRead']
-        },
-        {
-          name: 'message_context_index',
-          fields: ['contextType', 'courseId'] 
-        }
-      ]
+      // indexes: [
+      //   {
+      //     fields: ['conversationId']
+      //   },
+      //   {
+      //     fields: ['senderId']
+      //   },
+      //   {
+      //     fields: ['isRead']
+      //   },
+      //   {
+      //     name: 'message_context_index',
+      //     fields: ['contextType', 'courseId'] 
+      //   }
+      // ]
     });
   
     // Message.associate = (models) => {

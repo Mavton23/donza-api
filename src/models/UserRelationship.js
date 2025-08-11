@@ -29,15 +29,15 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'user_relationships',
-    indexes: [
-      {
-        unique: true,
-        fields: ['userId', 'relatedUserId']
-      },
-      {
-        fields: ['relationshipType', 'status']
-      }
-    ]
+    // indexes: [
+    //   {
+    //     unique: true,
+    //     fields: ['userId', 'relatedUserId']
+    //   },
+    //   {
+    //     fields: ['relationshipType', 'status']
+    //   }
+    // ]
   });
 
   // UserRelationship.associate = (models) => {
