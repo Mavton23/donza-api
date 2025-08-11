@@ -31,12 +31,12 @@ module.exports = (sequelize) => {
     }, {
         timestamps: true,
         tableName: 'event_participants',
-        // indexes: [
-        //     {
-        //         fields: ['userId', 'eventId'],
-        //         unique: true
-        //     }
-        // ]
+        indexes: [
+            {
+                fields: ['userId', 'eventId'],
+                unique: true
+            }
+        ]
     });
 
     EventParticipant.associate = (models) => {

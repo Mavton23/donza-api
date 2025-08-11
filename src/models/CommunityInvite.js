@@ -30,12 +30,12 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'community_invites',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['communityId', 'email'],
-      //     unique: true
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['communityId', 'email'],
+          unique: true
+        }
+      ]
     });
   
     CommunityInvite.associate = (models) => {

@@ -41,14 +41,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'post_attachments',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['postId']
-      //   },
-      //   {
-      //     fields: ['type']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['postId']
+        },
+        {
+          fields: ['type']
+        }
+      ]
     });
   
     PostAttachment.associate = (models) => {

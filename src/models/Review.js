@@ -44,14 +44,14 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'reviews',
-    // indexes: [
-    //   {
-    //     fields: ['entityType', 'entityId'],
-    //   },
-    //   {
-    //     fields: ['userId'],
-    //   },
-    // ],
+    indexes: [
+      {
+        fields: ['entityType', 'entityId'],
+      },
+      {
+        fields: ['userId'],
+      },
+    ],
   });
 
   Review.associate = (models) => {

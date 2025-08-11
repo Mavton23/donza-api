@@ -40,12 +40,12 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'institution_instructors',
     timestamps: false,
-    // indexes: [
-    //   {
-    //     unique: true,
-    //     fields: ['institutionId', 'instructorId']
-    //   }
-    // ]
+    indexes: [
+      {
+        unique: true,
+        fields: ['institutionId', 'instructorId']
+      }
+    ]
   });
 
   return InstitutionInstructor;

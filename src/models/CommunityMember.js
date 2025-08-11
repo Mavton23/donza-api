@@ -23,15 +23,15 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'community_members',
       timestamps: false,
-      // indexes: [
-      //   {
-      //     unique: true,
-      //     fields: ['communityId', 'userId']
-      //   },
-      //   {
-      //     fields: ['role']
-      //   }
-      // ]
+      indexes: [
+        {
+          unique: true,
+          fields: ['communityId', 'userId']
+        },
+        {
+          fields: ['role']
+        }
+      ]
     });
   
     CommunityMember.associate = (models) => {

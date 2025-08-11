@@ -26,12 +26,12 @@ module.exports = (sequelize) => {
     }, {
         timestamps: true,
         tableName: 'user_lessons',
-        // indexes: [
-        //     {
-        //         fields: ['userId', 'lessonId'],
-        //         unique: true
-        //     }
-        // ]
+        indexes: [
+            {
+                fields: ['userId', 'lessonId'],
+                unique: true
+            }
+        ]
     });
 
     UserLesson.associate = (models) => {

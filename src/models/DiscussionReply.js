@@ -23,14 +23,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'discussion_replies',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['topicId']
-      //   },
-      //   {
-      //     fields: ['isSolution']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['topicId']
+        },
+        {
+          fields: ['isSolution']
+        }
+      ]
     });
   
     DiscussionReply.associate = (models) => {

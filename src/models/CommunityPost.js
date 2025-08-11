@@ -89,23 +89,23 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'community_posts',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['communityId']
-      //   },
-      //   {
-      //     fields: ['authorId']
-      //   },
-      //   {
-      //     fields: ['isPinned']
-      //   },
-      //   {
-      //     fields: ['postType']
-      //   },
-      //   {
-      //     fields: ['status']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['communityId']
+        },
+        {
+          fields: ['authorId']
+        },
+        {
+          fields: ['isPinned']
+        },
+        {
+          fields: ['postType']
+        },
+        {
+          fields: ['status']
+        }
+      ]
     });
   
     CommunityPost.associate = (models) => {

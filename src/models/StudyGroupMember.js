@@ -60,18 +60,18 @@ module.exports = (sequelize) => {
     }, {
         tableName: 'study_group_members',
         timestamps: false,
-        // indexes: [
-        //     {
-        //         unique: true,
-        //         fields: ['groupId', 'userId']
-        //     },
-        //     {
-        //         fields: ['role']
-        //     },
-        //     {
-        //         fields: ['status']
-        //     }
-        // ]
+        indexes: [
+            {
+                unique: true,
+                fields: ['groupId', 'userId']
+            },
+            {
+                fields: ['role']
+            },
+            {
+                fields: ['status']
+            }
+        ]
     });
 
     StudyGroupMember.associate = (models) => {

@@ -59,18 +59,18 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'billings',
-    // indexes: [
-    //   {
-    //     fields: ['institutionId'],
-    //   },
-    //   {
-    //     fields: ['status'],
-    //   },
-    //   {
-    //     fields: ['externalId'],
-    //     unique: true
-    //   }
-    // ],
+    indexes: [
+      {
+        fields: ['institutionId'],
+      },
+      {
+        fields: ['status'],
+      },
+      {
+        fields: ['externalId'],
+        unique: true
+      }
+    ],
     hooks: {
       beforeCreate: async (billing) => {
         if (!billing.currentPeriodEnd) {

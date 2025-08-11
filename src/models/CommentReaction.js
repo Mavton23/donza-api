@@ -28,21 +28,21 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'comment_reactions',
     timestamps: true,
-    // indexes: [
-    //   {
-    //     fields: ['commentId']
-    //   },
-    //   {
-    //     fields: ['userId']
-    //   },
-    //   {
-    //     fields: ['type']
-    //   },
-    //   {
-    //     fields: ['commentId', 'userId'],
-    //     unique: true
-    //   }
-    // ],
+    indexes: [
+      {
+        fields: ['commentId']
+      },
+      {
+        fields: ['userId']
+      },
+      {
+        fields: ['type']
+      },
+      {
+        fields: ['commentId', 'userId'],
+        unique: true
+      }
+    ],
   });
 
   CommentReaction.associate = (models) => {

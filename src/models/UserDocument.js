@@ -82,14 +82,14 @@ module.exports = (sequelize) => {
   }, {
     timestamps: true,
     tableName: 'user_documents',
-    // indexes: [
-    //   {
-    //     fields: ['userId', 'documentType']
-    //   },
-    //   {
-    //     fields: ['status']
-    //   }
-    // ]
+    indexes: [
+      {
+        fields: ['userId', 'documentType']
+      },
+      {
+        fields: ['status']
+      }
+    ]
   });
 
   UserDocument.associate = models => {

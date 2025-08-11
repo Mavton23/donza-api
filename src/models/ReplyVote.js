@@ -15,12 +15,12 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'reply_votes',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     unique: true,
-      //     fields: ['replyId', 'userId']
-      //   }
-      // ]
+      indexes: [
+        {
+          unique: true,
+          fields: ['replyId', 'userId']
+        }
+      ]
     });
   
     ReplyVote.associate = (models) => {

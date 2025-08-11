@@ -31,21 +31,21 @@ module.exports = (sequelize) => {
     tableName: 'post_comments',
     timestamps: true,
     paranoid: true,
-    // indexes: [
-    //   {
-    //     fields: ['postId']
-    //   },
-    //   {
-    //     fields: ['authorId']
-    //   },
-    //   {
-    //     fields: ['parentCommentId']
-    //   },
-    //   {
-    //     type: 'FULLTEXT',
-    //     fields: ['content']
-    //   }
-    // ]
+    indexes: [
+      {
+        fields: ['postId']
+      },
+      {
+        fields: ['authorId']
+      },
+      {
+        fields: ['parentCommentId']
+      },
+      {
+        type: 'FULLTEXT',
+        fields: ['content']
+      }
+    ]
   });
 
   PostComment.associate = (models) => {

@@ -62,20 +62,20 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'contact_requests',
     timestamps: true,
-    // indexes: [
-    //   {
-    //     fields: ['status']
-    //   },
-    //   {
-    //     fields: ['contactMethod']
-    //   },
-    //   {
-    //     fields: ['userId']
-    //   },
-    //   {
-    //     fields: ['createdAt']
-    //   }
-    // ]
+    indexes: [
+      {
+        fields: ['status']
+      },
+      {
+        fields: ['contactMethod']
+      },
+      {
+        fields: ['userId']
+      },
+      {
+        fields: ['createdAt']
+      }
+    ]
   });
 
   ContactRequest.associate = (models) => {

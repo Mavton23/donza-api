@@ -82,20 +82,20 @@ module.exports = (sequelize) => {
   }, {
     tableName: 'activities',
     timestamps: true,
-    // indexes: [
-    //   {
-    //     fields: ['userId']
-    //   },
-    //   {
-    //     fields: ['groupId']
-    //   },
-    //   {
-    //     fields: ['createdAt']
-    //   },
-    //   {
-    //     fields: ['type']
-    //   }
-    // ]
+    indexes: [
+      {
+        fields: ['userId']
+      },
+      {
+        fields: ['groupId']
+      },
+      {
+        fields: ['createdAt']
+      },
+      {
+        fields: ['type']
+      }
+    ]
   });
 
   Activity.associate = (models) => {

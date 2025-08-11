@@ -113,31 +113,30 @@ module.exports = (sequelize) => {
         }
       },
     },
-    // indexes: [
-    //   {
-    //     name: 'courses_instructor_index',
-    //     fields: ['instructorId'],
-    //   },
-    //   {
-    //     name: 'courses_category_index',
-    //     fields: ['category']
-    //   },
-    //   {
-    //     name: 'courses_status_index',
-    //     fields: ['status'],
-    //   },
-    //   {
-    //     name: 'courses_title_search_index',
-    //     fields: ['title'],
-    //     using: 'BTREE',
-    //   },
-    //   // Índice para slugs (URLs amigáveis)
-    //   {
-    //     name: 'courses_slug_index',
-    //     fields: ['slug'],
-    //     unique: true,
-    //   }
-    // ],
+    indexes: [
+      {
+        name: 'courses_instructor_index',
+        fields: ['instructorId'],
+      },
+      {
+        name: 'courses_category_index',
+        fields: ['category']
+      },
+      {
+        name: 'courses_status_index',
+        fields: ['status'],
+      },
+      {
+        name: 'courses_title_search_index',
+        fields: ['title'],
+        using: 'BTREE',
+      },
+      {
+        name: 'courses_slug_index',
+        fields: ['slug'],
+        unique: true,
+      }
+    ],
   });
 
   Course.associate = (models) => {

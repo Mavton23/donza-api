@@ -34,14 +34,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'chat_messages',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['chatId', 'createdAt']
-      //   },
-      //   {
-      //     fields: ['isOnTopic']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['chatId', 'createdAt']
+        },
+        {
+          fields: ['isOnTopic']
+        }
+      ]
     });
   
     ChatMessage.associate = (models) => {

@@ -77,15 +77,15 @@ module.exports = (sequelize) => {
     tableName: 'communities',
     timestamps: true,
     paranoid: true,
-    // indexes: [
-    //   {
-    //     unique: true,
-    //     fields: ['slug']
-    //   },
-    //   {
-    //     fields: ['tags']
-    //   }
-    // ]
+    indexes: [
+      {
+        unique: true,
+        fields: ['slug']
+      },
+      {
+        fields: ['tags']
+      }
+    ]
   });
   
     Community.associate = (models) => {

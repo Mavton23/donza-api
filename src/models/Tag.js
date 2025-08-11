@@ -24,15 +24,15 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'tags',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['name'],
-      //     unique: true
-      //   },
-      //   {
-      //     fields: ['isSystemTag']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['name'],
+          unique: true
+        },
+        {
+          fields: ['isSystemTag']
+        }
+      ]
     });
   
     Tag.associate = (models) => {

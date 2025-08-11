@@ -39,14 +39,14 @@ module.exports = (sequelize) => {
     }, {
       tableName: 'group_meetings',
       timestamps: true,
-      // indexes: [
-      //   {
-      //     fields: ['groupId']
-      //   },
-      //   {
-      //     fields: ['startTime']
-      //   }
-      // ]
+      indexes: [
+        {
+          fields: ['groupId']
+        },
+        {
+          fields: ['startTime']
+        }
+      ]
     });
   
     GroupMeeting.associate = (models) => {
