@@ -20,14 +20,14 @@ module.exports = (sequelize) => {
       tableName: 'content_reports'
     });
   
-    ContentReport.associate = (models) => {
-      ContentReport.belongsTo(models.User, {
-        foreignKey: 'reporterId'
-      });
-      ContentReport.belongsTo(models.DiscussionTopic, {
-        foreignKey: 'topicId'
-      });
-    };
+    // ContentReport.associate = (models) => {
+    //   ContentReport.belongsTo(models.User, {
+    //     foreignKey: 'reporterId'
+    //   });
+    //   ContentReport.belongsTo(models.DiscussionTopic, {
+    //     foreignKey: 'topicId'
+    //   });
+    // };
   
     return ContentReport;
   };

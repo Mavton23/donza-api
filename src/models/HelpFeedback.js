@@ -34,17 +34,17 @@ module.exports = (sequelize) => {
     ],
   });
 
-  HelpFeedback.associate = (models) => {
-    HelpFeedback.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user',
-    });
+  // HelpFeedback.associate = (models) => {
+  //   HelpFeedback.belongsTo(models.User, {
+  //     foreignKey: 'userId',
+  //     as: 'user',
+  //   });
     
-    HelpFeedback.belongsTo(models.HelpArticle, {
-      foreignKey: 'articleId',
-      as: 'article',
-    });
-  };
+  //   HelpFeedback.belongsTo(models.HelpArticle, {
+  //     foreignKey: 'articleId',
+  //     as: 'article',
+  //   });
+  // };
 
   return HelpFeedback;
 };

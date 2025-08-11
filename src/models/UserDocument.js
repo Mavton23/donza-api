@@ -92,16 +92,16 @@ module.exports = (sequelize) => {
     ]
   });
 
-  UserDocument.associate = models => {
-    UserDocument.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user'
-    });
-    UserDocument.belongsTo(models.User, {
-      foreignKey: 'reviewedBy',
-      as: 'reviewer'
-    });
-  };
+  // UserDocument.associate = models => {
+  //   UserDocument.belongsTo(models.User, {
+  //     foreignKey: 'userId',
+  //     as: 'user'
+  //   });
+  //   UserDocument.belongsTo(models.User, {
+  //     foreignKey: 'reviewedBy',
+  //     as: 'reviewer'
+  //   });
+  // };
 
   return UserDocument;
 };

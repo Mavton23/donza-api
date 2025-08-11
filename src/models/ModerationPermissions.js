@@ -19,7 +19,7 @@ module.exports = (sequelize) => {
         }
         }, {
             tableName: 'moderation_permissions'
-        });
+    });
     
     return ModerationPermissions;
 }

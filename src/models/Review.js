@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   const Review = sequelize.define('Review', {
     reviewId: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      defaultValue: () => uuidv4(),
       primaryKey: true,
     },
     entityType: {
@@ -54,35 +54,35 @@ module.exports = (sequelize) => {
     ],
   });
 
-  Review.associate = (models) => {
-    Review.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user',
-    });
+  // Review.associate = (models) => {
+  //   Review.belongsTo(models.User, {
+  //     foreignKey: 'userId',
+  //     as: 'user',
+  //   });
     
-    Review.belongsTo(models.Course, {
-      foreignKey: 'entityId',
-      as: 'course',
-      constraints: false,
-    });
+  //   Review.belongsTo(models.Course, {
+  //     foreignKey: 'entityId',
+  //     as: 'course',
+  //     constraints: false,
+  //   });
     
-    Review.belongsTo(models.Event, {
-      foreignKey: 'entityId',
-      constraints: false,
-      scope: {
-        entityType: 'event',
-      },
-    });
+  //   Review.belongsTo(models.Event, {
+  //     foreignKey: 'entityId',
+  //     constraints: false,
+  //     scope: {
+  //       entityType: 'event',
+  //     },
+  //   });
     
-    Review.belongsTo(models.User, {
-      foreignKey: 'entityId',
-      as: 'instructor',
-      constraints: false,
-      scope: {
-        entityType: 'instructor',
-      },
-    });
-  };
+  //   Review.belongsTo(models.User, {
+  //     foreignKey: 'entityId',
+  //     as: 'instructor',
+  //     constraints: false,
+  //     scope: {
+  //       entityType: 'instructor',
+  //     },
+  //   });
+  // };
 
   return Review;
 };

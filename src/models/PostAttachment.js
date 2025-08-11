@@ -51,16 +51,16 @@ module.exports = (sequelize) => {
       ]
     });
   
-    PostAttachment.associate = (models) => {
-      PostAttachment.belongsTo(models.CommunityPost, {
-        foreignKey: 'postId',
-        as: 'post'
-      });
-      PostAttachment.belongsTo(models.User, {
-        foreignKey: 'uploadedById',
-        as: 'uploadedBy'
-      });
-    };
+    // PostAttachment.associate = (models) => {
+    //   PostAttachment.belongsTo(models.CommunityPost, {
+    //     foreignKey: 'postId',
+    //     as: 'post'
+    //   });
+    //   PostAttachment.belongsTo(models.User, {
+    //     foreignKey: 'uploadedById',
+    //     as: 'uploadedBy'
+    //   });
+    // };
   
     return PostAttachment;
   };

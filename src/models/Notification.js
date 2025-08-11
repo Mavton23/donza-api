@@ -133,23 +133,23 @@ module.exports = (sequelize) => {
       ]
     });
   
-    Notification.associate = (models) => {
-      Notification.belongsTo(models.User, {
-        foreignKey: 'userId',
-        as: 'user'
-      });
-      Notification.belongsTo(models.Course, {
-        foreignKey: 'relatedEntityId',
-        constraints: false,
-        as: 'course'
-      });
+    // Notification.associate = (models) => {
+    //   Notification.belongsTo(models.User, {
+    //     foreignKey: 'userId',
+    //     as: 'user'
+    //   });
+    //   Notification.belongsTo(models.Course, {
+    //     foreignKey: 'relatedEntityId',
+    //     constraints: false,
+    //     as: 'course'
+    //   });
 
-      Notification.belongsTo(models.Event, {
-        foreignKey: 'relatedEntityId',
-        constraints: false,
-        as: 'event'
-      });
-    };
+    //   Notification.belongsTo(models.Event, {
+    //     foreignKey: 'relatedEntityId',
+    //     constraints: false,
+    //     as: 'event'
+    //   });
+    // };
   
     return Notification;
   };

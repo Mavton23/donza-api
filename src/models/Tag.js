@@ -35,12 +35,12 @@ module.exports = (sequelize) => {
       ]
     });
   
-    Tag.associate = (models) => {
-      Tag.belongsToMany(models.CommunityPost, {
-        through: 'PostTags',
-        as: 'posts'
-      });
-    };
+    // Tag.associate = (models) => {
+    //   Tag.belongsToMany(models.CommunityPost, {
+    //     through: 'PostTags',
+    //     as: 'posts'
+    //   });
+    // };
   
     return Tag;
   };

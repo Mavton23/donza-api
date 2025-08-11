@@ -19,14 +19,14 @@ module.exports = (sequelize) => {
     timestamps: false
   });
 
-  ChatMember.associate = (models) => {
-    ChatMember.belongsTo(models.GroupChat, {
-      foreignKey: 'chatId'
-    });
-    ChatMember.belongsTo(models.User, {
-      foreignKey: 'userId'
-    });
-  };
+  // ChatMember.associate = (models) => {
+  //   ChatMember.belongsTo(models.GroupChat, {
+  //     foreignKey: 'chatId'
+  //   });
+  //   ChatMember.belongsTo(models.User, {
+  //     foreignKey: 'userId'
+  //   });
+  // };
 
   return ChatMember;
 };

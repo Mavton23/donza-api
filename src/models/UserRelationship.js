@@ -40,17 +40,17 @@ module.exports = (sequelize) => {
     ]
   });
 
-  UserRelationship.associate = (models) => {
-    UserRelationship.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'initiator',
-    });
+  // UserRelationship.associate = (models) => {
+  //   UserRelationship.belongsTo(models.User, {
+  //     foreignKey: 'userId',
+  //     as: 'initiator',
+  //   });
 
-    UserRelationship.belongsTo(models.User, {
-      foreignKey: 'relatedUserId',
-      as: 'target',
-    });
-  };
+  //   UserRelationship.belongsTo(models.User, {
+  //     foreignKey: 'relatedUserId',
+  //     as: 'target',
+  //   });
+  // };
 
   return UserRelationship;
 };

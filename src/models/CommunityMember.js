@@ -34,18 +34,18 @@ module.exports = (sequelize) => {
       ]
     });
   
-    CommunityMember.associate = (models) => {
-      CommunityMember.belongsTo(models.Community, {
-        foreignKey: 'communityId'
-      });
-      CommunityMember.belongsTo(models.User, {
-        foreignKey: 'userId'
-      });
-      CommunityMember.belongsToMany(models.CommunityRole, {
-        through: models.CommunityMemberRole,
-        as: 'roles'
-      });
-    };
+    // CommunityMember.associate = (models) => {
+    //   CommunityMember.belongsTo(models.Community, {
+    //     foreignKey: 'communityId'
+    //   });
+    //   CommunityMember.belongsTo(models.User, {
+    //     foreignKey: 'userId'
+    //   });
+    //   CommunityMember.belongsToMany(models.CommunityRole, {
+    //     through: models.CommunityMemberRole,
+    //     as: 'roles'
+    //   });
+    // };
   
     return CommunityMember;
   };

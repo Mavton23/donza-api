@@ -56,16 +56,16 @@ module.exports = (sequelize) => {
       ]
     });
   
-    Message.associate = (models) => {
-      Message.belongsTo(models.User, {
-        foreignKey: 'senderId',
-        as: 'sender'
-      });
-      Message.belongsTo(models.Conversation, {
-        foreignKey: 'conversationId',
-        as: 'conversation'
-      });
-    };
+    // Message.associate = (models) => {
+    //   Message.belongsTo(models.User, {
+    //     foreignKey: 'senderId',
+    //     as: 'sender'
+    //   });
+    //   Message.belongsTo(models.Conversation, {
+    //     foreignKey: 'conversationId',
+    //     as: 'conversation'
+    //   });
+    // };
   
     return Message;
   };

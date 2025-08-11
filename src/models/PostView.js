@@ -32,16 +32,16 @@ module.exports = (sequelize) => {
       ]
     });
   
-    PostView.associate = (models) => {
-      PostView.belongsTo(models.CommunityPost, {
-        foreignKey: 'postId',
-        as: 'post'
-      });
-      PostView.belongsTo(models.User, {
-        foreignKey: 'userId',
-        as: 'user'
-      });
-    };
+    // PostView.associate = (models) => {
+    //   PostView.belongsTo(models.CommunityPost, {
+    //     foreignKey: 'postId',
+    //     as: 'post'
+    //   });
+    //   PostView.belongsTo(models.User, {
+    //     foreignKey: 'userId',
+    //     as: 'user'
+    //   });
+    // };
   
     return PostView;
   };

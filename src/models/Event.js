@@ -52,24 +52,24 @@ module.exports = (sequelize) => {
     tableName: 'events',
   });
 
-  Event.associate = (models) => {
-    Event.belongsToMany(models.User, {
-        through: models.EventParticipant,
-        as: 'participants',
-        foreignKey: 'eventId',
-    });
+  // Event.associate = (models) => {
+  //   Event.belongsToMany(models.User, {
+  //       through: models.EventParticipant,
+  //       as: 'participants',
+  //       foreignKey: 'eventId',
+  //   });
 
-    Event.belongsTo(models.User, {
-      foreignKey: 'organizerId',
-      as: 'organizer'
-    });
+  //   Event.belongsTo(models.User, {
+  //     foreignKey: 'organizerId',
+  //     as: 'organizer'
+  //   });
 
-    Event.hasMany(models.Certificate, {
-      foreignKey: 'eventId',
-      as: 'certificates'
-    });
+  //   Event.hasMany(models.Certificate, {
+  //     foreignKey: 'eventId',
+  //     as: 'certificates'
+  //   });
   
-  }
+  // }
 
   return Event;
 };

@@ -31,16 +31,16 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    CommunityRole.associate = (models) => {
-      CommunityRole.belongsTo(models.Community, {
-        foreignKey: 'communityId',
-        as: 'community'
-      });
-      CommunityRole.belongsToMany(models.User, {
-        through: models.CommunityMemberRole,
-        as: 'members'
-      });
-    };
+    // CommunityRole.associate = (models) => {
+    //   CommunityRole.belongsTo(models.Community, {
+    //     foreignKey: 'communityId',
+    //     as: 'community'
+    //   });
+    //   CommunityRole.belongsToMany(models.User, {
+    //     through: models.CommunityMemberRole,
+    //     as: 'members'
+    //   });
+    // };
   
     return CommunityRole;
   };

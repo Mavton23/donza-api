@@ -49,20 +49,20 @@ module.exports = (sequelize) => {
       ]
     });
   
-    GroupMeeting.associate = (models) => {
-      GroupMeeting.belongsTo(models.StudyGroup, {
-        foreignKey: 'groupId',
-        as: 'studyGroup'
-      });
-      GroupMeeting.belongsTo(models.User, {
-        foreignKey: 'organizerId',
-        as: 'organizer'
-      });
-      GroupMeeting.belongsToMany(models.User, {
-        through: 'MeetingParticipants',
-        as: 'participants'
-      });
-    };
+    // GroupMeeting.associate = (models) => {
+    //   GroupMeeting.belongsTo(models.StudyGroup, {
+    //     foreignKey: 'groupId',
+    //     as: 'studyGroup'
+    //   });
+    //   GroupMeeting.belongsTo(models.User, {
+    //     foreignKey: 'organizerId',
+    //     as: 'organizer'
+    //   });
+    //   GroupMeeting.belongsToMany(models.User, {
+    //     through: 'MeetingParticipants',
+    //     as: 'participants'
+    //   });
+    // };
   
     return GroupMeeting;
   };

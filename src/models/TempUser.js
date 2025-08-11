@@ -122,12 +122,12 @@ module.exports = (sequelize) => {
     }
   });
 
-  TempUser.associate = models => {
-    TempUser.hasMany(models.UserDocument, {
-      foreignKey: 'tempUserId',
-      as: 'tempDocuments'
-    });
-  };
+  // TempUser.associate = models => {
+  //   TempUser.hasMany(models.UserDocument, {
+  //     foreignKey: 'tempUserId',
+  //     as: 'tempDocuments'
+  //   });
+  // };
 
   return TempUser;
 };

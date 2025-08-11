@@ -44,13 +44,13 @@ module.exports = (sequelize) => {
     ],
   });
 
-  HelpCategory.associate = (models) => {
-    HelpCategory.hasMany(models.HelpArticle, {
-      foreignKey: 'category',
-      sourceKey: 'name',
-      as: 'articles',
-    });
-  };
+  // HelpCategory.associate = (models) => {
+  //   HelpCategory.hasMany(models.HelpArticle, {
+  //     foreignKey: 'category',
+  //     sourceKey: 'name',
+  //     as: 'articles',
+  //   });
+  // };
 
   return HelpCategory;
 };

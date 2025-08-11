@@ -108,36 +108,36 @@ module.exports = (sequelize) => {
       ]
     });
   
-    CommunityPost.associate = (models) => {
-      CommunityPost.belongsTo(models.Community, {
-        foreignKey: 'communityId',
-        as: 'community'
-      });
-      CommunityPost.belongsTo(models.User, {
-        foreignKey: 'authorId',
-        as: 'author'
-      });
-      CommunityPost.hasMany(models.PostComment, {
-        foreignKey: 'postId',
-        as: 'comments'
-      });
-      CommunityPost.hasMany(models.PostReaction, {
-        foreignKey: 'postId',
-        as: 'reactions'
-      });
-      CommunityPost.belongsToMany(models.Tag, {
-        through: 'PostTags',
-        as: 'tags'
-      });
-      CommunityPost.belongsToMany(models.LearningObjective, {
-        through: 'PostObjectives',
-        as: 'objectives'
-      });
-      CommunityPost.hasMany(models.PostAttachment, {
-        foreignKey: 'postId',
-        as: 'attachments'
-      })
-    };
+    // CommunityPost.associate = (models) => {
+    //   CommunityPost.belongsTo(models.Community, {
+    //     foreignKey: 'communityId',
+    //     as: 'community'
+    //   });
+    //   CommunityPost.belongsTo(models.User, {
+    //     foreignKey: 'authorId',
+    //     as: 'author'
+    //   });
+    //   CommunityPost.hasMany(models.PostComment, {
+    //     foreignKey: 'postId',
+    //     as: 'comments'
+    //   });
+    //   CommunityPost.hasMany(models.PostReaction, {
+    //     foreignKey: 'postId',
+    //     as: 'reactions'
+    //   });
+    //   CommunityPost.belongsToMany(models.Tag, {
+    //     through: 'PostTags',
+    //     as: 'tags'
+    //   });
+    //   CommunityPost.belongsToMany(models.LearningObjective, {
+    //     through: 'PostObjectives',
+    //     as: 'objectives'
+    //   });
+    //   CommunityPost.hasMany(models.PostAttachment, {
+    //     foreignKey: 'postId',
+    //     as: 'attachments'
+    //   })
+    // };
   
     return CommunityPost;
   };

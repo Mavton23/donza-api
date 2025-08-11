@@ -55,16 +55,16 @@ module.exports = (sequelize) => {
       timestamps: true
     });
   
-    Submission.associate = (models) => {
-      Submission.belongsTo(models.User, {
-        foreignKey: 'userId',
-        as: 'student'
-      });
-      Submission.belongsTo(models.Assignment, {
-        foreignKey: 'assignmentId',
-        as: 'assignment'
-      });
-    };
+    // Submission.associate = (models) => {
+    //   Submission.belongsTo(models.User, {
+    //     foreignKey: 'userId',
+    //     as: 'student'
+    //   });
+    //   Submission.belongsTo(models.Assignment, {
+    //     foreignKey: 'assignmentId',
+    //     as: 'assignment'
+    //   });
+    // };
   
     return Submission;
   };

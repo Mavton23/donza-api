@@ -84,18 +84,18 @@ module.exports = (sequelize) => {
     }
   });
 
-  Billing.associate = (models) => {
-    Billing.belongsTo(models.User, {
-      foreignKey: 'institutionId',
-      as: 'institution',
-      onDelete: 'CASCADE'
-    });
+  // Billing.associate = (models) => {
+  //   Billing.belongsTo(models.User, {
+  //     foreignKey: 'institutionId',
+  //     as: 'institution',
+  //     onDelete: 'CASCADE'
+  //   });
 
-    Billing.hasMany(models.Invoice, {
-      foreignKey: 'billingId',
-      as: 'invoices'
-    });
-  };
+  //   Billing.hasMany(models.Invoice, {
+  //     foreignKey: 'billingId',
+  //     as: 'invoices'
+  //   });
+  // };
 
   return Billing;
 };

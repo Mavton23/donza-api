@@ -45,19 +45,19 @@ module.exports = (sequelize) => {
       ]
     });
   
-    DiscussionTopic.associate = (models) => {
-      DiscussionTopic.belongsTo(models.StudyGroup, {
-        foreignKey: 'groupId'
-      });
-      DiscussionTopic.belongsTo(models.User, {
-        foreignKey: 'authorId',
-        as: 'author'
-      });
-      DiscussionTopic.hasMany(models.DiscussionReply, {
-        foreignKey: 'topicId',
-        as: 'replies'
-      });
-    };
+    // DiscussionTopic.associate = (models) => {
+    //   DiscussionTopic.belongsTo(models.StudyGroup, {
+    //     foreignKey: 'groupId'
+    //   });
+    //   DiscussionTopic.belongsTo(models.User, {
+    //     foreignKey: 'authorId',
+    //     as: 'author'
+    //   });
+    //   DiscussionTopic.hasMany(models.DiscussionReply, {
+    //     foreignKey: 'topicId',
+    //     as: 'replies'
+    //   });
+    // };
   
     return DiscussionTopic;
   };

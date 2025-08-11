@@ -34,14 +34,14 @@ module.exports = (sequelize) => {
         ]
     });
 
-    UserLesson.associate = (models) => {
-        UserLesson.belongsTo(models.User, {
-            foreignKey: 'userId'
-        });
-        UserLesson.belongsTo(models.Lesson, {
-            foreignKey: 'lessonId'
-        });
-    };
+    // UserLesson.associate = (models) => {
+    //     UserLesson.belongsTo(models.User, {
+    //         foreignKey: 'userId'
+    //     });
+    //     UserLesson.belongsTo(models.Lesson, {
+    //         foreignKey: 'lessonId'
+    //     });
+    // };
 
     return UserLesson;
 };

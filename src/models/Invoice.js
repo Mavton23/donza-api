@@ -57,12 +57,12 @@ module.exports = (sequelize) => {
     ]
   });
 
-  Invoice.associate = (models) => {
-    Invoice.belongsTo(models.Billing, {
-      foreignKey: 'billingId',
-      as: 'billing'
-    });
-  };
+  // Invoice.associate = (models) => {
+  //   Invoice.belongsTo(models.Billing, {
+  //     foreignKey: 'billingId',
+  //     as: 'billing'
+  //   });
+  // };
 
   return Invoice;
 };
