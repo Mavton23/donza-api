@@ -50,10 +50,9 @@ const startServer = async () => {
     const apiRouter = require('./src/routes/index');
     app.use('/api', apiRouter);
 
-    app.use(errorHandler);
 
     // Inicia servidor
-    server.listen(port, () => {
+    app.listen(port, () => {
       logger.info(`API & WEBSOCKET SERVER RUNNIG ON ${port} PORT`);
     });
   } catch (error) {
