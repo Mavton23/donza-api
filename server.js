@@ -41,10 +41,10 @@ app.use(errorHandler);
 
 const startServer = async () => {
   try {
-    // await syncDatabase({
-    //   force: process.env.DB_FORCE_SYNC === 'true',
-    //   alter: process.env.DB_ALTER_SYNC === 'true'
-    // })
+    await syncDatabase({
+      force: process.env.DB_FORCE_SYNC === 'true',
+      alter: process.env.DB_ALTER_SYNC === 'true'
+    })
 
     // Rotas da API
     const apiRouter = require('./src/routes/index');
