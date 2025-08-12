@@ -61,9 +61,9 @@ const syncOrder = [
     // 'ContentReport',
     // 'ModerationPermissions',
     // 'ContentScanResult',
-    // 'HelpArticle',
-    'HelpFeedback',
-    'HelpCategory'
+    'HelpArticle',
+    // 'HelpFeedback',
+    // 'HelpCategory'
 ];
 
 const syncDatabase = async (options = {}) => {
