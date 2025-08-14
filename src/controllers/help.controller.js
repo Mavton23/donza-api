@@ -188,7 +188,7 @@ module.exports = {
             const topics = await HelpArticle.findAll({
                 order: [['viewCount', 'DESC']],
                 limit: 5,
-                attributes: ['title', 'slug'],
+                attributes: ['articleId', 'title', 'slug'],
             });
             
             res.json(topics);
