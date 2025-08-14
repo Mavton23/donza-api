@@ -41,17 +41,17 @@ app.use(errorHandler);
 
 const startServer = async () => {
   try {
-    await syncDatabase({
-      force: process.env.DB_FORCE_SYNC === 'true',
-      alter: process.env.DB_ALTER_SYNC === 'true'
-    })
+    // await syncDatabase({
+    //   force: process.env.DB_FORCE_SYNC === 'true',
+    //   alter: process.env.DB_ALTER_SYNC === 'true'
+    // })
 
     // Rotas da API
     const apiRouter = require('./src/routes/index');
     app.use('/api', apiRouter);
 
     // Inicia servidor
-    server.listen(port, () => {
+    app.listen(port, () => {
       logger.info(`API & WEBSOCKET SERVER RUNNIG ON ${port} PORT`);
     });
   } catch (error) {
