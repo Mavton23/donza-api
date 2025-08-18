@@ -23,8 +23,6 @@ app.use(morgan('dev'));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
-app.use(errorHandler);
-
 // Cria servidor HTTP
 // const server = createServer(app);
 
@@ -49,6 +47,9 @@ const startServer = async () => {
     // Rotas da API
     const apiRouter = require('./src/routes/index');
     app.use('/api', apiRouter);
+
+    // Handler de erros para o frontend
+    app.use(errorHandler);
 
     // Inicia servidor
     app.listen(port, () => {
