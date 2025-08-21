@@ -4,7 +4,7 @@ const communityController = require('../controllers/community.controller');
 const authenticate = require('../middleware/authenticate');
 const authorize = require('../middleware/authorize');
 const { checkUserStatus } = require('../middleware/checkUserStatus');
-const { singleImage, handleUploadErrors } = require('../middleware/upload');
+const { communityUpload, handleUploadErrors } = require('../middleware/upload');
 
 router.use(authenticate);
 
@@ -15,11 +15,9 @@ router.get('/communities/:communityId',
   communityController.getCommunityDetails
 );
 
-
-// Operações básicas de comunidades
 router.post('/communities', 
   checkUserStatus(),
-  singleImage,
+  communityUpload,
   handleUploadErrors, 
 communityController.createCommunity);
 

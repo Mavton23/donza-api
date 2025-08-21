@@ -255,12 +255,20 @@ getCommunities: async (req, res, next) => {
       let coverImageUrl, thumbnailImageUrl;
       
       if (req.files?.coverImage) {
-        const result = await uploadToCloudinary(req.files.coverImage[0].path);
+        const result = await uploadToCloudinary(
+          req.files.coverImage[0],
+          'communities/cover',
+          ['jpg', 'jpeg', 'png', 'webp']
+        );
         coverImageUrl = result.secure_url;
       }
 
       if (req.files?.thumbnailImage) {
-        const result = await uploadToCloudinary(req.files.thumbnailImage[0].path);
+        const result = await uploadToCloudinary(
+          req.files.thumbnailImage[0],
+          'communities/thumbnail', 
+          ['jpg', 'jpeg', 'png', 'webp']
+        );
         thumbnailImageUrl = result.secure_url;
       }
 

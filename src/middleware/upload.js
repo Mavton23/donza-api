@@ -1,5 +1,4 @@
 const multer = require('multer');
-const path = require('path');
 const { MAX_FILE_SIZE, ALLOWED_FILE_TYPES, DOCUMENT_TYPES } = require('../constants/constants');
 
 // Configuração para armazenamento em memória (ideal para Cloudinary)
@@ -27,6 +26,25 @@ const uploadStrategies = {
     limits: { fileSize: MAX_FILE_SIZE.IMAGE }
   }).single('coverImage'),
 
+  communityUpload: multer({
+      storage: memoryStorage,
+      fileFilter: (req, file, cb) => {
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+        if (allowedTypes.includes(file.mimetype)) {
+          cb(null, true);
+        } else {
+          cb(new Error('Apenas imagens são permitidas'), false);
+        }
+      },
+      limits: {
+        fileSize: 10 * 1024 * 1024,
+        files: 2,
+        fieldSize: 20 * 1024 * 1024
+      }
+    }).fields([
+      { name: 'coverImage', maxCount: 1 },
+      { name: 'thumbnailImage', maxCount: 1 }
+    ]),
 
   // Configuração para avatares
     avatarUpload: multer({
