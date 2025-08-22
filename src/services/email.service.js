@@ -158,8 +158,8 @@ const sendVerificationEmail = async (email, verificationToken) => {
     const emailHtml = emailTemplates['verification']({
       verificationUrl,
       email,
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com',
-      helpUrl: "https://donza.com/ajuda",
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com',
+      helpUrl: "https://donza.com/help",
       terms,
       privacy,
       appName: process.env.APP_NAME || 'Donza',
@@ -197,8 +197,9 @@ const sendRegistrationCompleteEmail = async (user) => {
       username: user.username,
       fullName: user.fullName,
       appName: process.env.APP_NAME || 'Donza',
+      loginUrl: `${process.env.FRONTEND_URL}/login`,
       dashboardUrl: `${process.env.FRONTEND_URL}/dashboard`,
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com'
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com'
     });
 
     // Configuração do email
@@ -235,7 +236,7 @@ const sendPasswordResetEmail = async (user, resetToken) => {
     const emailHtml = emailTemplates['password-reset']({
       username: user.username,
       resetUrl,
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com',
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com',
       appName: process.env.APP_NAME || 'Donza',
       expirationHours: 1
     });
@@ -273,7 +274,7 @@ const sendPasswordChangedEmail = async (user) => {
       fullName: user.fullName,
       appName: process.env.APP_NAME || 'Donza',
       loginUrl: `${process.env.FRONTEND_URL}/login`,
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com'
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com'
     })
     
     const mailOptions = {
@@ -282,7 +283,7 @@ const sendPasswordChangedEmail = async (user) => {
       subject: 'Senha alterada com sucesso',
       html: emailHtml,
       text: `Olá ${user.username},\n\nSua senha foi alterada com sucesso em ${new Date().toLocaleString('pt-BR')}.\n\n` +
-            `Se você não realizou esta alteração, entre em contato com: ${process.env.SUPPORT_EMAIL || 'suporte@donza.com'}\n\n` +
+            `Se você não realizou esta alteração, entre em contato com: ${process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com'}\n\n` +
             `Atenciosamente,\nEquipe ${process.env.APP_NAME || 'Donza'}`
       };
 
@@ -311,7 +312,7 @@ const sendAccountApprovedEmail = async (email, username, reviewer) => {
       loginUrl: `${process.env.FRONTEND_URL}/login`,
       terms: `${process.env.FRONTEND_URL}/terms`,
       privacy:  `${process.env.FRONTEND_URL}/privacy`,
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com',
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com',
       currentYear: new Date().getFullYear()
     });
 
@@ -352,7 +353,7 @@ const sendAccountRejectedEmail = async (email, username, reviewer, reason) => {
       reviewer,
       reason,
       appName: process.env.APP_NAME || 'Donza',
-      supportEmail: process.env.SUPPORT_EMAIL || 'suporte@donza.com',
+      supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com',
       helpUrl: "https://donza.com/ajuda",
       currentYear: new Date().getFullYear()
     });
@@ -365,7 +366,7 @@ const sendAccountRejectedEmail = async (email, username, reviewer, reason) => {
       html: emailHtml,
       text: `Olá ${username},\n\nLamentamos informar que sua solicitação de conta no ${process.env.APP_NAME || 'Donza'} não foi aprovada por ${reviewer}.\n\n` +
             `Motivo: ${reason}\n\n` +
-            `Se você acredita que houve um engano ou deseja mais informações, entre em contato com nosso suporte: ${process.env.SUPPORT_EMAIL || 'suporte@donza.com'}\n\n` +
+            `Se você acredita que houve um engano ou deseja mais informações, entre em contato com nosso suporte: ${process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com'}\n\n` +
             `Atenciosamente,\nEquipe ${process.env.APP_NAME || 'Donza'}`
     };
 
