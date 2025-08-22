@@ -11,6 +11,11 @@ router.get('/notifications',
   notificationController.getUserNotifications
 );
 
+router.get('/has-unread',
+  authenticate,
+  notificationController.hasUnreadNotifications
+);
+
 router.get('/notifications/preferences',
   authenticate,
   notificationController.getPreferences

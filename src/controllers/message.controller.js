@@ -584,6 +584,50 @@ sendMessage: async (req, res, next) => {
   },
 
   /**
+  * Verifica se existem mensagens não lidas
+  */
+  hasUnreadMessages: async (req, res, next) => {
+    try {
+      const currentUserId = req.user.userId;
+
+      const userConversations = await ConversationParticipant.findAll({
+        where: { userId: currentUserId },
+        attributes: ['conversationId'],
+        raw: true
+      });
+
+      if (userConversations.length === 0) {
+        return res.json({
+          success: true,
+          hasUnread: false,
+          count: 0
+        });
+      }
+
+      const conversationIds = userConversations.map(uc => uc.conversationId);
+
+      // Subquery para contar mensagens não lidas
+      const unreadCount = await Message.count({
+        where: {
+          conversationId: { [Op.in]: conversationIds },
+          isRead: false,
+          senderId: { [Op.ne]: currentUserId }
+        }
+      });
+
+      res.json({
+        success: true,
+        hasUnread: unreadCount > 0,
+        count: unreadCount
+      });
+
+    } catch (error) {
+      console.error("Error checking unread messages:", error);
+      next(error);
+    }
+  },
+
+  /**
    * @function getTodayMessageCount
    * @description Obtém a contagem de mensagens enviadas pelo usuário hoje
    * @param {import('express').Request} req - Objeto da requisição

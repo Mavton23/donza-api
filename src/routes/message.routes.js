@@ -24,6 +24,12 @@ router.get('/conversations',
   authenticate,
   messageController.getUserConversations
 );
+
+router.get('/has-unread',
+  authenticate,
+  messageController.hasUnreadMessages
+);
+
 router.post('/conversations/:conversationId/messages', 
   authenticate,
   messageController.verifyConversationAccess, 

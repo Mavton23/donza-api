@@ -75,6 +75,33 @@ module.exports = {
   },
 
   /**
+   * Obtém o status de notificações do usuário 
+   */
+  hasUnreadNotifications: async (req, res, next) => {
+    try {
+      const currentUserId = req.user.userId;
+
+      // Verifica se há notificações não lidas
+      const unreadCount = await Notification.count({
+        where: {
+          userId: currentUserId,
+          isRead: false
+        }
+      });
+
+      res.json({
+        success: true,
+        hasUnread: unreadCount > 0,
+        count: unreadCount
+      });
+
+    } catch (error) {
+      console.error("Error checking unread notifications:", error);
+      next(error);
+    }
+  },
+
+  /**
    * Versão administrativa para visualizar notificações de qualquer usuário
    */
   getUserNotificationsAdmin: async (req, res, next) => {
