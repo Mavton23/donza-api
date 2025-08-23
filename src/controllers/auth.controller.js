@@ -686,15 +686,14 @@ module.exports = {
                 { where: { userId: user.userId } }
             );
 
+            // Transformar em objeto e remover a password
+            const userData = user.toJSON();
+            delete userData.password;
+
             res.json({
                 success: true,
                 data: {
-                    userId: user.userId,
-                    username: user.username,
-                    email: user.email,
-                    role: user.role,
-                    status: user.status,
-                    avatarUrl: user.avatarUrl,
+                    user: userData,
                     accessToken,
                     refreshToken
                 }

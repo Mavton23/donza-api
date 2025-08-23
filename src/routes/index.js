@@ -14,6 +14,7 @@ const lessonRoutes = require('./lessons.routes');
 const eventRoutes = require('./events.routes');
 const reviewsRoutes = require('./review.routes.js');
 const assignmentRoutes = require('./assignment.routes.js');
+const paymentsRoutes = require('./payment.routes.js');
 const certificateRoutes = require('./certificate.routes.js');
 const conversationRoutes = require('./message.routes');
 const helpRoutes = require('./help.routes');
@@ -64,6 +65,9 @@ router.use('/certificates', certificateRoutes);
 
 // Rotas de tarefas
 router.use('/assignment', assignmentRoutes);
+
+// Rotas de pagamentos
+router.use('/payments', paymentsRoutes);
 
 // Rotas de messagens
 router.use('/conversation', conversationRoutes);

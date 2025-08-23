@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
       defaultValue: 'incomplete',
     },
     paymentMethod: {
-      type: DataTypes.ENUM('credit_card', 'pix', 'bank_transfer', 'boleto'),
+      type: DataTypes.ENUM('credit_card', 'pix', 'bank_transfer', 'boleto', 'mobile_method'),
       allowNull: true,
     },
     cardLast4: {
@@ -34,6 +34,29 @@ module.exports = (sequelize) => {
       validate: {
         is: /^\d{4}$/
       }
+    },
+    cardBrand: {
+      type: DataTypes.ENUM('visa', 'mastercard', 'amex', 'elo', 'hipercard'),
+      allowNull: true
+    },
+    cardExpMonth: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: 1,
+          max: 12
+      }
+    },
+    cardExpYear: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+          min: new Date().getFullYear()
+      }
+    },
+    externalPaymentMethodId: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     currentPeriodStart: {
       type: DataTypes.DATE,

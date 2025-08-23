@@ -61,7 +61,7 @@ const syncOrder = [
     // 'ContentReport',
     // 'ModerationPermissions',
     // 'ContentScanResult',
-    'Testimonial',
+    'Billing',
     // 'HelpArticle',
     // 'HelpFeedback',
     // 'HelpCategory'
