@@ -62,14 +62,19 @@ module.exports = {
                 }, { transaction });
             }
             
-            await transaction.commit();
-
             // Enviar email de verificação
             try {
                 await sendVerificationEmail(email, verificationToken);
-            } catch (notifyError) {
-                console.error("Erro no envio de email: ", notifyError);
+            } catch (emailError) {
+                await transaction.rollback();
+                return res.status(400).json({
+                    success: false,
+                    message: 'Falha ao enviar email de verificação. Por favor, tente novamente.'
+                });
             }
+
+            // Se o email foi enviado com sucesso, commitar a transação
+            await transaction.commit();
 
         
             res.status(200).json({
@@ -78,7 +83,9 @@ module.exports = {
                 message: 'Email de verificação enviado com sucesso!'
             });
         } catch (error) {
-            transaction.rollback();
+            if (transaction.finished !== 'rollback') {
+                await transaction.rollback();
+            }
             next(error);
         }
     },

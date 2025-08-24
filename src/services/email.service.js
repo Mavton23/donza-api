@@ -159,7 +159,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
       verificationUrl,
       email,
       supportEmail: process.env.SUPPORT_EMAIL || 'nordinomaviedeveloper@gmail.com',
-      helpUrl: "https://donza.com/help",
+      helpUrl: `${process.env.FRONTEND_URL}/help` || 'https://donza.com/help',
       terms,
       privacy,
       appName: process.env.APP_NAME || 'Donza',
@@ -175,13 +175,18 @@ const sendVerificationEmail = async (email, verificationToken) => {
       text: `Olá ${email},\n\nPor favor, complete seu registro clicando no link abaixo:\n\n${verificationUrl}\n\nO link expirará em 24 horas.\n\nAtenciosamente,\nEquipe Donza`
     };
 
+    // Verifica conexão com o servidor SMTP
+        try {
+          await transporter.verify();
+        } catch (verifyError) {
+          throw new Error('Servidor de email indisponível');
+        }
+
     // Envia o email
     const info = await transporter.sendMail(mailOptions);
-    console.log(`Email de verificação enviado para ${email}: ${info.messageId}`);
     
     return info;
   } catch (error) {
-    console.error('Erro ao enviar email de verificação:', error instanceof Error ? error.message : error);
     throw new BadRequestError('Falha ao enviar email de verificação');
   }
 };
