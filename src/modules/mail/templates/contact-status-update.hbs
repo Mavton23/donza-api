@@ -1,0 +1,12 @@
+<h2>Olá {{name}},</h2>
+<div class="status-box">
+  <p>O estado do seu pedido foi atualizado:</p>
+  <div class="status-change"><span class="old-status">{{oldStatus}}</span> <span>→</span> <span class="new-status">{{newStatus}}</span></div>
+</div>
+<div class="details-box">
+  <div class="detail-row"><span class="detail-label">ID do pedido:</span><span class="detail-value">#{{requestId}}</span></div>
+  <div class="detail-row"><span class="detail-label">Método de contacto:</span><span class="detail-value">{{contactMethod}}</span></div>
+</div>
+{{#if supportEmail}}
+<p>Para mais informações, escreva para <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
+{{/if}}

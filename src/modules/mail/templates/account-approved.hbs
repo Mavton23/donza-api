@@ -1,0 +1,10 @@
+<h2>Olá {{username}},</h2>
+<p>É com grande satisfação que informamos que a sua conta na plataforma <strong>{{appName}}</strong> foi aprovada!</p>
+<div class="highlight-box"><p>A sua conta foi revista e aprovada por <strong>{{reviewer}}</strong>. Já tem acesso completo a todos os recursos da nossa plataforma de ensino.</p></div>
+<p>Já pode iniciar sessão e explorar todos os materiais, cursos e ferramentas disponíveis.</p>
+<div class="button-container"><a href="{{loginUrl}}" class="button">Aceder à minha conta</a></div>
+<p>Se precisar de ajuda para começar, consulte a nossa <a href="{{helpUrl}}">Central de Ajuda</a> ou contacte o suporte.</p>
+<div class="divider"></div>
+{{#if supportEmail}}
+<p><strong>Dúvidas ou problemas?</strong><br>Escreva-nos para <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
+{{/if}}

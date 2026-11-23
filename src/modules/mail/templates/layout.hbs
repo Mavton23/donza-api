@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{heading}} - {{appName}}</title>
+<style>
+body{font-family:'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;color:#333;background-color:#f9fafb;margin:0;padding:0}
+.email-container{max-width:600px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.08);border:1px solid #e5e7eb}
+.header{background:linear-gradient(135deg,{{accent}} 0%,{{accentDark}} 100%);background-color:{{accent}};padding:40px 20px;text-align:center}
+.brand-name{font-size:32px;font-weight:800;color:#fff;letter-spacing:1px}
+.brand-tagline{font-size:14px;color:rgba(255,255,255,.9);letter-spacing:.5px}
+h1{color:#fff;font-size:26px;margin:10px 0 0;font-weight:600;letter-spacing:-.5px}
+.content{padding:40px}
+h2{color:#111827;font-size:22px;margin-top:0;font-weight:600;margin-bottom:25px}
+h3{color:#111827}
+p{font-size:16px;color:#4b5563;margin-bottom:20px}
+a{color:{{accent}} }
+.highlight-box,.status-box,.task-box,.event-box{background-color:{{tint}};border-left:4px solid {{accent}};padding:16px;margin:20px 0;border-radius:0 6px 6px 0}
+.highlight-box p:last-child,.status-box p:last-child{margin-bottom:0}
+.warning-box{background-color:#fef2f2;border-left:4px solid #ef4444;padding:16px;margin:20px 0;border-radius:0 6px 6px 0}
+.reason-box{background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;padding:16px;margin:20px 0}
+.reason-title{font-weight:600;color:#dc2626;margin-bottom:8px}
+.details-box{background-color:#f8f9fa;border-radius:8px;padding:20px;margin:25px 0;border:1px solid #e9ecef}
+.detail-row{display:flex;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #e9ecef}
+.detail-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.detail-label{font-weight:600;color:#4b5563}
+.detail-value{color:#111827;font-weight:500;text-align:right}
+.message-box{background-color:#f3f4f6;border-radius:6px;padding:16px;margin:20px 0;border:1px solid #e5e7eb}
+.message-text{margin-top:10px;line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.amount{font-size:24px;font-weight:700;color:{{accent}} }
+.transaction-id{font-family:Monaco,Menlo,'Ubuntu Mono',monospace;font-size:12px;color:#6b7280;background:#f3f4f6;padding:4px 8px;border-radius:4px;word-break:break-all}
+.status-change{text-align:center;margin:15px 0}
+.old-status{color:#ef4444;font-weight:600}
+.new-status{color:#10b981;font-weight:600}
+.verification-link{word-break:break-all;background:#f3f4f6;padding:14px;border-radius:6px;font-family:'SF Mono',Menlo,monospace;font-size:14px;color:#1f2937;margin:20px 0;border:1px dashed #d1d5db}
+.button-container{text-align:center;margin:35px 0}
+.button{display:inline-block;padding:16px 32px;background-color:{{accent}};background:linear-gradient(135deg,{{accent}} 0%,{{accentDark}} 100%);color:#fff!important;text-decoration:none;border-radius:8px;font-weight:600;font-size:16px}
+.button-danger{background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);background-color:#ef4444}
+.divider{height:1px;background:linear-gradient(90deg,rgba(229,231,235,0) 0%,#d1d5db 50%,rgba(229,231,235,0) 100%);margin:35px 0}
+.step{margin-bottom:15px}
+.footer{padding:25px;text-align:center;font-size:14px;color:#6b7280;background-color:#f9fafb;border-top:1px solid #e5e7eb}
+.footer p{font-size:14px;margin-bottom:12px}
+.footer a{color:#6b7280;text-decoration:none;margin:0 8px}
+.social-links a{color:{{accent}};font-weight:500}
+@media only screen and (max-width:600px){.content{padding:25px}.brand-name{font-size:28px}h1{font-size:22px}h2{font-size:20px}.button{padding:14px 28px}.detail-row{flex-direction:column}.detail-value{text-align:left}}
+</style>
+</head>
+<body>
+<div class="email-container">
+  <div class="header">
+    <div class="brand-name">{{appName}}</div>
+    <div class="brand-tagline">{{tagline}}</div>
+    <h1>{{heading}}</h1>
+  </div>
+  <div class="content">
+{{{body}}}
+  </div>
+  <div class="footer">
+{{#if social.length}}
+    <div class="social-links"><p>{{#each social}}{{#unless @first}} | {{/unless}}<a href="{{url}}">{{name}}</a>{{/each}}</p></div>
+{{/if}}
+    <p><a href="{{helpUrl}}">Ajuda</a> <a href="{{termsUrl}}">Termos</a> <a href="{{privacyUrl}}">Privacidade</a></p>
+    <p>Atenciosamente,<br><strong>{{signature}}</strong></p>
+    <p>© {{currentYear}} {{appName}}. Todos os direitos reservados.</p>
+{{#if supportEmail}}
+    <p><a href="mailto:{{supportEmail}}">{{supportEmail}}</a></p>
+{{/if}}
+  </div>
+</div>
+</body>
+</html>

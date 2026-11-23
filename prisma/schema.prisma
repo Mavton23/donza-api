@@ -1,0 +1,2464 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// ENUMS
+// ═════════════════════════════════════════════════════════════════════════════
+
+// ── Utilizadores ──────────────────────────────────────────────────────────────
+enum UserRole {
+  student
+  instructor
+  admin
+  institution
+}
+
+enum UserStatus {
+  pending
+  approved
+  rejected
+  suspended
+}
+
+enum EducationLevel {
+  graduation
+  specialization
+  masters
+  phd
+}
+
+enum InstitutionType {
+  Universidade
+  Faculdade
+  EscolaTecnica    @map("Escola Técnica")
+  CentroPesquisa   @map("Centro de Pesquisa")
+  PlataformaOnline @map("Plataforma Online")
+  OngEducacional   @map("ONG Educacional")
+  Outro
+}
+
+enum MobileMoneyProvider {
+  mpesa
+  emola
+  outro
+}
+
+enum KycStatus {
+  pending
+  verified
+  rejected
+  expired
+}
+
+enum RegistrationStatus {
+  pending
+  documents_uploaded
+  completed
+}
+
+enum DocumentType {
+  alvara
+  credenciamento
+  estatutos
+  endereco
+  nuit
+  diplomas
+  experiencia
+  identidade
+  cv
+  certificacoes
+  comprovante_matricula
+  registroProfissional
+  other
+}
+
+enum RelationshipType {
+  follow
+  blocked
+}
+
+enum RelationshipStatus {
+  accepted
+  blocked
+  pending
+  rejected
+}
+
+enum InstructorLinkStatus {
+  pending
+  accepted
+  rejected
+}
+
+// Reutilizado: UserDocument, Testimonial, StudyGroupPendingMember, MessageRequest
+enum ApprovalStatus {
+  pending
+  approved
+  rejected
+}
+
+enum TestimonialSource {
+  platform
+  external
+}
+
+// ── Cursos ────────────────────────────────────────────────────────────────────
+// Reutilizado: Course.level, Lesson.level, CommunityPost.difficultyLevel
+enum DifficultyLevel {
+  beginner
+  intermediate
+  advanced
+}
+
+// Reutilizado: Course.status, HelpArticle.status
+enum PublicationStatus {
+  draft
+  published
+  archived
+}
+
+enum LessonType {
+  video
+  audio
+  pdf
+  text
+  quiz
+  assignment
+}
+
+enum EnrollmentStatus {
+  active
+  completed
+  canceled
+}
+
+enum AssignmentStatus {
+  draft
+  published
+  closed
+}
+
+enum SubmissionFormat {
+  text
+  file
+  both
+}
+
+enum SubmissionStatus {
+  draft
+  submitted
+  graded
+  late
+}
+
+enum CertificateStatus {
+  issued
+  revoked
+  expired
+}
+
+enum ReviewEntityType {
+  course
+  event
+  instructor
+}
+
+// ── Eventos ───────────────────────────────────────────────────────────────────
+enum EventStatus {
+  scheduled
+  live
+  completed
+  canceled
+}
+
+enum EventParticipantStatus {
+  registered
+  attended
+  cancelled
+}
+
+// ── Mensagens ─────────────────────────────────────────────────────────────────
+enum ConversationType {
+  conversation
+  group
+  community
+}
+
+enum MessageContextType {
+  conversation
+  group
+  community
+  announcement
+  support
+}
+
+enum MessageType {
+  text
+  image
+  file
+  link
+  topic_change
+  announcement
+}
+
+enum MessageStatus {
+  sent
+  delivered
+  read
+  pending_approval
+}
+
+enum ParticipantRole {
+  participant
+  member
+  moderator
+  admin
+  owner
+}
+
+// ── Comunidades ───────────────────────────────────────────────────────────────
+enum CommunityMembershipType {
+  open
+  approval
+  invite_only
+}
+
+enum CommunityStatus {
+  active
+  archived
+  suspended
+}
+
+enum CommunityBaseRole {
+  member
+  moderator
+  admin
+}
+
+enum CommunityMemberStatus {
+  pending // pedido de entrada (comunidades com aprovação)
+  active
+  muted
+  banned
+}
+
+enum CommunityInviteStatus {
+  pending
+  accepted
+  expired
+  revoked
+}
+
+enum PostStatus {
+  draft
+  published
+  archived
+  deleted
+}
+
+enum PostVisibility {
+  public
+  members
+  restricted
+}
+
+enum PostType {
+  discussion
+  question
+  resource
+  announcement
+  assignment
+}
+
+enum CommentStatus {
+  active
+  deleted
+  flagged
+}
+
+enum PostReactionType {
+  like
+  helpful
+  creative
+  confused
+  celebrate
+  insightful
+}
+
+enum CommentReactionType {
+  like
+  upvote
+  downvote
+  laugh
+  celebrate
+  insightful
+  confused
+  thanks
+}
+
+enum PostAttachmentType {
+  file
+  link
+  video
+  image
+  document
+  presentation
+}
+
+enum DeviceType {
+  desktop
+  mobile
+  tablet
+}
+
+enum ObjectiveLevel {
+  basic
+  intermediate
+  advanced
+}
+
+// ── Grupos de estudo ──────────────────────────────────────────────────────────
+enum StudyGroupStatus {
+  active
+  paused
+  completed
+  archived
+}
+
+enum StudyGroupPrivacy {
+  public
+  private
+  invite_only
+}
+
+enum StudyGroupRole {
+  member
+  leader
+  co_leader @map("co-leader")
+  moderator
+}
+
+enum StudyGroupMemberStatus {
+  active
+  muted
+  banned
+  left
+}
+
+enum JoinMethod {
+  direct
+  invite
+  approval
+  promoted
+  rejoined
+}
+
+enum SharedContentType {
+  pdf
+  video
+  code
+  link
+  slide
+  image
+}
+
+enum GroupMeetingStatus {
+  scheduled
+  completed
+  canceled
+}
+
+enum AttendanceStatus {
+  confirmed
+  declined
+  pending
+}
+
+enum GroupTaskStatus {
+  pending
+  in_progress
+  completed
+  archived
+}
+
+enum TaskPriority {
+  low
+  medium
+  high
+}
+
+enum TaskAssignmentStatus {
+  pending
+  completed
+  rejected
+}
+
+enum VoteType {
+  up
+  down
+}
+
+enum GroupReportType {
+  WEEKLY_ACTIVITY
+  MONTHLY_SUMMARY
+  TASK_COMPLETION
+  TOP_CONTRIBUTORS
+}
+
+enum AchievementType {
+  TOP_CONTRIBUTOR
+  TASK_COMPLETER
+  DISCUSSION_LEADER
+  RESOURCE_PROVIDER
+}
+
+// ── Moderação ─────────────────────────────────────────────────────────────────
+enum ContentReportReason {
+  spam
+  inappropriate
+  off_topic
+  other
+}
+
+enum ScanContentType {
+  post
+  comment
+  resource
+  profile
+}
+
+enum ScanType {
+  automated
+  manual
+  userReport
+}
+
+enum ModerationActionType {
+  warn
+  mute
+  unmute
+  ban
+  unban
+  remove_content
+}
+
+enum AppealStatus {
+  pending
+  accepted
+  rejected
+}
+
+enum ScanStatus {
+  pending
+  reviewed
+  actioned
+  falsePositive
+}
+
+// ── Pagamentos ────────────────────────────────────────────────────────────────
+enum PaymentStatus {
+  pending
+  processing
+  succeeded
+  failed
+  canceled
+  refunded
+}
+
+enum PaymentItemType {
+  course
+  event
+}
+
+enum BillingPlan {
+  free
+  basic
+  premium
+  enterprise
+}
+
+enum BillingStatus {
+  active
+  past_due
+  canceled
+  incomplete
+}
+
+enum PaymentMethod {
+  credit_card
+  debit_card
+  bank_transfer
+  digital_wallet
+  mobile_method
+  cash
+  international
+}
+
+enum CardBrand {
+  visa
+  mastercard
+  amex
+  elo
+  hipercard
+}
+
+enum InvoiceStatus {
+  draft
+  open
+  paid
+  void
+  uncollectible
+}
+
+// Reutilizado: Invoice.payoutStatus, Payout.status
+enum PayoutStatus {
+  pending
+  processing
+  paid
+  failed
+  reversed
+}
+
+enum PayoutMethod {
+  bank_transfer
+  mobile_money
+  digital_wallet
+  internal_credit
+}
+
+enum BeneficiaryType {
+  instructor
+  institution
+}
+
+// ── Ajuda / Contacto ──────────────────────────────────────────────────────────
+enum ContactMethod {
+  email
+  chat
+  callback
+}
+
+enum ContactRequestStatus {
+  pending
+  in_progress
+  resolved
+}
+
+// ── Actividades ───────────────────────────────────────────────────────────────
+enum ActivityType {
+  course_started
+  course_completed
+  lesson_completed
+  resource_viewed
+  achievement_earned
+  enrollment
+  group_join
+  group_leave
+  group_role_change
+  content_upload
+  link_shared
+  content_update
+  content_delete
+  content_download
+  meeting_scheduled
+  meeting_attended
+  discussion_started
+  task_created
+  task_completed
+  system_maintenance
+  system_backup
+  admin_user_created
+  admin_user_updated
+  admin_content_created
+  admin_content_updated
+  system_alert
+}
+
+enum ActivityEntityType {
+  course
+  lesson
+  resource
+  achievement
+  event
+  study_group
+  group_content
+  group_meeting
+  discussion_topic
+  group_task
+}
+
+// ── Notificações ──────────────────────────────────────────────────────────────
+enum NotificationType {
+  DONZA_NOTIFICATION
+  USER_REVIEW_REQUIRED
+  USER_APPROVED
+  USER_REJECTED
+  EVENT_REMINDER
+  EVENT_CREATED
+  EVENT_UPDATED
+  EVENT_DELETED
+  EVENT_REGISTRATION
+  EVENT_REGISTRATION_CANCELLED
+  TASK_DEADLINE
+  NEW_MESSAGE
+  COURSE_UPDATE
+  REVIEW_REPLY
+  NEW_MEMBER
+  ROLE_CHANGED
+  MEETING_SCHEDULED
+  TASK_ASSIGNED
+  CERTIFICATE_ISSUED
+  CERTIFICATE_REVOKED
+  ACHIEVEMENT_EARNED
+  INSTITUTION_INVITE
+  INSTITUTION_INVITE_RESPONSE
+  MODERATION_NOTICE
+  PAYMENT_SUCCEEDED
+  PAYMENT_FAILED
+  PAYMENT_REFUNDED
+  PAYOUT_PAID
+  PAYOUT_FAILED
+  KYC_DECISION
+  MODERATION_APPEAL_SUBMITTED
+  MODERATION_APPEAL_DECISION
+  GROUP_REPORT_READY
+  NEW_FOLLOWER
+  FOLLOW_REQUEST
+  FOLLOW_REQUEST_ACCEPTED
+  FOLLOWING_UPDATE
+  UNFOLLOWED
+  COURSE_CREATED
+  COURSE_DELETED
+  COURSE_PUBLISHED
+  COURSE_ENROLLMENT
+  COURSE_UNENROLLMENT
+  COURSE_COMPLETION
+  COURSE_APPROVAL
+  COURSE_REJECTION
+  COURSE_MATERIAL_UPDATE
+  COURSE_DEADLINE_REMINDER
+  COURSE_NEW_ANNOUNCEMENT
+  MODULE_UPDATED
+  COMMUNITY_CREATED
+  MEMBER_REQUEST
+  NEW_COMMUNITY_MEMBER
+  NEW_COMMUNITY_POST
+  POST_REACTION
+  NEW_COMMENT
+  COMMENT_REPLY
+  POST_DELETED
+  COMMENT_DELETED
+  NEW_DIRECT_MESSAGE
+  CONVERSATION_READ
+  NEW_CONVERSATION
+  NEW_TICKET
+  STUDY_GROUP_NEW_MESSAGE
+  STUDY_GROUP_TOPIC_CHANGED
+  STUDY_GROUP_MESSAGE_EDITED
+  STUDY_GROUP_MESSAGE_DELETED
+  STUDY_GROUP_MESSAGE_OFF_TOPIC
+  STUDY_GROUP_CONTENT_UPLOADED
+  STUDY_GROUP_LINK_ADDED
+  STUDY_GROUP_CONTENT_UPDATED
+  STUDY_GROUP_CONTENT_DELETED
+  DISCUSSION_TOPIC_CREATED
+  DISCUSSION_TOPIC_UPDATED
+  DISCUSSION_REPLY_ADDED
+  DISCUSSION_REPLY_UPDATED
+  DISCUSSION_REPLY_VOTED
+  STUDY_GROUP_TASK_CREATED
+  STUDY_GROUP_TASK_UPDATED
+  STUDY_GROUP_TASK_DELETED
+  STUDY_GROUP_TASK_ASSIGNED
+  STUDY_GROUP_TASK_STATUS_CHANGED
+  COMMUNITY_UPDATED
+  MEMBER_LEFT_COMMUNITY
+  STUDY_GROUP_INVITE
+  STUDY_GROUP_JOIN_REQUEST
+  STUDY_GROUP_REQUEST_APPROVED
+  STUDY_GROUP_REQUEST_REJECTED
+  STUDY_GROUP_ROLE_CHANGE
+  STUDY_GROUP_REMOVED
+  STUDY_GROUP_UPDATED
+  STUDY_GROUP_DELETED
+  STUDY_GROUP_MEETING_SCHEDULED
+  LESSON_CREATED
+  MODULE_CREATED
+  COURSE_ASSIGNMENT_CREATED
+  COURSE_ASSIGNMENT_UPDATED
+  COURSE_ASSIGNMENT_SUBMITTED
+  COURSE_ASSIGNMENT_GRADED
+  CONTACT_REQUEST_RECEIVED
+  CONTACT_REQUEST_UPDATED
+  SYSTEM_ALERT
+  NEW_REVIEW
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// IDENTIDADE E AUTENTICAÇÃO
+// ═════════════════════════════════════════════════════════════════════════════
+
+model User {
+  userId String @id @default(uuid()) @db.Uuid
+
+  // Autenticação
+  username String     @unique
+  email    String     @unique
+  password String
+  role     UserRole   @default(student)
+  status   UserStatus @default(pending)
+
+  // Perfil
+  fullName         String?
+  avatarUrl        String?
+  bio              String?         @db.Text
+  interests        String[]        @default([])
+  expertise        String[]        @default([])
+  educationLevel   EducationLevel?
+  educationField   String?
+  isPrivate        Boolean         @default(false)
+  profileCompleted Boolean         @default(false)
+  socialMedia      Json            @default("{}")
+
+  // Verificação de email / sessão
+  isVerified        Boolean   @default(false)
+  verificationToken String?
+  verifiedAt        DateTime?
+  lastLogin         DateTime?
+
+  // Reset de password
+  passwordResetToken   String?
+  passwordResetExpires DateTime?
+
+  // Preferências
+  notificationPreferences Json @default("{\"email\":{\"eventReminders\":true,\"taskDeadlines\":true,\"newMessages\":true,\"courseUpdates\":false,\"reviewReplies\":true},\"inApp\":true}")
+  messagePreferences      Json @default("{\"acceptsMessagesFromStudents\":false,\"acceptsMessagesFromAll\":false,\"courseRelatedOnly\":true,\"dailyMessageLimit\":5,\"allowAttachments\":false}")
+
+  // Instrutor
+  teachingExperience Int?
+
+  // Instituição
+  institutionName     String?
+  institutionType     InstitutionType?
+  academicPrograms    String[]         @default([])
+  website             String?
+  contactPhone        String?
+  nuit                String?
+  legalRepresentative String?
+  accreditation       String?
+  yearFounded         Int?
+
+  // Revisão administrativa
+  verificationData Json      @default("{}")
+  rejectionReason  String?   @db.Text
+  reviewedById     String?   @db.Uuid
+  reviewDate       DateTime?
+  reviewedBy       User?     @relation("UserReviewer", fields: [reviewedById], references: [userId], onDelete: SetNull)
+  reviewedUsers    User[]    @relation("UserReviewer")
+
+  // Pagamentos / KYC
+  taxIdentification   String?
+  bankName            String?
+  bankAccountNumber   String?
+  mobileMoneyNumber   String?
+  mobileMoneyProvider MobileMoneyProvider?
+  kycStatus           KycStatus            @default(pending)
+  kycVerifiedAt       DateTime?
+
+  // Calendário: subir a versão invalida o link de subscrição (.ics) anterior
+  calendarTokenVersion Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // ── Relações: conta e social
+  tokens                 Token[]
+  relationshipsInitiated UserRelationship[] @relation("RelationshipInitiator")
+  relationshipsReceived  UserRelationship[] @relation("RelationshipTarget")
+  moderationReceived     GroupModerationAction[] @relation("ModerationTarget")
+  moderationIssued       GroupModerationAction[] @relation("ModerationIssuer")
+  appealsMade            GroupAppeal[] @relation("AppealAuthor")
+  appealsDecided         GroupAppeal[] @relation("AppealDecider")
+  testimonials           Testimonial[]
+  notifications          Notification[]
+  documents              UserDocument[]     @relation("DocumentOwner")
+  reviewedDocuments      UserDocument[]     @relation("DocumentReviewer")
+  contactRequests        ContactRequest[]   @relation("ContactRequestUser")
+  updatedContactRequests ContactRequest[]   @relation("ContactRequestUpdater")
+
+  // ── Relações: instituição <-> instrutores
+  instructors  InstitutionInstructor[] @relation("InstitutionToInstructors")
+  institutions InstitutionInstructor[] @relation("InstructorToInstitutions")
+
+  // ── Relações: ensino
+  taughtCourses    Course[]      @relation("CourseInstructor")
+  organizedCourses Course[]      @relation("CourseOrganizer")
+  createdModules   Module[]      @relation("ModuleCreator")
+  createdLessons   Lesson[]      @relation("LessonCreator")
+  lessonProgress   UserLesson[]
+  enrollments      Enrollment[]
+  submissions      Submission[]
+  certificates     Certificate[]
+  reviews          Review[]      @relation("ReviewAuthor")
+  reviewsReceived  Review[]      @relation("ReviewInstructor")
+  activities       Activity[]
+
+  // ── Relações: eventos
+  organizedEvents    Event[]            @relation("EventOrganizer")
+  eventRegistrations EventParticipant[]
+
+  // ── Relações: mensagens
+  createdConversations       Conversation[]   @relation("ConversationCreator")
+  conversationParticipations Participant[]
+  sentMessages               Message[]        @relation("MessageSender")
+  approvedMessages           Message[]        @relation("MessageApprover")
+  sentMessageRequests        MessageRequest[] @relation("MessageRequestSender")
+  receivedMessageRequests    MessageRequest[] @relation("MessageRequestReceiver")
+  messageLimits              MessageLimit[]
+
+  // ── Relações: comunidades
+  createdCommunities   Community[]
+  communityMemberships CommunityMember[]
+  invitesSent          CommunityInvite[] @relation("InviteInviter")
+  invitesReceived      CommunityInvite[] @relation("InviteInvitee")
+  communityPosts       CommunityPost[]
+  postComments         PostComment[]
+  postReactions        PostReaction[]
+  commentReactions     CommentReaction[]
+  postViews            PostView[]
+  postAttachments      PostAttachment[]
+
+  // ── Relações: grupos de estudo
+  createdStudyGroups         StudyGroup[]              @relation("StudyGroupCreator")
+  studyGroupMemberships      StudyGroupMember[]
+  studyGroupRequests         StudyGroupPendingMember[] @relation("PendingMemberUser")
+  reviewedStudyGroupRequests StudyGroupPendingMember[] @relation("PendingMemberReviewer")
+  organizedGroupMeetings     GroupMeeting[]            @relation("MeetingOrganizer")
+  meetingParticipations      MeetingParticipant[]
+  createdGroupTasks          GroupTask[]               @relation("GroupTaskCreator")
+  assignedGroupTasks         GroupTask[]               @relation("GroupTaskAssigner")
+  taskAssignments            TaskAssignment[]          @relation("TaskAssignee")
+  madeTaskAssignments        TaskAssignment[]          @relation("TaskAssigner")
+  uploadedContents           SharedContent[]
+  discussionTopics           DiscussionTopic[]
+  discussionReplies          DiscussionReply[]
+  replyVotes                 ReplyVote[]
+  contentReports             ContentReport[]
+  generatedGroupReports      GroupReport[]
+
+  // ── Relações: pagamentos
+  billings Billing[]
+  payouts  Payout[]
+  payments Payment[]
+  savedPaymentMethods SavedPaymentMethod[]
+
+  // ── Relações: auditoria
+  auditLogs AuditLog[]
+
+  // ── Relações: ajuda
+  reviewedHelpArticles HelpArticle[]
+  helpFeedbacks        HelpFeedback[]
+
+  @@index([role])
+  @@index([role, isVerified, status])
+  @@index([expertise], type: Gin)
+  @@map("users")
+}
+
+// Registo pendente (antes da verificação de email)
+model TempUser {
+  tempId String @id @default(uuid()) @db.Uuid
+
+  email    String   @unique
+  password String
+  role     UserRole @default(student) // validar no DTO: apenas student | instructor | institution
+
+  verificationToken    String             @unique
+  tokenExpires         DateTime
+  isEmailVerified      Boolean            @default(false)
+  verificationAttempts Int                @default(0) // máx. 5 (validar no serviço)
+  registrationStatus   RegistrationStatus @default(pending)
+
+  potentialUsername        String?
+  potentialFullname        String?
+  potentialInstitutionName String?
+  potentialNuit            String?
+  educationLevel           EducationLevel?
+  educationField           String?
+  legalRepresentative      String?
+
+  documents Json @default("[]")
+
+  ipAddress String?
+  userAgent String? @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tempDocuments UserDocument[]
+
+  @@index([tokenExpires])
+  @@index([isEmailVerified])
+  @@index([registrationStatus])
+  @@map("temp_users")
+}
+
+model Token {
+  tokenId   String   @id @default(uuid()) @db.Uuid
+  token     String   @unique // SHA-256 do refresh token (o valor cru só existe no cookie)
+  userId    String   @db.Uuid
+  expiresAt DateTime
+  revoked   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("tokens")
+}
+
+model UserDocument {
+  docId        String         @id @default(uuid()) @db.Uuid
+  tempUserId   String?        @db.Uuid
+  userId       String?        @db.Uuid
+  documentType DocumentType
+  originalName String
+  storageKey   String         @unique
+  storageProvider String      @default("cloudinary")
+  mimeType     String
+  size         Int
+  status       ApprovalStatus @default(pending)
+  reviewedById String?        @db.Uuid
+  reviewDate   DateTime?
+  rejectionReason String?     @db.Text
+  metadata     Json           @default("{}")
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  user     User?     @relation("DocumentOwner", fields: [userId], references: [userId], onDelete: Cascade)
+  reviewer User?     @relation("DocumentReviewer", fields: [reviewedById], references: [userId], onDelete: SetNull)
+  tempUser TempUser? @relation(fields: [tempUserId], references: [tempId], onDelete: Cascade)
+
+  @@index([userId, documentType])
+  @@index([tempUserId])
+  @@index([status])
+  @@map("user_documents")
+}
+
+// Seguir / bloquear
+model UserRelationship {
+  relationId       String             @id @default(uuid()) @db.Uuid
+  userId           String             @db.Uuid
+  relatedUserId    String             @db.Uuid
+  relationshipType RelationshipType   @default(follow)
+  status           RelationshipStatus @default(accepted)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  initiator User @relation("RelationshipInitiator", fields: [userId], references: [userId], onDelete: Cascade)
+  target    User @relation("RelationshipTarget", fields: [relatedUserId], references: [userId], onDelete: Cascade)
+
+  @@unique([userId, relatedUserId])
+  @@index([relatedUserId, relationshipType, status])
+  @@index([relationshipType, status])
+  @@map("user_relationships")
+}
+
+// Convite/vínculo instituição <-> instrutor
+model InstitutionInstructor {
+  id            String               @id @default(uuid()) @db.Uuid
+  institutionId String               @db.Uuid
+  instructorId  String               @db.Uuid
+  message       String?              @db.Text
+  status        InstructorLinkStatus @default(pending)
+  invitedAt     DateTime             @default(now())
+  respondedAt   DateTime?
+
+  institution User @relation("InstitutionToInstructors", fields: [institutionId], references: [userId], onDelete: Cascade)
+  instructor  User @relation("InstructorToInstitutions", fields: [instructorId], references: [userId], onDelete: Cascade)
+
+  @@unique([institutionId, instructorId])
+  @@map("institution_instructors")
+}
+
+model Testimonial {
+  testimonialId     String            @id @default(uuid()) @db.Uuid
+  userId            String?           @db.Uuid // nulo para depoimentos externos
+  content           String            @db.Text
+  rating            Int
+  status            ApprovalStatus    @default(pending)
+  featured          Boolean           @default(false)
+  source            TestimonialSource @default(platform)
+  externalAuthor    String?
+  externalRole      String?
+  externalAvatarUrl String?
+  metadata          Json              @default("{}")
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  author User? @relation(fields: [userId], references: [userId], onDelete: SetNull)
+
+  @@index([status])
+  @@index([featured])
+  @@index([userId])
+  @@map("testimonials")
+}
+
+model Notification {
+  notificationId  String           @id @default(uuid()) @db.Uuid
+  userId          String           @db.Uuid
+  type            NotificationType
+  title           String           @db.VarChar(100)
+  message         String           @db.Text
+  // Polimórfico (curso, evento, etc.): sem FK. O tipo da entidade deriva de `type`.
+  relatedEntityId String?          @db.Uuid
+  isRead          Boolean          @default(false)
+  emailSent       Boolean          @default(false)
+  metadata        Json?
+  scheduledAt     DateTime?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@index([scheduledAt])
+  @@map("notifications")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// ENSINO
+// ═════════════════════════════════════════════════════════════════════════════
+
+model Course {
+  courseId String @id @default(uuid()) @db.Uuid
+
+  instructorId String  @db.Uuid
+  organizerId  String? @db.Uuid // instituição organizadora
+
+  title            String
+  slug             String            @unique
+  category         String?
+  description      String?           @db.Text
+  shortDescription String?           @db.VarChar(200)
+  coverImageUrl    String?
+  level            DifficultyLevel   @default(beginner)
+  status           PublicationStatus @default(draft)
+  duration         Int? // em horas
+  isPublic         Boolean           @default(true)
+  language         String            @default("Portuguese")
+
+  price    Decimal @default(0.00) @db.Decimal(10, 2)
+  currency String  @default("USD") @db.VarChar(3)
+
+  requirements     String[]
+  learningOutcomes String[]
+
+  metrics         Json    @default("{\"enrollments\":0,\"completionRate\":0,\"avgRating\":0,\"lessonEngagement\":{},\"studentDemographics\":{}}")
+  messageSettings Json    @default("{\"studentsCanMessage\":true,\"createCourseChannel\":true}")
+  ratingAverage   Decimal @default(0) @db.Decimal(3, 1)
+  ratingCount     Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  instructor   User          @relation("CourseInstructor", fields: [instructorId], references: [userId], onDelete: Restrict)
+  organizer    User?         @relation("CourseOrganizer", fields: [organizerId], references: [userId], onDelete: SetNull)
+  modules      Module[]
+  enrollments  Enrollment[]
+  assignments  Assignment[]
+  certificates Certificate[]
+  reviews      Review[]
+  payments     Payment[]
+  activities   Activity[]
+
+  @@index([instructorId])
+  @@index([organizerId])
+  @@index([category])
+  @@index([status])
+  @@index([title])
+  @@map("courses")
+}
+
+model Module {
+  moduleId    String   @id @default(uuid()) @db.Uuid
+  courseId    String?  @db.Uuid
+  creatorId   String   @db.Uuid
+  title       String
+  description String?  @db.Text
+  order       Int
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  course      Course?      @relation(fields: [courseId], references: [courseId], onDelete: Cascade)
+  creator     User         @relation("ModuleCreator", fields: [creatorId], references: [userId], onDelete: Restrict)
+  lessons     Lesson[]
+  assignments Assignment[]
+
+  @@index([courseId, order])
+  @@index([creatorId, courseId])
+  @@map("modules")
+}
+
+model Lesson {
+  lessonId  String @id @default(uuid()) @db.Uuid
+  moduleId  String @db.Uuid
+  creatorId String @db.Uuid
+
+  title             String
+  content           String?         @db.Text
+  externalResources String[]        @default([])
+  // URL unificada (vídeo, PDF ou áudio). videoUrl/pdfUrl/audioUrl eliminados (ver notas).
+  mediaUrl          String?
+  duration          Int?
+  order             Int
+  lessonType        LessonType      @default(video)
+  level             DifficultyLevel @default(beginner)
+  isFree            Boolean         @default(false)
+  price             Decimal         @default(0.00) @db.Decimal(10, 2)
+  isPublished       Boolean         @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  module       Module       @relation(fields: [moduleId], references: [moduleId], onDelete: Cascade)
+  creator      User         @relation("LessonCreator", fields: [creatorId], references: [userId], onDelete: Restrict)
+  userLessons  UserLesson[]
+  assignments  Assignment[]
+
+  @@index([moduleId, order])
+  @@map("lessons")
+}
+
+// Progresso do utilizador por aula
+model UserLesson {
+  userLessonId String    @id @default(uuid()) @db.Uuid
+  userId       String    @db.Uuid
+  lessonId     String    @db.Uuid
+  completed    Boolean   @default(false)
+  completedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  lesson Lesson @relation(fields: [lessonId], references: [lessonId], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@map("user_lessons")
+}
+
+model Enrollment {
+  enrollmentId String           @id @default(uuid()) @db.Uuid
+  userId       String           @db.Uuid
+  courseId     String           @db.Uuid
+  progress     Int              @default(0) // 0-100 (validar no DTO)
+  enrolledAt   DateTime         @default(now())
+  lastAccessed DateTime?
+  favorite     Boolean          @default(false)
+  notes        String?          @db.Text
+  completedAt  DateTime?
+  status       EnrollmentStatus @default(active)
+  rating       Int? // 1-5 (validar no DTO)
+  review       String?          @db.Text
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [courseId], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([courseId])
+  @@index([status])
+  @@map("enrollments")
+}
+
+model Assignment {
+  assignmentId         String           @id @default(uuid()) @db.Uuid
+  courseId             String           @db.Uuid
+  moduleId             String?          @db.Uuid
+  lessonId             String?          @db.Uuid
+  title                String
+  description          String           @db.Text
+  dueDate              DateTime?
+  maxScore             Int              @default(100)
+  isPublished          Boolean          @default(false)
+  status               AssignmentStatus @default(draft)
+  allowLateSubmissions Boolean          @default(false)
+  latePenalty          Float            @default(0)
+  submissionFormat     SubmissionFormat @default(both)
+  allowedFileTypes     String[]         @default(["pdf", "docx", "zip"])
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+
+  course      Course       @relation(fields: [courseId], references: [courseId], onDelete: Cascade)
+  module      Module?      @relation(fields: [moduleId], references: [moduleId], onDelete: SetNull)
+  lesson      Lesson?      @relation(fields: [lessonId], references: [lessonId], onDelete: SetNull)
+  submissions Submission[]
+
+  @@index([courseId])
+  @@map("assignments")
+}
+
+model Submission {
+  submissionId  String           @id @default(uuid()) @db.Uuid
+  assignmentId  String           @db.Uuid
+  userId        String           @db.Uuid
+  content       String?          @db.Text
+  attachmentUrl String?
+  grade         Float?
+  feedback      String?          @db.Text
+  submittedAt   DateTime         @default(now())
+  status        SubmissionStatus @default(draft)
+  isLate        Boolean          @default(false)
+  // gradePercentage (campo computed) removido: calcular em código = grade / assignment.maxScore * 100
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  student    User       @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  assignment Assignment @relation(fields: [assignmentId], references: [assignmentId], onDelete: Cascade)
+
+  @@unique([assignmentId, userId])
+  @@index([userId])
+  @@map("submissions")
+}
+
+// Certificado de curso OU evento (pelo menos um dos dois: CHECK na migração)
+model Certificate {
+  certificateId   String            @id @default(uuid()) @db.Uuid
+  userId          String            @db.Uuid
+  courseId        String?           @db.Uuid
+  eventId         String?           @db.Uuid
+  credentialId    String            @unique
+  issueDate       DateTime          @default(now())
+  expirationDate  DateTime?
+  hours           Decimal           @db.Decimal(5, 1)
+  downloadUrl     String
+  verificationUrl String
+  status          CertificateStatus @default(issued)
+  metadata        Json?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  user   User    @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  // Restrict: um certificado emitido nunca fica órfão (o CHECK exige curso OU evento). Arquive em vez de apagar.
+  course Course? @relation(fields: [courseId], references: [courseId], onDelete: Restrict)
+  event  Event?  @relation(fields: [eventId], references: [eventId], onDelete: Restrict)
+
+  @@index([userId])
+  @@index([courseId])
+  @@index([eventId])
+  @@index([status])
+  @@map("certificates")
+}
+
+// Avaliação de curso, evento ou instrutor.
+// O `entityId` polimórfico foi dividido em 3 FKs reais (exactamente uma preenchida, conforme entityType).
+model Review {
+  reviewId        String           @id @default(uuid()) @db.Uuid
+  entityType      ReviewEntityType
+  userId          String           @db.Uuid
+  courseId        String?          @db.Uuid
+  eventId         String?          @db.Uuid
+  instructorId    String?          @db.Uuid
+  rating          Int // 1-5
+  comment         String?          @db.Text
+  instructorReply String?          @db.Text
+  replyDate       DateTime?
+  isPublic        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  user       User    @relation("ReviewAuthor", fields: [userId], references: [userId], onDelete: Cascade)
+  course     Course? @relation(fields: [courseId], references: [courseId], onDelete: Cascade)
+  event      Event?  @relation(fields: [eventId], references: [eventId], onDelete: Cascade)
+  instructor User?   @relation("ReviewInstructor", fields: [instructorId], references: [userId], onDelete: Cascade)
+
+  @@index([entityType, courseId])
+  @@index([entityType, eventId])
+  @@index([entityType, instructorId])
+  @@index([userId])
+  @@map("reviews")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// EVENTOS
+// ═════════════════════════════════════════════════════════════════════════════
+
+model Event {
+  eventId         String      @id @default(uuid()) @db.Uuid
+  organizerId     String      @db.Uuid
+  title           String
+  description     String?     @db.Text
+  startDate       DateTime
+  endDate         DateTime?
+  location        String?
+  isOnline        Boolean     @default(false)
+  meetingUrl      String?
+  maxParticipants Int?
+  price           Decimal     @default(0.00) @db.Decimal(10, 2)
+  status          EventStatus @default(scheduled)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  organizer    User               @relation("EventOrganizer", fields: [organizerId], references: [userId], onDelete: Restrict)
+  participants EventParticipant[]
+  certificates Certificate[]
+  reviews      Review[]
+  payments     Payment[]
+
+  @@index([organizerId])
+  @@index([status, startDate])
+  @@map("events")
+}
+
+model EventParticipant {
+  registrationId String                 @id @default(uuid()) @db.Uuid
+  userId         String                 @db.Uuid
+  eventId        String                 @db.Uuid
+  status         EventParticipantStatus @default(registered)
+  attended       Boolean                @default(false)
+  registeredAt   DateTime               @default(now())
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @updatedAt
+
+  user  User  @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  event Event @relation(fields: [eventId], references: [eventId], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([eventId])
+  @@map("event_participants")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// ACTIVIDADES E CONQUISTAS
+// ═════════════════════════════════════════════════════════════════════════════
+
+model Activity {
+  activityId String             @id @default(uuid()) @db.Uuid
+  userId     String             @db.Uuid
+  groupId    String?            @db.Uuid
+  courseId   String?            @db.Uuid
+  type       ActivityType
+  entityType ActivityEntityType
+  // Polimórfico (lesson, event, group_content, meeting, topic, task...): sem FK
+  entityId   String             @db.Uuid
+  duration   Int? // segundos
+  metadata   Json?              @default("{}")
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  user   User        @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  group  StudyGroup? @relation(fields: [groupId], references: [groupId], onDelete: SetNull)
+  course Course?     @relation(fields: [courseId], references: [courseId], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([groupId])
+  @@index([createdAt])
+  @@index([type])
+  @@index([entityType, entityId])
+  @@map("activities")
+}
+
+model Achievement {
+  achievementId String          @id @default(uuid()) @db.Uuid
+  membershipId  String          @db.Uuid
+  type          AchievementType
+  points        Int             @default(0)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  membership StudyGroupMember @relation(fields: [membershipId], references: [membershipId], onDelete: Cascade)
+
+  @@unique([membershipId, type])
+  @@map("achievements")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// MENSAGENS
+// ═════════════════════════════════════════════════════════════════════════════
+// NOTA: contextType/contextId são polimórficos (conversation | group | community | ...).
+// O Prisma não suporta FK polimórfica, por isso a ligação é feita no serviço (NestJS).
+
+model Conversation {
+  conversationId String           @id @default(uuid()) @db.Uuid
+  type           ConversationType @default(conversation)
+  name           String?
+  description    String?          @db.Text
+  avatar         String?
+  contextId      String?          @db.Uuid // ex.: communityId quando type = community
+  creatorId      String?          @db.Uuid
+  settings       Json             @default("{\"allowImages\":true,\"allowFiles\":true,\"requireApproval\":false,\"onlyAdminsCanPost\":false,\"maxMessageLength\":2000,\"isPublic\":true}")
+  stats          Json             @default("{\"messageCount\":0,\"participantCount\":0,\"lastActivity\":null}")
+  isActive       Boolean          @default(true)
+  archivedAt     DateTime?
+  lastMessageAt  DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  creator User? @relation("ConversationCreator", fields: [creatorId], references: [userId], onDelete: SetNull)
+
+  @@index([type, isActive])
+  @@index([contextId])
+  @@map("conversations")
+}
+
+model Participant {
+  participantId String           @id @default(uuid()) @db.Uuid
+  userId        String           @db.Uuid
+  contextType   ConversationType
+  contextId     String?          @db.Uuid
+  role          ParticipantRole  @default(participant)
+  notifications Boolean          @default(true)
+  muted         Boolean          @default(false)
+  mutedUntil    DateTime?
+  lastReadAt    DateTime?
+  messageCount  Int              @default(0)
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([contextType, contextId, userId])
+  @@index([userId, contextType])
+  @@map("participants")
+}
+
+model Message {
+  messageId        String             @id @default(uuid()) @db.Uuid
+  senderId         String?            @db.Uuid // nulo para mensagens de sistema
+  replyToId        String?            @db.Uuid
+  content          String             @db.Text // 1-5000 (validar no DTO)
+  contextType      MessageContextType @default(conversation)
+  contextId        String?            @db.Uuid
+  type             MessageType        @default(text)
+  metadata         Json               @default("{}")
+  status           MessageStatus      @default(sent)
+  readBy           Json               @default("{}")
+  requiresApproval Boolean            @default(false)
+  approvedById     String?            @db.Uuid
+  edited           Boolean            @default(false)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  sender   User?     @relation("MessageSender", fields: [senderId], references: [userId], onDelete: SetNull)
+  approver User?     @relation("MessageApprover", fields: [approvedById], references: [userId], onDelete: SetNull)
+  replyTo  Message?  @relation("MessageReplies", fields: [replyToId], references: [messageId], onDelete: SetNull)
+  replies  Message[] @relation("MessageReplies")
+
+  @@index([contextType, contextId, createdAt], map: "message_context_index")
+  @@index([senderId, createdAt], map: "message_sender_index")
+  @@index([contextType, contextId, status], map: "message_search_index")
+  @@map("messages")
+}
+
+// Pedido de mensagem a quem não aceita mensagens directas
+model MessageRequest {
+  requestId  String         @id @default(uuid()) @db.Uuid
+  senderId   String         @db.Uuid
+  receiverId String         @db.Uuid
+  subject    String
+  message    String         @db.Text
+  status     ApprovalStatus @default(pending)
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  sender   User @relation("MessageRequestSender", fields: [senderId], references: [userId], onDelete: Cascade)
+  receiver User @relation("MessageRequestReceiver", fields: [receiverId], references: [userId], onDelete: Cascade)
+
+  @@index([receiverId, status])
+  @@map("message_requests")
+}
+
+// Limite diário de mensagens por utilizador
+model MessageLimit {
+  userId String   @db.Uuid
+  date   DateTime @default(now()) @db.Date
+  count  Int      @default(0)
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@id([userId, date])
+  @@map("message_limits")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// COMUNIDADES
+// ═════════════════════════════════════════════════════════════════════════════
+
+model Community {
+  communityId      String                  @id @default(uuid()) @db.Uuid
+  creatorId        String                  @db.Uuid
+  name             String                  @unique
+  slug             String                  @unique
+  description      String?                 @db.Text
+  shortDescription String?                 @db.VarChar(100)
+  isPublic         Boolean                 @default(true)
+  coverImage       String?
+  thumbnailImage   String?
+  rules            Json                    @default("[]")
+  tags             String[]                @default([])
+  membershipType   CommunityMembershipType @default(open)
+  status           CommunityStatus         @default(active)
+  socialLinks      Json                    @default("{}")
+  analytics        Json                    @default("{\"memberCount\":0,\"postCount\":0,\"engagementRate\":0}")
+  createdAt        DateTime                @default(now())
+  updatedAt        DateTime                @updatedAt
+  deletedAt        DateTime? // paranoid (soft delete)
+
+  creator     User              @relation(fields: [creatorId], references: [userId], onDelete: Restrict)
+  members     CommunityMember[]
+  roles       CommunityRole[]
+  invites     CommunityInvite[]
+  posts       CommunityPost[]
+  studyGroups StudyGroup[]
+
+  @@index([tags], type: Gin)
+  @@map("communities")
+}
+
+model CommunityMember {
+  memberId    String                @id @default(uuid()) @db.Uuid
+  communityId String                @db.Uuid
+  userId      String                @db.Uuid
+  role        CommunityBaseRole     @default(member)
+  joinedAt    DateTime              @default(now())
+  status      CommunityMemberStatus @default(active)
+
+  community   Community             @relation(fields: [communityId], references: [communityId], onDelete: Cascade)
+  user        User                  @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  customRoles CommunityMemberRole[]
+
+  @@unique([communityId, userId])
+  @@index([role])
+  @@map("community_members")
+}
+
+model CommunityRole {
+  roleId      String   @id @default(uuid()) @db.Uuid
+  communityId String   @db.Uuid
+  name        String
+  permissions Json     @default("{\"managePosts\":false,\"manageEvents\":false,\"inviteMembers\":false,\"removeMembers\":false,\"editCommunity\":false}")
+  isDefault   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  community Community             @relation(fields: [communityId], references: [communityId], onDelete: Cascade)
+  members   CommunityMemberRole[]
+
+  @@index([communityId])
+  @@map("community_roles")
+}
+
+// Papéis personalizados atribuídos a membros (N:N CommunityMember <-> CommunityRole)
+model CommunityMemberRole {
+  id       String @id @default(uuid()) @db.Uuid
+  memberId String @db.Uuid
+  roleId   String @db.Uuid
+
+  member CommunityMember @relation(fields: [memberId], references: [memberId], onDelete: Cascade)
+  role   CommunityRole   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
+
+  @@unique([memberId, roleId])
+  @@map("community_member_roles")
+}
+
+model CommunityInvite {
+  inviteId    String                @id @default(uuid()) @db.Uuid
+  communityId String                @db.Uuid
+  inviterId   String                @db.Uuid
+  userId      String?               @db.Uuid // preenchido quando o convidado já tem conta
+  email       String
+  status      CommunityInviteStatus @default(pending)
+  token       String?               @unique @db.VarChar(64)
+  expiresAt   DateTime
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+
+  community Community @relation(fields: [communityId], references: [communityId], onDelete: Cascade)
+  inviter   User      @relation("InviteInviter", fields: [inviterId], references: [userId], onDelete: Cascade)
+  user      User?     @relation("InviteInvitee", fields: [userId], references: [userId], onDelete: SetNull)
+
+  @@unique([communityId, email])
+  @@map("community_invites")
+}
+
+model CommunityPost {
+  postId           String           @id @default(uuid()) @db.Uuid
+  communityId      String           @db.Uuid
+  authorId         String           @db.Uuid
+  title            String           @db.VarChar(120)
+  content          String           @db.Text
+  excerpt          String?          @db.VarChar(200)
+  isPinned         Boolean          @default(false)
+  status           PostStatus       @default(draft)
+  visibility       PostVisibility   @default(public)
+  postType         PostType         @default(discussion)
+  difficultyLevel  DifficultyLevel?
+  isOriginalContent Boolean         @default(true)
+  sourceUrl        String?          @db.VarChar(512)
+  metadata         Json             @default("{}")
+  editHistory      Json             @default("[]")
+  lastEditedAt     DateTime?
+  acceptedAnswerId String?          @unique @db.Uuid
+  isLocked         Boolean          @default(false)
+  stats            Json             @default("{\"reactions\":{\"like\":0,\"helpful\":0,\"creative\":0,\"confused\":0,\"celebrate\":0,\"insightful\":0},\"viewCount\":0,\"commentCount\":0}")
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  community      Community        @relation(fields: [communityId], references: [communityId], onDelete: Cascade)
+  author         User             @relation(fields: [authorId], references: [userId], onDelete: Restrict)
+  acceptedAnswer PostComment?     @relation("AcceptedAnswer", fields: [acceptedAnswerId], references: [commentId], onDelete: SetNull)
+  comments       PostComment[]    @relation("PostComments")
+  reactions      PostReaction[]
+  views          PostView[]
+  attachments    PostAttachment[]
+  tags           PostTag[]
+  objectives     PostObjective[]
+
+  @@index([communityId])
+  @@index([authorId])
+  @@index([isPinned])
+  @@index([postType])
+  @@index([status])
+  @@map("community_posts")
+}
+
+model PostComment {
+  commentId       String        @id @default(uuid()) @db.Uuid
+  postId          String        @db.Uuid
+  authorId        String        @db.Uuid
+  parentCommentId String?       @db.Uuid
+  content         String        @db.Text // 1-1000 (validar no DTO)
+  status          CommentStatus @default(active)
+  isAnswer        Boolean       @default(false)
+  metadata        Json          @default("{}")
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  deletedAt       DateTime? // paranoid (soft delete)
+
+  post             CommunityPost    @relation("PostComments", fields: [postId], references: [postId], onDelete: Cascade)
+  author           User             @relation(fields: [authorId], references: [userId], onDelete: Restrict)
+  parentComment    PostComment?     @relation("CommentReplies", fields: [parentCommentId], references: [commentId], onDelete: Cascade)
+  replies          PostComment[]    @relation("CommentReplies")
+  reactions        CommentReaction[]
+  acceptedForPost  CommunityPost?   @relation("AcceptedAnswer")
+
+  @@index([postId])
+  @@index([authorId])
+  @@index([parentCommentId])
+  @@map("post_comments")
+}
+
+model PostReaction {
+  reactionId String           @id @default(uuid()) @db.Uuid
+  postId     String           @db.Uuid
+  userId     String           @db.Uuid
+  type       PostReactionType @default(like)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+
+  post CommunityPost @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  user User          @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([postId, userId])
+  @@index([userId])
+  @@index([type])
+  @@map("post_reactions")
+}
+
+model CommentReaction {
+  reactionId String              @id @default(uuid()) @db.Uuid
+  commentId  String              @db.Uuid
+  userId     String              @db.Uuid
+  type       CommentReactionType @default(like)
+  metadata   Json                @default("{}")
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+
+  comment PostComment @relation(fields: [commentId], references: [commentId], onDelete: Cascade)
+  user    User        @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([commentId, userId])
+  @@index([userId])
+  @@index([type])
+  @@map("comment_reactions")
+}
+
+model PostView {
+  viewId     String      @id @default(uuid()) @db.Uuid
+  postId     String      @db.Uuid
+  userId     String?     @db.Uuid // nulo para visitantes anónimos
+  duration   Int         @default(0) // segundos
+  deviceType DeviceType?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  post CommunityPost @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  user User?         @relation(fields: [userId], references: [userId], onDelete: SetNull)
+
+  @@index([postId])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("post_views")
+}
+
+model PostAttachment {
+  attachmentId String             @id @default(uuid()) @db.Uuid
+  postId       String             @db.Uuid
+  uploadedById String             @db.Uuid
+  url          String             @db.VarChar(512)
+  type         PostAttachmentType @default(file)
+  title        String?            @db.VarChar(100)
+  description  String?            @db.Text
+  metadata     Json               @default("{}")
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  post       CommunityPost @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  uploadedBy User          @relation(fields: [uploadedById], references: [userId], onDelete: Restrict)
+
+  @@index([postId])
+  @@index([type])
+  @@map("post_attachments")
+}
+
+model Tag {
+  tagId       String   @id @default(uuid()) @db.Uuid
+  name        String   @unique @db.VarChar(50)
+  description String?  @db.Text
+  isSystemTag Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  posts PostTag[]
+
+  @@index([isSystemTag])
+  @@map("tags")
+}
+
+model PostTag {
+  postId    String @db.Uuid
+  tagId     String @db.Uuid
+  relevance Float  @default(1.0)
+
+  post CommunityPost @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  tag  Tag           @relation(fields: [tagId], references: [tagId], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@map("post_tags")
+}
+
+model LearningObjective {
+  objectiveId String         @id @default(uuid()) @db.Uuid
+  name        String         @db.VarChar(100)
+  description String?        @db.Text
+  level       ObjectiveLevel @default(basic)
+  subjectArea String         @db.VarChar(50)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  posts PostObjective[]
+
+  @@index([subjectArea])
+  @@index([level])
+  @@map("learning_objectives")
+}
+
+model PostObjective {
+  postId      String @db.Uuid
+  objectiveId String @db.Uuid
+  relevance   Int    @default(1) // 1-5 (validar no DTO)
+
+  post      CommunityPost     @relation(fields: [postId], references: [postId], onDelete: Cascade)
+  objective LearningObjective @relation(fields: [objectiveId], references: [objectiveId], onDelete: Cascade)
+
+  @@id([postId, objectiveId])
+  @@map("post_objectives")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// GRUPOS DE ESTUDO
+// ═════════════════════════════════════════════════════════════════════════════
+
+model StudyGroup {
+  groupId          String            @id @default(uuid()) @db.Uuid
+  communityId      String?           @db.Uuid
+  creatorId        String            @db.Uuid
+  name             String
+  description      String?           @db.Text
+  meetingSchedule  Json?
+  maxMembers       Int?
+  status           StudyGroupStatus  @default(active)
+  privacy          StudyGroupPrivacy @default(public)
+  tags             String[]          @default([])
+  goals            String?           @db.Text
+  inviteCode       String?           @unique
+  approvalRequired Boolean           @default(false)
+  coverImageUrl    String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  community       Community?                @relation(fields: [communityId], references: [communityId], onDelete: SetNull)
+  creator         User                      @relation("StudyGroupCreator", fields: [creatorId], references: [userId], onDelete: Restrict)
+  members         StudyGroupMember[]
+  pendingRequests StudyGroupPendingMember[]
+  meetings        GroupMeeting[]
+  discussionTopics DiscussionTopic[]
+  sharedContents  SharedContent[]
+  tasks           GroupTask[]
+  reports         GroupReport[]
+  activities      Activity[]
+  moderationActions GroupModerationAction[]
+  appeals         GroupAppeal[]
+  scanResults     ContentScanResult[]
+
+  @@index([communityId])
+  @@index([creatorId])
+  @@index([tags], type: Gin)
+  @@map("study_groups")
+}
+
+model StudyGroupMember {
+  membershipId         String                 @id @default(uuid()) @db.Uuid
+  groupId              String                 @db.Uuid
+  userId               String                 @db.Uuid
+  role                 StudyGroupRole         @default(member)
+  previousRole         StudyGroupRole?
+  joinedAt             DateTime               @default(now())
+  contributionScore    Int                    @default(0)
+  lastActiveAt         DateTime?
+  leftAt               DateTime?
+  achievements         String[]               @default([]) // badges rápidos; Achievement guarda o histórico com pontos
+  status               StudyGroupMemberStatus @default(active)
+  mutedUntil           DateTime?
+  joinMethod           JoinMethod             @default(direct)
+  inviteCodeUsed       String?
+  preventiveModeration Json                   @default("{\"contentFilter\":{\"enabled\":true,\"level\":\"medium\"},\"rateLimiting\":{\"postsPerHour\":10,\"commentsPerHour\":20},\"newMemberRestrictions\":{\"contentCreation\":false,\"duration\":\"24h\"}}")
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+
+  group             StudyGroup    @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  user              User          @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  earnedAchievements Achievement[]
+
+  @@unique([groupId, userId])
+  @@index([role])
+  @@index([status])
+  @@map("study_group_members")
+}
+
+model StudyGroupPendingMember {
+  requestId       String         @id @default(uuid()) @db.Uuid
+  groupId         String         @db.Uuid
+  userId          String         @db.Uuid
+  status          ApprovalStatus @default(pending)
+  requestedAt     DateTime       @default(now())
+  reviewedAt      DateTime?
+  reviewedById    String?        @db.Uuid
+  message         String?        @db.Text
+  responseMessage String?        @db.Text
+  // true => convite directo da liderança ao utilizador (reviewedById = quem convidou); false => pedido do utilizador
+  isInvite        Boolean        @default(false)
+
+  studyGroup StudyGroup @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  user       User       @relation("PendingMemberUser", fields: [userId], references: [userId], onDelete: Cascade)
+  reviewer   User?      @relation("PendingMemberReviewer", fields: [reviewedById], references: [userId], onDelete: SetNull)
+
+  @@unique([groupId, userId])
+  @@index([status])
+  @@map("study_group_pending_members")
+}
+
+model GroupMeeting {
+  meetingId   String             @id @default(uuid()) @db.Uuid
+  groupId     String             @db.Uuid
+  organizerId String             @db.Uuid
+  title       String
+  description String?            @db.Text
+  startTime   DateTime
+  endTime     DateTime?
+  meetingUrl  String?
+  recurring   Json?
+  status      GroupMeetingStatus @default(scheduled)
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  studyGroup   StudyGroup           @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  organizer    User                 @relation("MeetingOrganizer", fields: [organizerId], references: [userId], onDelete: Restrict)
+  participants MeetingParticipant[]
+
+  @@index([groupId])
+  @@index([startTime])
+  @@map("group_meetings")
+}
+
+model MeetingParticipant {
+  participationId  String           @id @default(uuid()) @db.Uuid
+  meetingId        String           @db.Uuid
+  userId           String           @db.Uuid
+  attendanceStatus AttendanceStatus @default(pending)
+  joinedAt         DateTime?
+  leftAt           DateTime?
+
+  meeting GroupMeeting @relation(fields: [meetingId], references: [meetingId], onDelete: Cascade)
+  user    User         @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([meetingId, userId])
+  @@map("meeting_participants")
+}
+
+model GroupTask {
+  taskId      String          @id @default(uuid()) @db.Uuid
+  groupId     String          @db.Uuid
+  creatorId   String          @db.Uuid
+  assignerId  String?         @db.Uuid
+  title       String
+  description String?         @db.Text
+  deadline    DateTime?
+  status      GroupTaskStatus @default(pending)
+  priority    TaskPriority    @default(medium)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  group       StudyGroup       @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  creator     User             @relation("GroupTaskCreator", fields: [creatorId], references: [userId], onDelete: Restrict)
+  assigner    User?            @relation("GroupTaskAssigner", fields: [assignerId], references: [userId], onDelete: SetNull)
+  assignments TaskAssignment[]
+
+  @@index([groupId])
+  @@index([status])
+  @@index([deadline])
+  @@map("group_tasks")
+}
+
+model TaskAssignment {
+  assignmentId String               @id @default(uuid()) @db.Uuid
+  taskId       String               @db.Uuid
+  userId       String               @db.Uuid
+  assignedById String?              @db.Uuid
+  status       TaskAssignmentStatus @default(pending)
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+
+  task     GroupTask @relation(fields: [taskId], references: [taskId], onDelete: Cascade)
+  user     User      @relation("TaskAssignee", fields: [userId], references: [userId], onDelete: Cascade)
+  assigner User?     @relation("TaskAssigner", fields: [assignedById], references: [userId], onDelete: SetNull)
+
+  @@unique([taskId, userId])
+  @@map("task_assignments")
+}
+
+model SharedContent {
+  contentId     String            @id @default(uuid()) @db.Uuid
+  groupId       String            @db.Uuid
+  uploaderId    String            @db.Uuid
+  title         String
+  description   String?           @db.Text
+  fileUrl       String?
+  fileType      SharedContentType
+  externalUrl   String?
+  downloadCount Int               @default(0)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  group    StudyGroup @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  uploader User       @relation(fields: [uploaderId], references: [userId], onDelete: Restrict)
+
+  @@index([groupId, fileType])
+  @@map("shared_contents")
+}
+
+model DiscussionTopic {
+  topicId   String   @id @default(uuid()) @db.Uuid
+  groupId   String   @db.Uuid
+  authorId  String   @db.Uuid
+  title     String   @db.VarChar(100)
+  content   String   @db.Text
+  isPinned  Boolean  @default(false)
+  isClosed  Boolean  @default(false)
+  tags      String[] @default([])
+  flags     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  group   StudyGroup        @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  author  User              @relation(fields: [authorId], references: [userId], onDelete: Restrict)
+  replies DiscussionReply[]
+  reports ContentReport[]
+
+  @@index([groupId])
+  @@index([isPinned])
+  @@map("discussion_topics")
+}
+
+model DiscussionReply {
+  replyId    String   @id @default(uuid()) @db.Uuid
+  topicId    String   @db.Uuid
+  authorId   String   @db.Uuid
+  content    String   @db.Text
+  upvotes    Int      @default(0)
+  isSolution Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  topic  DiscussionTopic @relation(fields: [topicId], references: [topicId], onDelete: Cascade)
+  author User            @relation(fields: [authorId], references: [userId], onDelete: Restrict)
+  votes  ReplyVote[]
+
+  @@index([topicId])
+  @@index([isSolution])
+  @@map("discussion_replies")
+}
+
+model ReplyVote {
+  voteId    String   @id @default(uuid()) @db.Uuid
+  replyId   String   @db.Uuid
+  userId    String   @db.Uuid
+  voteType  VoteType
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reply DiscussionReply @relation(fields: [replyId], references: [replyId], onDelete: Cascade)
+  user  User            @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@unique([replyId, userId])
+  @@map("reply_votes")
+}
+
+model GroupReport {
+  reportId      String          @id @default(uuid()) @db.Uuid
+  groupId       String          @db.Uuid
+  generatedById String?         @db.Uuid
+  type          GroupReportType
+  data          Json
+  periodStart   DateTime
+  periodEnd     DateTime
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  group     StudyGroup @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  generator User?      @relation(fields: [generatedById], references: [userId], onDelete: SetNull)
+
+  @@unique([groupId, type, periodStart])
+  @@index([groupId, type])
+  @@map("group_reports")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// MODERAÇÃO
+// ═════════════════════════════════════════════════════════════════════════════
+
+model ContentReport {
+  reportId   String              @id @default(uuid()) @db.Uuid
+  reporterId String              @db.Uuid
+  topicId    String?             @db.Uuid
+  reason     ContentReportReason
+  resolved   Boolean             @default(false)
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+
+  reporter User             @relation(fields: [reporterId], references: [userId], onDelete: Cascade)
+  topic    DiscussionTopic? @relation(fields: [topicId], references: [topicId], onDelete: Cascade)
+
+  @@index([topicId])
+  @@index([resolved])
+  @@map("content_reports")
+}
+
+model ContentScanResult {
+  scanId             String          @id @default(uuid()) @db.Uuid
+  contentType        ScanContentType
+  scanType           ScanType
+  riskScore          Float           @default(0)
+  flaggedCategories  String[]        @default([])
+  details            Json?
+  status             ScanStatus      @default(pending)
+  // Análises de grupos de estudo: o conteúdo analisado (no máximo uma análise por conteúdo)
+  groupId            String?         @db.Uuid
+  contentId          String?         @db.Uuid
+  authorId           String?         @db.Uuid
+  reviewedById       String?         @db.Uuid
+  reviewedAt         DateTime?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  group StudyGroup? @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+
+  @@unique([groupId, contentType, contentId])
+  @@index([groupId, status])
+  @@index([contentType])
+  @@index([status])
+  @@map("content_scan_results")
+}
+
+// Registo de acções de moderação num grupo (avisos, silenciamentos, banimentos, remoções). `moderatorId` nulo = automático.
+model GroupModerationAction {
+  actionId        String               @id @default(uuid()) @db.Uuid
+  groupId         String               @db.Uuid
+  targetId        String               @db.Uuid
+  moderatorId     String?              @db.Uuid
+  type            ModerationActionType
+  reason          String               @db.Text
+  durationMinutes Int?
+  expiresAt       DateTime?
+  contentType     ScanContentType?
+  contentId       String?              @db.Uuid
+  revokedAt       DateTime?
+  createdAt       DateTime             @default(now())
+
+  group     StudyGroup   @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  target    User         @relation("ModerationTarget", fields: [targetId], references: [userId], onDelete: Cascade)
+  moderator User?        @relation("ModerationIssuer", fields: [moderatorId], references: [userId], onDelete: SetNull)
+  appeal    GroupAppeal?
+
+  @@index([groupId, createdAt])
+  @@index([groupId, targetId, type, createdAt])
+  @@map("group_moderation_actions")
+}
+
+// Recurso contra um silenciamento/banimento: um por acção.
+model GroupAppeal {
+  appealId     String       @id @default(uuid()) @db.Uuid
+  actionId     String       @unique @db.Uuid
+  groupId      String       @db.Uuid
+  userId       String       @db.Uuid
+  message      String       @db.Text
+  status       AppealStatus @default(pending)
+  decidedById  String?      @db.Uuid
+  decisionNote String?      @db.Text
+  decidedAt    DateTime?
+  createdAt    DateTime     @default(now())
+
+  action  GroupModerationAction @relation(fields: [actionId], references: [actionId], onDelete: Cascade)
+  group   StudyGroup            @relation(fields: [groupId], references: [groupId], onDelete: Cascade)
+  user    User                  @relation("AppealAuthor", fields: [userId], references: [userId], onDelete: Cascade)
+  decider User?                 @relation("AppealDecider", fields: [decidedById], references: [userId], onDelete: SetNull)
+
+  @@index([groupId, status])
+  @@index([userId])
+  @@map("group_appeals")
+}
+
+model ModerationPermission {
+  permissionId String   @id @default(uuid()) @db.Uuid
+  role         String   @unique
+  permissions  Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("moderation_permissions")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// PAGAMENTOS
+// ═════════════════════════════════════════════════════════════════════════════
+
+model Billing {
+  billingId               String         @id @default(uuid()) @db.Uuid
+  institutionId           String         @db.Uuid
+  plan                    BillingPlan    @default(free)
+  status                  BillingStatus  @default(incomplete)
+  paymentMethod           PaymentMethod?
+  cardLast4               String?        @db.VarChar(4)
+  cardBrand               CardBrand?
+  cardExpMonth            Int?
+  cardExpYear             Int?
+  externalPaymentMethodId String?
+  exchangeRate            Decimal?       @db.Decimal(10, 4)
+  originalCurrency        String         @default("MZN") @db.VarChar(3)
+  originalAmount          Decimal?       @db.Decimal(10, 2)
+  currentPeriodStart      DateTime       @default(now())
+  currentPeriodEnd        DateTime?
+  cancelAtPeriodEnd       Boolean        @default(false)
+  externalId              String?        @unique
+  metadata                Json           @default("{}")
+  createdAt               DateTime       @default(now())
+  updatedAt               DateTime       @updatedAt
+
+  institution User      @relation(fields: [institutionId], references: [userId], onDelete: Cascade)
+  invoices    Invoice[]
+
+  @@index([institutionId])
+  @@index([status])
+  @@map("billings")
+}
+
+model Invoice {
+  invoiceId        String        @id @default(uuid()) @db.Uuid
+  billingId        String        @db.Uuid
+  externalId       String
+  amount           Decimal       @db.Decimal(10, 2)
+  currency         String        @default("MZN") @db.VarChar(3)
+  platformShare    Decimal?      @db.Decimal(10, 2)
+  instructorShare  Decimal?      @db.Decimal(10, 2)
+  institutionShare Decimal?      @db.Decimal(10, 2)
+  payoutStatus     PayoutStatus  @default(pending) // no original não incluía `reversed`
+  status           InvoiceStatus @default(draft)
+  dueDate          DateTime?
+  pdfUrl           String?
+  periodStart      DateTime
+  periodEnd        DateTime
+  items            Json          @default("[]")
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  billing Billing  @relation(fields: [billingId], references: [billingId], onDelete: Restrict)
+  payouts Payout[]
+
+  @@index([billingId])
+  @@index([status])
+  @@index([externalId])
+  @@map("invoices")
+}
+
+model Payout {
+  payoutId             String          @id @default(uuid()) @db.Uuid
+  invoiceId            String?         @db.Uuid
+  paymentId            String?         @db.Uuid
+  holdUntil            DateTime?
+  beneficiaryId        String          @db.Uuid
+  beneficiaryType      BeneficiaryType
+  amount               Decimal         @db.Decimal(10, 2) // > 0 (validar no DTO)
+  currency             String          @default("MZN") @db.VarChar(3)
+  exchangeRate         Decimal?        @db.Decimal(10, 4)
+  originalAmount       Decimal?        @db.Decimal(10, 2)
+  status               PayoutStatus    @default(pending)
+  payoutMethod         PayoutMethod
+  externalPayoutId     String?
+  paidAt               DateTime?
+  estimatedArrivalDate DateTime?
+  failureCode          String?
+  failureMessage       String?         @db.Text
+  metadata             Json            @default("{}")
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+
+  invoice     Invoice? @relation(fields: [invoiceId], references: [invoiceId], onDelete: Restrict)
+  payment     Payment? @relation(fields: [paymentId], references: [paymentId], onDelete: Restrict)
+  beneficiary User    @relation(fields: [beneficiaryId], references: [userId], onDelete: Restrict)
+
+  @@index([beneficiaryId])
+  @@index([invoiceId])
+  @@index([paymentId])
+  @@index([status, holdUntil])
+  @@index([payoutMethod])
+  @@index([createdAt])
+  @@map("payouts")
+}
+
+/// Pagamento de um curso ou evento. O dinheiro só conta como recebido quando `status = succeeded`
+/// (confirmado pelo fornecedor via webhook, ou pelo admin nas transferências bancárias).
+model Payment {
+  paymentId      String          @id @default(uuid()) @db.Uuid
+  userId         String          @db.Uuid
+  itemType       PaymentItemType
+  courseId       String?         @db.Uuid
+  eventId        String?         @db.Uuid
+  amount         Decimal         @db.Decimal(10, 2)
+  currency       String          @db.VarChar(3)
+  provider       String // id do fornecedor registado no código (stripe, mpesa, emola, bank_transfer…)
+  status         PaymentStatus   @default(pending)
+  idempotencyKey String?
+  externalId     String?
+  checkoutUrl    String?
+  instructions   Json?
+  phoneNumber    String?
+  platformFee    Decimal         @default(0) @db.Decimal(10, 2)
+  failureCode    String?
+  failureMessage String?         @db.Text
+  paidAt         DateTime?
+  fulfilledAt    DateTime? // matrícula/inscrição concluída
+  refundedAt     DateTime?
+  refundReason   String?         @db.Text
+  metadata       Json            @default("{}")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  user    User     @relation(fields: [userId], references: [userId], onDelete: Restrict)
+  course  Course?  @relation(fields: [courseId], references: [courseId], onDelete: Restrict)
+  event   Event?   @relation(fields: [eventId], references: [eventId], onDelete: Restrict)
+  payouts Payout[]
+
+  @@unique([userId, idempotencyKey])
+  @@unique([provider, externalId])
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+  @@index([courseId])
+  @@index([eventId])
+  @@map("payments")
+}
+
+/// Método guardado pelo utilizador (nunca números completos de cartão: só o identificador do fornecedor).
+model SavedPaymentMethod {
+  methodId         String        @id @default(uuid()) @db.Uuid
+  userId           String        @db.Uuid
+  provider         String
+  type             PaymentMethod
+  label            String
+  phone            String?
+  last4            String?       @db.VarChar(4)
+  brand            CardBrand?
+  expMonth         Int?
+  expYear          Int?
+  externalMethodId String?
+  isDefault        Boolean       @default(false)
+  createdAt        DateTime      @default(now())
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("saved_payment_methods")
+}
+
+/// Eventos de webhook já vistos: a chave primária garante processamento único por evento.
+model PaymentWebhookEvent {
+  provider    String
+  eventId     String
+  payload     Json
+  receivedAt  DateTime  @default(now())
+  processedAt DateTime?
+
+  @@id([provider, eventId])
+  @@index([receivedAt])
+  @@map("payment_webhook_events")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// AJUDA E CONTACTO
+// ═════════════════════════════════════════════════════════════════════════════
+
+model HelpCategory {
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String   @unique @db.VarChar(50)
+  description  String?  @db.VarChar(200)
+  icon         String?  @db.VarChar(30)
+  isActive     Boolean  @default(true)
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  articles HelpArticle[]
+
+  @@index([displayOrder])
+  @@map("help_categories")
+}
+
+model HelpArticle {
+  articleId       String            @id @default(uuid()) @db.Uuid
+  title           String            @db.VarChar(100)
+  slug            String            @unique @db.VarChar(120)
+  category        String            @default("getting-started") // FK por nome (como no original)
+  status          PublicationStatus @default(draft)
+  content         String            @db.Text
+  excerpt         String?           @db.VarChar(200)
+  viewCount       Int               @default(0)
+  feedbackCount   Int               @default(0)
+  helpfulCount    Int               @default(0)
+  rating          Float             @default(0) // = helpfulCount / feedbackCount * 5 (calcular no serviço)
+  lastReviewedAt  DateTime?
+  reviewerId      String?           @db.Uuid
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  categoryInfo HelpCategory   @relation(fields: [category], references: [name], onUpdate: Cascade, onDelete: Restrict)
+  reviewer     User?          @relation(fields: [reviewerId], references: [userId], onDelete: SetNull)
+  feedbacks    HelpFeedback[]
+
+  @@index([category])
+  @@index([rating])
+  @@map("help_articles")
+}
+
+model HelpFeedback {
+  feedbackId String   @id @default(uuid()) @db.Uuid
+  userId     String   @db.Uuid
+  articleId  String   @db.Uuid
+  wasHelpful Boolean
+  comment    String?  @db.VarChar(500)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user    User        @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  article HelpArticle @relation(fields: [articleId], references: [articleId], onDelete: Cascade)
+
+  @@unique([userId, articleId])
+  @@index([articleId])
+  @@map("help_feedbacks")
+}
+
+model ContactRequest {
+  requestId     String               @id @default(uuid()) @db.Uuid
+  userId        String?              @db.Uuid
+  updatedById   String?              @db.Uuid
+  name          String
+  email         String
+  contactMethod ContactMethod
+  subject       String?
+  message       String?              @db.Text
+  phone         String?
+  preferredTime DateTime?
+  status        ContactRequestStatus @default(pending)
+  metadata      Json                 @default("{}")
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+
+  user          User? @relation("ContactRequestUser", fields: [userId], references: [userId], onDelete: SetNull)
+  updatedByUser User? @relation("ContactRequestUpdater", fields: [updatedById], references: [userId], onDelete: SetNull)
+
+  @@index([status])
+  @@index([contactMethod])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("contact_requests")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// AUDITORIA (acções administrativas; substitui logAdminAction/logAccess)
+// ═════════════════════════════════════════════════════════════════════════════
+
+model AuditLog {
+  auditId    String   @id @default(uuid()) @db.Uuid
+  userId     String?  @db.Uuid
+  action     String
+  entityType String
+  entityId   String?
+  method     String   @db.VarChar(10)
+  endpoint   String
+  statusCode Int?
+  changes    Json?
+  ip         String?
+  createdAt  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [userId], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@index([action])
+  @@index([entityType, entityId])
+  @@map("audit_logs")
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// AGENDADOR
+// ═════════════════════════════════════════════════════════════════════════════
+
+/// Lembretes/avisos já enviados. A chave primária é o "reclamar" atómico: com várias instâncias
+/// da API só uma consegue inserir a linha e por isso só ela envia.
+model ReminderDispatch {
+  kind     String
+  entityId String   @db.Uuid
+  userId   String   @db.Uuid
+  window   String
+  sentAt   DateTime @default(now())
+
+  @@id([kind, entityId, userId, window])
+  @@index([sentAt])
+  @@map("reminder_dispatches")
+}

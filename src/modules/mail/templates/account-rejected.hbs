@@ -1,0 +1,13 @@
+<h2>Olá {{username}},</h2>
+<p>Lamentamos informar que o seu pedido de conta na plataforma <strong>{{appName}}</strong> não foi aprovado neste momento.</p>
+<div class="warning-box"><p>A sua conta foi revista por <strong>{{reviewer}}</strong> e não cumpriu os critérios necessários para aprovação.</p></div>
+<div class="reason-box"><div class="reason-title">Motivo da rejeição:</div><p>{{reason}}</p></div>
+<p>Se acredita que houve um engano ou quer esclarecer algum ponto, contacte a nossa equipa de suporte.</p>
+{{#if supportEmail}}
+<div class="button-container"><a href="mailto:{{supportEmail}}" class="button button-danger">Falar com o suporte</a></div>
+{{/if}}
+<p>Se necessário, pode tentar registar-se novamente, garantindo que todas as informações pedidas estão completas.</p>
+<div class="divider"></div>
+{{#if supportEmail}}
+<p><strong>Precisa de ajuda?</strong><br>Escreva-nos para <a href="mailto:{{supportEmail}}">{{supportEmail}}</a> ou visite a <a href="{{helpUrl}}">Central de Ajuda</a>.</p>
+{{/if}}

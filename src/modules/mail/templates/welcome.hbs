@@ -1,0 +1,14 @@
+<h2>Olá {{username}},</h2>
+<p>É com grande alegria que damos as boas-vindas ao <strong>{{appName}}</strong>! A sua jornada de aprendizagem está prestes a começar.</p>
+<div class="highlight-box">
+  <p>A sua conta foi criada com sucesso e já tem acesso aos recursos da plataforma.</p>
+</div>
+<div class="button-container"><a href="{{loginUrl}}" class="button">Aceder à minha conta</a></div>
+<h3>Comece a sua jornada:</h3>
+<div class="step"><strong>1. Complete o seu perfil</strong><br>Adicione as suas informações para personalizar a experiência.</div>
+<div class="step"><strong>2. Explore os cursos</strong><br>Descubra conteúdos cuidadosamente preparados para o seu desenvolvimento.</div>
+<div class="step"><strong>3. Conecte-se com outros</strong><br>Interaja com colegas e instrutores para enriquecer a sua experiência.</div>
+<div class="divider"></div>
+{{#if supportEmail}}
+<p><strong>Precisa de ajuda?</strong><br>Contacte-nos em <a href="mailto:{{supportEmail}}">{{supportEmail}}</a> ou visite a nossa <a href="{{helpUrl}}">Central de Ajuda</a>.</p>
+{{/if}}
